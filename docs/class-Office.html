@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>Class Sale_suspended</title>
+	<title>Class Office</title>
 
 	<link rel="stylesheet" href="resources/style.css?c2f33731c1948fbed7c333554678bfa68d4817da">
 
@@ -79,6 +79,7 @@
 				<li><a href="class-Module.html">Module</a></li>
 				<li><a href="class-MY_Lang.html">MY_Lang</a></li>
 				<li><a href="class-No_Access.html">No_Access</a></li>
+				<li class="active"><a href="class-Office.html">Office</a></li>
 				<li><a href="class-Person.html">Person</a></li>
 				<li><a href="class-Persons.html">Persons</a></li>
 				<li><a href="class-Receiving.html">Receiving</a></li>
@@ -90,7 +91,6 @@
 				<li><a href="class-Rounding_mode.html">Rounding_mode</a></li>
 				<li><a href="class-Sale.html">Sale</a></li>
 				<li><a href="class-Sale_lib.html">Sale_lib</a></li>
-				<li class="active"><a href="class-Sale_suspended.html">Sale_suspended</a></li>
 				<li><a href="class-Sales.html">Sales</a></li>
 				<li><a href="class-Secure_Controller.html">Secure_Controller</a></li>
 				<li><a href="class-Sms_lib.html">Sms_lib</a></li>
@@ -120,6 +120,7 @@
 				<li><a href="class-Token_lib.html">Token_lib</a></li>
 				<li><a href="class-Token_quote_sequence.html">Token_quote_sequence</a></li>
 				<li><a href="class-Token_suspended_invoice_count.html">Token_suspended_invoice_count</a></li>
+				<li><a href="class-Token_work_order_sequence.html">Token_work_order_sequence</a></li>
 				<li><a href="class-Token_year_invoice_count.html">Token_year_invoice_count</a></li>
 				<li><a href="class-Tracking_lib.html">Tracking_lib</a></li>
 			</ul>
@@ -130,6 +131,7 @@
 
 			<h3>Functions</h3>
 			<ul>
+				<li><a href="function-_load_language_files.html">_load_language_files</a></li>
 				<li><a href="function-cash_decimals.html">cash_decimals</a></li>
 				<li><a href="function-currency_side.html">currency_side</a></li>
 				<li><a href="function-current_language.html">current_language</a></li>
@@ -145,6 +147,7 @@
 				<li><a href="function-get_item_kit_data_row.html">get_item_kit_data_row</a></li>
 				<li><a href="function-get_item_kits_manage_table_headers.html">get_item_kits_manage_table_headers</a></li>
 				<li><a href="function-get_items_manage_table_headers.html">get_items_manage_table_headers</a></li>
+				<li><a href="function-get_languages.html">get_languages</a></li>
 				<li><a href="function-get_people_manage_table_headers.html">get_people_manage_table_headers</a></li>
 				<li><a href="function-get_person_data_row.html">get_person_data_row</a></li>
 				<li><a href="function-get_sale_data_last_row.html">get_sale_data_last_row</a></li>
@@ -156,7 +159,7 @@
 				<li><a href="function-get_tax_data_row.html">get_tax_data_row</a></li>
 				<li><a href="function-get_taxes_manage_table_headers.html">get_taxes_manage_table_headers</a></li>
 				<li><a href="function-load_config.html">load_config</a></li>
-				<li><a href="function-load_language_files.html">load_language_files</a></li>
+				<li><a href="function-load_language.html">load_language</a></li>
 				<li><a href="function-load_stats.html">load_stats</a></li>
 				<li><a href="function-parse_decimals.html">parse_decimals</a></li>
 				<li><a href="function-pdf_create.html">pdf_create</a></li>
@@ -206,22 +209,26 @@
 	</div>
 
 <div id="content" class="class">
-	<h1>Class Sale_suspended</h1>
+	<h1>Class Office</h1>
 
 
-	<div class="description">
-	<p>Sale_suspended class</p>
-	</div>
 
 	<dl class="tree">
 		<dd style="padding-left:0px">
-CI_Model
+CI_Controller
 			
 			
 		</dd>
 		<dd style="padding-left:30px">
 			<img src="resources/inherit.png" alt="Extended by">
-<b><span>Sale_suspended</span></b>			
+			<a href="class-Secure_Controller.html"><span>Secure_Controller</span></a>
+			
+			
+			
+		</dd>
+		<dd style="padding-left:60px">
+			<img src="resources/inherit.png" alt="Extended by">
+<b><span>Office</span></b>			
 			
 			
 		</dd>
@@ -240,7 +247,7 @@ CI_Model
 		
 		
 
-			<b>Located at</b> <a href="source-class-Sale_suspended.html#4-225" title="Go to source code">models/Sale_suspended.php</a>
+			<b>Located at</b> <a href="source-class-Office.html#5-23" title="Go to source code">controllers/Office.php</a>
 		<br>
 	</div>
 
@@ -248,7 +255,7 @@ CI_Model
 
 	<table class="summary methods" id="methods">
 	<caption>Methods summary</caption>
-	<tr data-order="get_all" id="_get_all">
+	<tr data-order="__construct" id="___construct">
 
 		<td class="attributes"><code>
 			 public 
@@ -259,8 +266,8 @@ CI_Model
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_get_all">#</a>
-		<code><a href="source-class-Sale_suspended.html#9-15" title="Go to source code">get_all</a>( )</code>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-Office.html#7-10" title="Go to source code">__construct</a>( )</code>
 
 		<div class="description short">
 			
@@ -274,11 +281,13 @@ CI_Model
 
 
 
+				<h4>Overrides</h4>
+				<div class="list"><code><a href="class-Secure_Controller.html#___construct">Secure_Controller::__construct()</a></code></div>
 
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="get_info" id="_get_info">
+	<tr data-order="index" id="_index">
 
 		<td class="attributes"><code>
 			 public 
@@ -289,8 +298,8 @@ CI_Model
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_get_info">#</a>
-		<code><a href="source-class-Sale_suspended.html#17-24" title="Go to source code">get_info</a>( <span> <var>$sale_id</var></span> )</code>
+		<a class="anchor" href="#_index">#</a>
+		<code><a href="source-class-Office.html#12-15" title="Go to source code">index</a>( )</code>
 
 		<div class="description short">
 			
@@ -304,11 +313,13 @@ CI_Model
 
 
 
+				<h4>Overrides</h4>
+				<div class="list"><code><a href="class-Secure_Controller.html#_index">Secure_Controller::index()</a></code></div>
 
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="get_invoice_count" id="_get_invoice_count">
+	<tr data-order="logout" id="_logout">
 
 		<td class="attributes"><code>
 			 public 
@@ -319,278 +330,8 @@ CI_Model
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_get_invoice_count">#</a>
-		<code><a href="source-class-Sale_suspended.html#29-35" title="Go to source code">get_invoice_count</a>( )</code>
-
-		<div class="description short">
-			
-		</div>
-
-		<div class="description detailed hidden">
-			
-
-
-
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="get_sale_by_invoice_number" id="_get_sale_by_invoice_number">
-
-		<td class="attributes"><code>
-			 public 
-
-			
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_get_sale_by_invoice_number">#</a>
-		<code><a href="source-class-Sale_suspended.html#37-43" title="Go to source code">get_sale_by_invoice_number</a>( <span> <var>$invoice_number</var></span> )</code>
-
-		<div class="description short">
-			
-		</div>
-
-		<div class="description detailed hidden">
-			
-
-
-
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="exists" id="_exists">
-
-		<td class="attributes"><code>
-			 public 
-
-			
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_exists">#</a>
-		<code><a href="source-class-Sale_suspended.html#45-51" title="Go to source code">exists</a>( <span> <var>$sale_id</var></span> )</code>
-
-		<div class="description short">
-			
-		</div>
-
-		<div class="description detailed hidden">
-			
-
-
-
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="update" id="_update">
-
-		<td class="attributes"><code>
-			 public 
-
-			
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_update">#</a>
-		<code><a href="source-class-Sale_suspended.html#53-58" title="Go to source code">update</a>( <span> <var>$sale_data</var></span>, <span> <var>$sale_id</var></span> )</code>
-
-		<div class="description short">
-			
-		</div>
-
-		<div class="description detailed hidden">
-			
-
-
-
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="save" id="_save">
-
-		<td class="attributes"><code>
-			 public 
-
-			
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_save">#</a>
-		<code><a href="source-class-Sale_suspended.html#60-155" title="Go to source code">save</a>( <span> <var>$items</var></span>, <span> <var>$customer_id</var></span>, <span> <var>$employee_id</var></span>, <span> <var>$comment</var></span>, <span> <var>$invoice_number</var></span>, <span> <var>$quote_number</var></span>, <span> <var>$payments</var></span>, <span> <var>$dinner_table</var></span>, <span> <var>$sale_id</var> = <span class="php-keyword1">FALSE</span></span> )</code>
-
-		<div class="description short">
-			
-		</div>
-
-		<div class="description detailed hidden">
-			
-
-
-
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="delete" id="_delete">
-
-		<td class="attributes"><code>
-			 public 
-
-			
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_delete">#</a>
-		<code><a href="source-class-Sale_suspended.html#157-178" title="Go to source code">delete</a>( <span> <var>$sale_id</var></span> )</code>
-
-		<div class="description short">
-			
-		</div>
-
-		<div class="description detailed hidden">
-			
-
-
-
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="get_sale_items" id="_get_sale_items">
-
-		<td class="attributes"><code>
-			 public 
-
-			
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_get_sale_items">#</a>
-		<code><a href="source-class-Sale_suspended.html#180-200" title="Go to source code">get_sale_items</a>( <span> <var>$sale_id</var></span> )</code>
-
-		<div class="description short">
-			
-		</div>
-
-		<div class="description detailed hidden">
-			
-
-
-
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="get_sale_payments" id="_get_sale_payments">
-
-		<td class="attributes"><code>
-			 public 
-
-			
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_get_sale_payments">#</a>
-		<code><a href="source-class-Sale_suspended.html#202-208" title="Go to source code">get_sale_payments</a>( <span> <var>$sale_id</var></span> )</code>
-
-		<div class="description short">
-			
-		</div>
-
-		<div class="description detailed hidden">
-			
-
-
-
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="get_comment" id="_get_comment">
-
-		<td class="attributes"><code>
-			 public 
-
-			
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_get_comment">#</a>
-		<code><a href="source-class-Sale_suspended.html#210-216" title="Go to source code">get_comment</a>( <span> <var>$sale_id</var></span> )</code>
-
-		<div class="description short">
-			
-		</div>
-
-		<div class="description detailed hidden">
-			
-
-
-
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="get_dinner_table" id="_get_dinner_table">
-
-		<td class="attributes"><code>
-			 public 
-
-			
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_get_dinner_table">#</a>
-		<code><a href="source-class-Sale_suspended.html#218-224" title="Go to source code">get_dinner_table</a>( <span> <var>$sale_id</var></span> )</code>
+		<a class="anchor" href="#_logout">#</a>
+		<code><a href="source-class-Office.html#17-22" title="Go to source code">logout</a>( )</code>
 
 		<div class="description short">
 			
@@ -610,6 +351,23 @@ CI_Model
 	</tr>
 	</table>
 
+	<table class="summary inherited">
+	<caption>Methods inherited from <a href="class-Secure_Controller.html#methods">Secure_Controller</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-Secure_Controller.html#_check_numeric">check_numeric()</a>, 
+			<a href="class-Secure_Controller.html#_delete">delete()</a>, 
+			<a href="class-Secure_Controller.html#_numeric">numeric()</a>, 
+			<a href="class-Secure_Controller.html#_save">save()</a>, 
+			<a href="class-Secure_Controller.html#_search">search()</a>, 
+			<a href="class-Secure_Controller.html#_suggest_search">suggest_search()</a>, 
+			<a href="class-Secure_Controller.html#_track_event">track_event()</a>, 
+			<a href="class-Secure_Controller.html#_track_page">track_page()</a>, 
+			<a href="class-Secure_Controller.html#_view">view()</a>, 
+			<a href="class-Secure_Controller.html#_xss_clean">xss_clean()</a>
+		</code></td>
+	</tr>
+	</table>
 
 
 

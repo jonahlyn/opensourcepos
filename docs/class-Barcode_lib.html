@@ -79,6 +79,7 @@
 				<li><a href="class-Module.html">Module</a></li>
 				<li><a href="class-MY_Lang.html">MY_Lang</a></li>
 				<li><a href="class-No_Access.html">No_Access</a></li>
+				<li><a href="class-Office.html">Office</a></li>
 				<li><a href="class-Person.html">Person</a></li>
 				<li><a href="class-Persons.html">Persons</a></li>
 				<li><a href="class-Receiving.html">Receiving</a></li>
@@ -90,7 +91,6 @@
 				<li><a href="class-Rounding_mode.html">Rounding_mode</a></li>
 				<li><a href="class-Sale.html">Sale</a></li>
 				<li><a href="class-Sale_lib.html">Sale_lib</a></li>
-				<li><a href="class-Sale_suspended.html">Sale_suspended</a></li>
 				<li><a href="class-Sales.html">Sales</a></li>
 				<li><a href="class-Secure_Controller.html">Secure_Controller</a></li>
 				<li><a href="class-Sms_lib.html">Sms_lib</a></li>
@@ -120,6 +120,7 @@
 				<li><a href="class-Token_lib.html">Token_lib</a></li>
 				<li><a href="class-Token_quote_sequence.html">Token_quote_sequence</a></li>
 				<li><a href="class-Token_suspended_invoice_count.html">Token_suspended_invoice_count</a></li>
+				<li><a href="class-Token_work_order_sequence.html">Token_work_order_sequence</a></li>
 				<li><a href="class-Token_year_invoice_count.html">Token_year_invoice_count</a></li>
 				<li><a href="class-Tracking_lib.html">Tracking_lib</a></li>
 			</ul>
@@ -130,6 +131,7 @@
 
 			<h3>Functions</h3>
 			<ul>
+				<li><a href="function-_load_language_files.html">_load_language_files</a></li>
 				<li><a href="function-cash_decimals.html">cash_decimals</a></li>
 				<li><a href="function-currency_side.html">currency_side</a></li>
 				<li><a href="function-current_language.html">current_language</a></li>
@@ -145,6 +147,7 @@
 				<li><a href="function-get_item_kit_data_row.html">get_item_kit_data_row</a></li>
 				<li><a href="function-get_item_kits_manage_table_headers.html">get_item_kits_manage_table_headers</a></li>
 				<li><a href="function-get_items_manage_table_headers.html">get_items_manage_table_headers</a></li>
+				<li><a href="function-get_languages.html">get_languages</a></li>
 				<li><a href="function-get_people_manage_table_headers.html">get_people_manage_table_headers</a></li>
 				<li><a href="function-get_person_data_row.html">get_person_data_row</a></li>
 				<li><a href="function-get_sale_data_last_row.html">get_sale_data_last_row</a></li>
@@ -156,7 +159,7 @@
 				<li><a href="function-get_tax_data_row.html">get_tax_data_row</a></li>
 				<li><a href="function-get_taxes_manage_table_headers.html">get_taxes_manage_table_headers</a></li>
 				<li><a href="function-load_config.html">load_config</a></li>
-				<li><a href="function-load_language_files.html">load_language_files</a></li>
+				<li><a href="function-load_language.html">load_language</a></li>
 				<li><a href="function-load_stats.html">load_stats</a></li>
 				<li><a href="function-parse_decimals.html">parse_decimals</a></li>
 				<li><a href="function-pdf_create.html">pdf_create</a></li>
@@ -229,7 +232,7 @@
 		
 		
 
-			<b>Located at</b> <a href="source-class-Barcode_lib.html#12-265" title="Go to source code">libraries/Barcode_lib.php</a>
+			<b>Located at</b> <a href="source-class-Barcode_lib.html#11-264" title="Go to source code">libraries/Barcode_lib.php</a>
 		<br>
 	</div>
 
@@ -249,7 +252,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-Barcode_lib.html#22-25" title="Go to source code">__construct</a>( )</code>
+		<code><a href="source-class-Barcode_lib.html#21-24" title="Go to source code">__construct</a>( )</code>
 
 		<div class="description short">
 			
@@ -279,7 +282,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_list_barcodes">#</a>
-		<code><a href="source-class-Barcode_lib.html#27-30" title="Go to source code">get_list_barcodes</a>( )</code>
+		<code><a href="source-class-Barcode_lib.html#26-29" title="Go to source code">get_list_barcodes</a>( )</code>
 
 		<div class="description short">
 			
@@ -309,7 +312,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_barcode_config">#</a>
-		<code><a href="source-class-Barcode_lib.html#32-52" title="Go to source code">get_barcode_config</a>( )</code>
+		<code><a href="source-class-Barcode_lib.html#31-51" title="Go to source code">get_barcode_config</a>( )</code>
 
 		<div class="description short">
 			
@@ -339,7 +342,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_parse_barcode_fields">#</a>
-		<code><a href="source-class-Barcode_lib.html#54-78" title="Go to source code">parse_barcode_fields</a>( <span> <var>&amp; $quantity</var></span>, <span> <var>&amp; $item_id_or_number_or_item_kit_or_receipt</var></span> )</code>
+		<code><a href="source-class-Barcode_lib.html#53-77" title="Go to source code">parse_barcode_fields</a>( <span> <var>&amp; $quantity</var></span>, <span> <var>&amp; $item_id_or_number_or_item_kit_or_receipt</var></span> )</code>
 
 		<div class="description short">
 			
@@ -369,7 +372,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_validate_barcode">#</a>
-		<code><a href="source-class-Barcode_lib.html#80-85" title="Go to source code">validate_barcode</a>( <span> <var>$barcode</var></span> )</code>
+		<code><a href="source-class-Barcode_lib.html#79-84" title="Go to source code">validate_barcode</a>( <span> <var>$barcode</var></span> )</code>
 
 		<div class="description short">
 			
@@ -399,7 +402,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_barcode_instance">#</a>
-		<code><a href="source-class-Barcode_lib.html#87-101" title="Go to source code">barcode_instance</a>( <span> <var>$item</var></span>, <span> <var>$barcode_config</var></span> )</code>
+		<code><a href="source-class-Barcode_lib.html#86-100" title="Go to source code">barcode_instance</a>( <span> <var>$item</var></span>, <span> <var>$barcode_config</var></span> )</code>
 
 		<div class="description short">
 			
@@ -429,7 +432,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_generate_receipt_barcode">#</a>
-		<code><a href="source-class-Barcode_lib.html#167-192" title="Go to source code">generate_receipt_barcode</a>( <span> <var>$barcode_content</var></span> )</code>
+		<code><a href="source-class-Barcode_lib.html#166-191" title="Go to source code">generate_receipt_barcode</a>( <span> <var>$barcode_content</var></span> )</code>
 
 		<div class="description short">
 			
@@ -459,7 +462,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_display_barcode">#</a>
-		<code><a href="source-class-Barcode_lib.html#194-205" title="Go to source code">display_barcode</a>( <span> <var>$item</var></span>, <span> <var>$barcode_config</var></span> )</code>
+		<code><a href="source-class-Barcode_lib.html#193-204" title="Go to source code">display_barcode</a>( <span> <var>$item</var></span>, <span> <var>$barcode_config</var></span> )</code>
 
 		<div class="description short">
 			
@@ -489,7 +492,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_listfonts">#</a>
-		<code><a href="source-class-Barcode_lib.html#239-259" title="Go to source code">listfonts</a>( <span> <var>$folder</var></span> )</code>
+		<code><a href="source-class-Barcode_lib.html#238-258" title="Go to source code">listfonts</a>( <span> <var>$folder</var></span> )</code>
 
 		<div class="description short">
 			
@@ -519,7 +522,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_font_name">#</a>
-		<code><a href="source-class-Barcode_lib.html#261-264" title="Go to source code">get_font_name</a>( <span> <var>$font_file_name</var></span> )</code>
+		<code><a href="source-class-Barcode_lib.html#260-263" title="Go to source code">get_font_name</a>( <span> <var>$font_file_name</var></span> )</code>
 
 		<div class="description short">
 			

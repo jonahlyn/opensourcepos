@@ -79,6 +79,7 @@
 				<li><a href="class-Module.html">Module</a></li>
 				<li><a href="class-MY_Lang.html">MY_Lang</a></li>
 				<li><a href="class-No_Access.html">No_Access</a></li>
+				<li><a href="class-Office.html">Office</a></li>
 				<li><a href="class-Person.html">Person</a></li>
 				<li><a href="class-Persons.html">Persons</a></li>
 				<li><a href="class-Receiving.html">Receiving</a></li>
@@ -90,7 +91,6 @@
 				<li><a href="class-Rounding_mode.html">Rounding_mode</a></li>
 				<li><a href="class-Sale.html">Sale</a></li>
 				<li><a href="class-Sale_lib.html">Sale_lib</a></li>
-				<li><a href="class-Sale_suspended.html">Sale_suspended</a></li>
 				<li><a href="class-Sales.html">Sales</a></li>
 				<li><a href="class-Secure_Controller.html">Secure_Controller</a></li>
 				<li><a href="class-Sms_lib.html">Sms_lib</a></li>
@@ -120,6 +120,7 @@
 				<li><a href="class-Token_lib.html">Token_lib</a></li>
 				<li><a href="class-Token_quote_sequence.html">Token_quote_sequence</a></li>
 				<li><a href="class-Token_suspended_invoice_count.html">Token_suspended_invoice_count</a></li>
+				<li><a href="class-Token_work_order_sequence.html">Token_work_order_sequence</a></li>
 				<li><a href="class-Token_year_invoice_count.html">Token_year_invoice_count</a></li>
 				<li><a href="class-Tracking_lib.html">Tracking_lib</a></li>
 			</ul>
@@ -130,6 +131,7 @@
 
 			<h3>Functions</h3>
 			<ul>
+				<li><a href="function-_load_language_files.html">_load_language_files</a></li>
 				<li><a href="function-cash_decimals.html">cash_decimals</a></li>
 				<li><a href="function-currency_side.html">currency_side</a></li>
 				<li><a href="function-current_language.html">current_language</a></li>
@@ -145,6 +147,7 @@
 				<li><a href="function-get_item_kit_data_row.html">get_item_kit_data_row</a></li>
 				<li><a href="function-get_item_kits_manage_table_headers.html">get_item_kits_manage_table_headers</a></li>
 				<li><a href="function-get_items_manage_table_headers.html">get_items_manage_table_headers</a></li>
+				<li><a href="function-get_languages.html">get_languages</a></li>
 				<li><a href="function-get_people_manage_table_headers.html">get_people_manage_table_headers</a></li>
 				<li><a href="function-get_person_data_row.html">get_person_data_row</a></li>
 				<li><a href="function-get_sale_data_last_row.html">get_sale_data_last_row</a></li>
@@ -156,7 +159,7 @@
 				<li><a href="function-get_tax_data_row.html">get_tax_data_row</a></li>
 				<li><a href="function-get_taxes_manage_table_headers.html">get_taxes_manage_table_headers</a></li>
 				<li><a href="function-load_config.html">load_config</a></li>
-				<li><a href="function-load_language_files.html">load_language_files</a></li>
+				<li><a href="function-load_language.html">load_language</a></li>
 				<li><a href="function-load_stats.html">load_stats</a></li>
 				<li><a href="function-parse_decimals.html">parse_decimals</a></li>
 				<li><a href="function-pdf_create.html">pdf_create</a></li>
@@ -244,7 +247,7 @@ CI_Controller
 		
 		
 
-			<b>Located at</b> <a href="source-class-Config.html#5-971" title="Go to source code">controllers/Config.php</a>
+			<b>Located at</b> <a href="source-class-Config.html#5-977" title="Go to source code">controllers/Config.php</a>
 		<br>
 	</div>
 
@@ -296,7 +299,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_index">#</a>
-		<code><a href="source-class-Config.html#197-233" title="Go to source code">index</a>( )</code>
+		<code><a href="source-class-Config.html#197-234" title="Go to source code">index</a>( )</code>
 
 		<div class="description short">
 			
@@ -328,7 +331,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_tax_code_options">#</a>
-		<code><a href="source-class-Config.html#236-247" title="Go to source code">get_tax_code_options</a>( )</code>
+		<code><a href="source-class-Config.html#237-248" title="Go to source code">get_tax_code_options</a>( )</code>
 
 		<div class="description short">
 			
@@ -358,7 +361,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_save_info">#</a>
-		<code><a href="source-class-Config.html#250-283" title="Go to source code">save_info</a>( )</code>
+		<code><a href="source-class-Config.html#251-284" title="Go to source code">save_info</a>( )</code>
 
 		<div class="description short">
 			
@@ -388,7 +391,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_save_general">#</a>
-		<code><a href="source-class-Config.html#285-318" title="Go to source code">save_general</a>( )</code>
+		<code><a href="source-class-Config.html#286-321" title="Go to source code">save_general</a>( )</code>
 
 		<div class="description short">
 			
@@ -418,7 +421,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_check_number_locale">#</a>
-		<code><a href="source-class-Config.html#320-337" title="Go to source code">check_number_locale</a>( )</code>
+		<code><a href="source-class-Config.html#323-340" title="Go to source code">check_number_locale</a>( )</code>
 
 		<div class="description short">
 			
@@ -448,7 +451,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_save_locale">#</a>
-		<code><a href="source-class-Config.html#339-369" title="Go to source code">save_locale</a>( )</code>
+		<code><a href="source-class-Config.html#342-372" title="Go to source code">save_locale</a>( )</code>
 
 		<div class="description short">
 			
@@ -478,7 +481,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_save_email">#</a>
-		<code><a href="source-class-Config.html#371-398" title="Go to source code">save_email</a>( )</code>
+		<code><a href="source-class-Config.html#374-401" title="Go to source code">save_email</a>( )</code>
 
 		<div class="description short">
 			
@@ -508,7 +511,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_save_message">#</a>
-		<code><a href="source-class-Config.html#400-423" title="Go to source code">save_message</a>( )</code>
+		<code><a href="source-class-Config.html#403-426" title="Go to source code">save_message</a>( )</code>
 
 		<div class="description short">
 			
@@ -538,7 +541,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_ajax_check_mailchimp_api_key">#</a>
-		<code><a href="source-class-Config.html#452-463" title="Go to source code">ajax_check_mailchimp_api_key</a>( )</code>
+		<code><a href="source-class-Config.html#455-466" title="Go to source code">ajax_check_mailchimp_api_key</a>( )</code>
 
 		<div class="description short">
 			
@@ -568,7 +571,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_save_mailchimp">#</a>
-		<code><a href="source-class-Config.html#465-488" title="Go to source code">save_mailchimp</a>( )</code>
+		<code><a href="source-class-Config.html#468-491" title="Go to source code">save_mailchimp</a>( )</code>
 
 		<div class="description short">
 			
@@ -598,7 +601,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_ajax_stock_locations">#</a>
-		<code><a href="source-class-Config.html#490-497" title="Go to source code">ajax_stock_locations</a>( )</code>
+		<code><a href="source-class-Config.html#493-500" title="Go to source code">ajax_stock_locations</a>( )</code>
 
 		<div class="description short">
 			
@@ -628,7 +631,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_ajax_dinner_tables">#</a>
-		<code><a href="source-class-Config.html#499-506" title="Go to source code">ajax_dinner_tables</a>( )</code>
+		<code><a href="source-class-Config.html#502-509" title="Go to source code">ajax_dinner_tables</a>( )</code>
 
 		<div class="description short">
 			
@@ -658,7 +661,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_ajax_tax_categories">#</a>
-		<code><a href="source-class-Config.html#508-515" title="Go to source code">ajax_tax_categories</a>( )</code>
+		<code><a href="source-class-Config.html#511-518" title="Go to source code">ajax_tax_categories</a>( )</code>
 
 		<div class="description short">
 			
@@ -688,7 +691,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_ajax_customer_rewards">#</a>
-		<code><a href="source-class-Config.html#517-524" title="Go to source code">ajax_customer_rewards</a>( )</code>
+		<code><a href="source-class-Config.html#520-527" title="Go to source code">ajax_customer_rewards</a>( )</code>
 
 		<div class="description short">
 			
@@ -718,7 +721,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_save_locations">#</a>
-		<code><a href="source-class-Config.html#537-576" title="Go to source code">save_locations</a>( )</code>
+		<code><a href="source-class-Config.html#540-579" title="Go to source code">save_locations</a>( )</code>
 
 		<div class="description short">
 			
@@ -748,7 +751,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_save_tables">#</a>
-		<code><a href="source-class-Config.html#578-624" title="Go to source code">save_tables</a>( )</code>
+		<code><a href="source-class-Config.html#581-627" title="Go to source code">save_tables</a>( )</code>
 
 		<div class="description short">
 			
@@ -778,7 +781,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_save_tax">#</a>
-		<code><a href="source-class-Config.html#626-714" title="Go to source code">save_tax</a>( )</code>
+		<code><a href="source-class-Config.html#629-717" title="Go to source code">save_tax</a>( )</code>
 
 		<div class="description short">
 			
@@ -808,7 +811,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_save_rewards">#</a>
-		<code><a href="source-class-Config.html#716-773" title="Go to source code">save_rewards</a>( )</code>
+		<code><a href="source-class-Config.html#719-776" title="Go to source code">save_rewards</a>( )</code>
 
 		<div class="description short">
 			
@@ -838,7 +841,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_save_barcode">#</a>
-		<code><a href="source-class-Config.html#775-802" title="Go to source code">save_barcode</a>( )</code>
+		<code><a href="source-class-Config.html#778-805" title="Go to source code">save_barcode</a>( )</code>
 
 		<div class="description short">
 			
@@ -868,7 +871,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_save_receipt">#</a>
-		<code><a href="source-class-Config.html#804-830" title="Go to source code">save_receipt</a>( )</code>
+		<code><a href="source-class-Config.html#807-833" title="Go to source code">save_receipt</a>( )</code>
 
 		<div class="description short">
 			
@@ -898,7 +901,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_save_invoice">#</a>
-		<code><a href="source-class-Config.html#832-868" title="Go to source code">save_invoice</a>( )</code>
+		<code><a href="source-class-Config.html#835-874" title="Go to source code">save_invoice</a>( )</code>
 
 		<div class="description short">
 			
@@ -928,7 +931,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_remove_logo">#</a>
-		<code><a href="source-class-Config.html#870-875" title="Go to source code">remove_logo</a>( )</code>
+		<code><a href="source-class-Config.html#876-881" title="Go to source code">remove_logo</a>( )</code>
 
 		<div class="description short">
 			
@@ -958,7 +961,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_backup_db">#</a>
-		<code><a href="source-class-Config.html#942-970" title="Go to source code">backup_db</a>( )</code>
+		<code><a href="source-class-Config.html#948-976" title="Go to source code">backup_db</a>( )</code>
 
 		<div class="description short">
 			

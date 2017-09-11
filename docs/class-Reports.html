@@ -79,6 +79,7 @@
 				<li><a href="class-Module.html">Module</a></li>
 				<li><a href="class-MY_Lang.html">MY_Lang</a></li>
 				<li><a href="class-No_Access.html">No_Access</a></li>
+				<li><a href="class-Office.html">Office</a></li>
 				<li><a href="class-Person.html">Person</a></li>
 				<li><a href="class-Persons.html">Persons</a></li>
 				<li><a href="class-Receiving.html">Receiving</a></li>
@@ -90,7 +91,6 @@
 				<li><a href="class-Rounding_mode.html">Rounding_mode</a></li>
 				<li><a href="class-Sale.html">Sale</a></li>
 				<li><a href="class-Sale_lib.html">Sale_lib</a></li>
-				<li><a href="class-Sale_suspended.html">Sale_suspended</a></li>
 				<li><a href="class-Sales.html">Sales</a></li>
 				<li><a href="class-Secure_Controller.html">Secure_Controller</a></li>
 				<li><a href="class-Sms_lib.html">Sms_lib</a></li>
@@ -120,6 +120,7 @@
 				<li><a href="class-Token_lib.html">Token_lib</a></li>
 				<li><a href="class-Token_quote_sequence.html">Token_quote_sequence</a></li>
 				<li><a href="class-Token_suspended_invoice_count.html">Token_suspended_invoice_count</a></li>
+				<li><a href="class-Token_work_order_sequence.html">Token_work_order_sequence</a></li>
 				<li><a href="class-Token_year_invoice_count.html">Token_year_invoice_count</a></li>
 				<li><a href="class-Tracking_lib.html">Tracking_lib</a></li>
 			</ul>
@@ -130,6 +131,7 @@
 
 			<h3>Functions</h3>
 			<ul>
+				<li><a href="function-_load_language_files.html">_load_language_files</a></li>
 				<li><a href="function-cash_decimals.html">cash_decimals</a></li>
 				<li><a href="function-currency_side.html">currency_side</a></li>
 				<li><a href="function-current_language.html">current_language</a></li>
@@ -145,6 +147,7 @@
 				<li><a href="function-get_item_kit_data_row.html">get_item_kit_data_row</a></li>
 				<li><a href="function-get_item_kits_manage_table_headers.html">get_item_kits_manage_table_headers</a></li>
 				<li><a href="function-get_items_manage_table_headers.html">get_items_manage_table_headers</a></li>
+				<li><a href="function-get_languages.html">get_languages</a></li>
 				<li><a href="function-get_people_manage_table_headers.html">get_people_manage_table_headers</a></li>
 				<li><a href="function-get_person_data_row.html">get_person_data_row</a></li>
 				<li><a href="function-get_sale_data_last_row.html">get_sale_data_last_row</a></li>
@@ -156,7 +159,7 @@
 				<li><a href="function-get_tax_data_row.html">get_tax_data_row</a></li>
 				<li><a href="function-get_taxes_manage_table_headers.html">get_taxes_manage_table_headers</a></li>
 				<li><a href="function-load_config.html">load_config</a></li>
-				<li><a href="function-load_language_files.html">load_language_files</a></li>
+				<li><a href="function-load_language.html">load_language</a></li>
 				<li><a href="function-load_stats.html">load_stats</a></li>
 				<li><a href="function-parse_decimals.html">parse_decimals</a></li>
 				<li><a href="function-pdf_create.html">pdf_create</a></li>
@@ -244,7 +247,7 @@ CI_Controller
 		
 		
 
-			<b>Located at</b> <a href="source-class-Reports.html#5-1258" title="Go to source code">controllers/Reports.php</a>
+			<b>Located at</b> <a href="source-class-Reports.html#5-1285" title="Go to source code">controllers/Reports.php</a>
 		<br>
 	</div>
 
@@ -598,7 +601,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_date_input">#</a>
-		<code><a href="source-class-Reports.html#354-363" title="Go to source code">date_input</a>( )</code>
+		<code><a href="source-class-Reports.html#354-364" title="Go to source code">date_input</a>( )</code>
 
 		<div class="description short">
 			
@@ -628,7 +631,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_date_input_sales">#</a>
-		<code><a href="source-class-Reports.html#366-375" title="Go to source code">date_input_sales</a>( )</code>
+		<code><a href="source-class-Reports.html#367-377" title="Go to source code">date_input_sales</a>( )</code>
 
 		<div class="description short">
 			
@@ -658,7 +661,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_date_input_recv">#</a>
-		<code><a href="source-class-Reports.html#377-386" title="Go to source code">date_input_recv</a>( )</code>
+		<code><a href="source-class-Reports.html#379-388" title="Go to source code">date_input_recv</a>( )</code>
 
 		<div class="description short">
 			
@@ -688,7 +691,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_graphical_summary_sales">#</a>
-		<code><a href="source-class-Reports.html#389-423" title="Go to source code">graphical_summary_sales</a>( <span> <var>$start_date</var></span>, <span> <var>$end_date</var></span>, <span> <var>$sale_type</var></span>, <span> <var>$location_id</var> = <span class="php-quote">'all'</span></span> )</code>
+		<code><a href="source-class-Reports.html#391-425" title="Go to source code">graphical_summary_sales</a>( <span> <var>$start_date</var></span>, <span> <var>$end_date</var></span>, <span> <var>$sale_type</var></span>, <span> <var>$location_id</var> = <span class="php-quote">'all'</span></span> )</code>
 
 		<div class="description short">
 			
@@ -718,7 +721,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_graphical_summary_items">#</a>
-		<code><a href="source-class-Reports.html#426-459" title="Go to source code">graphical_summary_items</a>( <span> <var>$start_date</var></span>, <span> <var>$end_date</var></span>, <span> <var>$sale_type</var></span>, <span> <var>$location_id</var> = <span class="php-quote">'all'</span></span> )</code>
+		<code><a href="source-class-Reports.html#428-461" title="Go to source code">graphical_summary_items</a>( <span> <var>$start_date</var></span>, <span> <var>$end_date</var></span>, <span> <var>$sale_type</var></span>, <span> <var>$location_id</var> = <span class="php-quote">'all'</span></span> )</code>
 
 		<div class="description short">
 			
@@ -748,7 +751,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_graphical_summary_categories">#</a>
-		<code><a href="source-class-Reports.html#462-493" title="Go to source code">graphical_summary_categories</a>( <span> <var>$start_date</var></span>, <span> <var>$end_date</var></span>, <span> <var>$sale_type</var></span>, <span> <var>$location_id</var> = <span class="php-quote">'all'</span></span> )</code>
+		<code><a href="source-class-Reports.html#464-495" title="Go to source code">graphical_summary_categories</a>( <span> <var>$start_date</var></span>, <span> <var>$end_date</var></span>, <span> <var>$sale_type</var></span>, <span> <var>$location_id</var> = <span class="php-quote">'all'</span></span> )</code>
 
 		<div class="description short">
 			
@@ -778,7 +781,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_graphical_summary_suppliers">#</a>
-		<code><a href="source-class-Reports.html#496-527" title="Go to source code">graphical_summary_suppliers</a>( <span> <var>$start_date</var></span>, <span> <var>$end_date</var></span>, <span> <var>$sale_type</var></span>, <span> <var>$location_id</var> = <span class="php-quote">'all'</span></span> )</code>
+		<code><a href="source-class-Reports.html#498-529" title="Go to source code">graphical_summary_suppliers</a>( <span> <var>$start_date</var></span>, <span> <var>$end_date</var></span>, <span> <var>$sale_type</var></span>, <span> <var>$location_id</var> = <span class="php-quote">'all'</span></span> )</code>
 
 		<div class="description short">
 			
@@ -808,7 +811,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_graphical_summary_employees">#</a>
-		<code><a href="source-class-Reports.html#530-561" title="Go to source code">graphical_summary_employees</a>( <span> <var>$start_date</var></span>, <span> <var>$end_date</var></span>, <span> <var>$sale_type</var></span>, <span> <var>$location_id</var> = <span class="php-quote">'all'</span></span> )</code>
+		<code><a href="source-class-Reports.html#532-563" title="Go to source code">graphical_summary_employees</a>( <span> <var>$start_date</var></span>, <span> <var>$end_date</var></span>, <span> <var>$sale_type</var></span>, <span> <var>$location_id</var> = <span class="php-quote">'all'</span></span> )</code>
 
 		<div class="description short">
 			
@@ -838,7 +841,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_graphical_summary_taxes">#</a>
-		<code><a href="source-class-Reports.html#564-595" title="Go to source code">graphical_summary_taxes</a>( <span> <var>$start_date</var></span>, <span> <var>$end_date</var></span>, <span> <var>$sale_type</var></span>, <span> <var>$location_id</var> = <span class="php-quote">'all'</span></span> )</code>
+		<code><a href="source-class-Reports.html#566-597" title="Go to source code">graphical_summary_taxes</a>( <span> <var>$start_date</var></span>, <span> <var>$end_date</var></span>, <span> <var>$sale_type</var></span>, <span> <var>$location_id</var> = <span class="php-quote">'all'</span></span> )</code>
 
 		<div class="description short">
 			
@@ -868,7 +871,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_graphical_summary_customers">#</a>
-		<code><a href="source-class-Reports.html#598-631" title="Go to source code">graphical_summary_customers</a>( <span> <var>$start_date</var></span>, <span> <var>$end_date</var></span>, <span> <var>$sale_type</var></span>, <span> <var>$location_id</var> = <span class="php-quote">'all'</span></span> )</code>
+		<code><a href="source-class-Reports.html#600-633" title="Go to source code">graphical_summary_customers</a>( <span> <var>$start_date</var></span>, <span> <var>$end_date</var></span>, <span> <var>$sale_type</var></span>, <span> <var>$location_id</var> = <span class="php-quote">'all'</span></span> )</code>
 
 		<div class="description short">
 			
@@ -898,7 +901,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_graphical_summary_discounts">#</a>
-		<code><a href="source-class-Reports.html#634-667" title="Go to source code">graphical_summary_discounts</a>( <span> <var>$start_date</var></span>, <span> <var>$end_date</var></span>, <span> <var>$sale_type</var></span>, <span> <var>$location_id</var> = <span class="php-quote">'all'</span></span> )</code>
+		<code><a href="source-class-Reports.html#636-669" title="Go to source code">graphical_summary_discounts</a>( <span> <var>$start_date</var></span>, <span> <var>$end_date</var></span>, <span> <var>$sale_type</var></span>, <span> <var>$location_id</var> = <span class="php-quote">'all'</span></span> )</code>
 
 		<div class="description short">
 			
@@ -928,7 +931,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_graphical_summary_payments">#</a>
-		<code><a href="source-class-Reports.html#670-701" title="Go to source code">graphical_summary_payments</a>( <span> <var>$start_date</var></span>, <span> <var>$end_date</var></span>, <span> <var>$sale_type</var></span>, <span> <var>$location_id</var> = <span class="php-quote">'all'</span></span> )</code>
+		<code><a href="source-class-Reports.html#672-703" title="Go to source code">graphical_summary_payments</a>( <span> <var>$start_date</var></span>, <span> <var>$end_date</var></span>, <span> <var>$sale_type</var></span>, <span> <var>$location_id</var> = <span class="php-quote">'all'</span></span> )</code>
 
 		<div class="description short">
 			
@@ -958,7 +961,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_specific_customer_input">#</a>
-		<code><a href="source-class-Reports.html#703-716" title="Go to source code">specific_customer_input</a>( )</code>
+		<code><a href="source-class-Reports.html#705-719" title="Go to source code">specific_customer_input</a>( )</code>
 
 		<div class="description short">
 			
@@ -988,7 +991,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_specific_customer">#</a>
-		<code><a href="source-class-Reports.html#718-786" title="Go to source code">specific_customer</a>( <span> <var>$start_date</var></span>, <span> <var>$end_date</var></span>, <span> <var>$customer_id</var></span>, <span> <var>$sale_type</var></span> )</code>
+		<code><a href="source-class-Reports.html#721-790" title="Go to source code">specific_customer</a>( <span> <var>$start_date</var></span>, <span> <var>$end_date</var></span>, <span> <var>$customer_id</var></span>, <span> <var>$sale_type</var></span> )</code>
 
 		<div class="description short">
 			
@@ -1018,7 +1021,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_specific_employee_input">#</a>
-		<code><a href="source-class-Reports.html#788-801" title="Go to source code">specific_employee_input</a>( )</code>
+		<code><a href="source-class-Reports.html#792-806" title="Go to source code">specific_employee_input</a>( )</code>
 
 		<div class="description short">
 			
@@ -1048,7 +1051,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_specific_employee">#</a>
-		<code><a href="source-class-Reports.html#803-871" title="Go to source code">specific_employee</a>( <span> <var>$start_date</var></span>, <span> <var>$end_date</var></span>, <span> <var>$employee_id</var></span>, <span> <var>$sale_type</var></span> )</code>
+		<code><a href="source-class-Reports.html#808-877" title="Go to source code">specific_employee</a>( <span> <var>$start_date</var></span>, <span> <var>$end_date</var></span>, <span> <var>$employee_id</var></span>, <span> <var>$sale_type</var></span> )</code>
 
 		<div class="description short">
 			
@@ -1078,7 +1081,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_specific_discount_input">#</a>
-		<code><a href="source-class-Reports.html#873-888" title="Go to source code">specific_discount_input</a>( )</code>
+		<code><a href="source-class-Reports.html#879-895" title="Go to source code">specific_discount_input</a>( )</code>
 
 		<div class="description short">
 			
@@ -1108,7 +1111,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_specific_discount">#</a>
-		<code><a href="source-class-Reports.html#890-956" title="Go to source code">specific_discount</a>( <span> <var>$start_date</var></span>, <span> <var>$end_date</var></span>, <span> <var>$discount</var></span>, <span> <var>$sale_type</var></span> )</code>
+		<code><a href="source-class-Reports.html#897-964" title="Go to source code">specific_discount</a>( <span> <var>$start_date</var></span>, <span> <var>$end_date</var></span>, <span> <var>$discount</var></span>, <span> <var>$sale_type</var></span> )</code>
 
 		<div class="description short">
 			
@@ -1138,7 +1141,37 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_detailed_sales_row">#</a>
-		<code><a href="source-class-Reports.html#958-988" title="Go to source code">get_detailed_sales_row</a>( <span> <var>$sale_id</var></span> )</code>
+		<code><a href="source-class-Reports.html#966-996" title="Go to source code">get_detailed_sales_row</a>( <span> <var>$sale_id</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="get_sale_type_options" id="_get_sale_type_options">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_get_sale_type_options">#</a>
+		<code><a href="source-class-Reports.html#998-1014" title="Go to source code">get_sale_type_options</a>( )</code>
 
 		<div class="description short">
 			
@@ -1168,7 +1201,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_detailed_sales">#</a>
-		<code><a href="source-class-Reports.html#990-1070" title="Go to source code">detailed_sales</a>( <span> <var>$start_date</var></span>, <span> <var>$end_date</var></span>, <span> <var>$sale_type</var></span>, <span> <var>$location_id</var> = <span class="php-quote">'all'</span></span> )</code>
+		<code><a href="source-class-Reports.html#1016-1097" title="Go to source code">detailed_sales</a>( <span> <var>$start_date</var></span>, <span> <var>$end_date</var></span>, <span> <var>$sale_type</var></span>, <span> <var>$location_id</var> = <span class="php-quote">'all'</span></span> )</code>
 
 		<div class="description short">
 			
@@ -1198,7 +1231,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_detailed_receivings_row">#</a>
-		<code><a href="source-class-Reports.html#1072-1099" title="Go to source code">get_detailed_receivings_row</a>( <span> <var>$receiving_id</var></span> )</code>
+		<code><a href="source-class-Reports.html#1099-1126" title="Go to source code">get_detailed_receivings_row</a>( <span> <var>$receiving_id</var></span> )</code>
 
 		<div class="description short">
 			
@@ -1228,7 +1261,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_detailed_receivings">#</a>
-		<code><a href="source-class-Reports.html#1101-1158" title="Go to source code">detailed_receivings</a>( <span> <var>$start_date</var></span>, <span> <var>$end_date</var></span>, <span> <var>$receiving_type</var></span>, <span> <var>$location_id</var> = <span class="php-quote">'all'</span></span> )</code>
+		<code><a href="source-class-Reports.html#1128-1185" title="Go to source code">detailed_receivings</a>( <span> <var>$start_date</var></span>, <span> <var>$end_date</var></span>, <span> <var>$receiving_type</var></span>, <span> <var>$location_id</var> = <span class="php-quote">'all'</span></span> )</code>
 
 		<div class="description short">
 			
@@ -1258,7 +1291,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_inventory_low">#</a>
-		<code><a href="source-class-Reports.html#1160-1190" title="Go to source code">inventory_low</a>( )</code>
+		<code><a href="source-class-Reports.html#1187-1217" title="Go to source code">inventory_low</a>( )</code>
 
 		<div class="description short">
 			
@@ -1288,7 +1321,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_inventory_summary_input">#</a>
-		<code><a href="source-class-Reports.html#1192-1205" title="Go to source code">inventory_summary_input</a>( )</code>
+		<code><a href="source-class-Reports.html#1219-1232" title="Go to source code">inventory_summary_input</a>( )</code>
 
 		<div class="description short">
 			
@@ -1318,7 +1351,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_inventory_summary">#</a>
-		<code><a href="source-class-Reports.html#1207-1240" title="Go to source code">inventory_summary</a>( <span> <var>$location_id</var> = <span class="php-quote">'all'</span></span>, <span> <var>$item_count</var> = <span class="php-quote">'all'</span></span> )</code>
+		<code><a href="source-class-Reports.html#1234-1267" title="Go to source code">inventory_summary</a>( <span> <var>$location_id</var> = <span class="php-quote">'all'</span></span>, <span> <var>$item_count</var> = <span class="php-quote">'all'</span></span> )</code>
 
 		<div class="description short">
 			

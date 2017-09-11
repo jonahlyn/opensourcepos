@@ -79,6 +79,7 @@
 				<li><a href="class-Module.html">Module</a></li>
 				<li><a href="class-MY_Lang.html">MY_Lang</a></li>
 				<li><a href="class-No_Access.html">No_Access</a></li>
+				<li><a href="class-Office.html">Office</a></li>
 				<li><a href="class-Person.html">Person</a></li>
 				<li><a href="class-Persons.html">Persons</a></li>
 				<li><a href="class-Receiving.html">Receiving</a></li>
@@ -90,7 +91,6 @@
 				<li><a href="class-Rounding_mode.html">Rounding_mode</a></li>
 				<li><a href="class-Sale.html">Sale</a></li>
 				<li><a href="class-Sale_lib.html">Sale_lib</a></li>
-				<li><a href="class-Sale_suspended.html">Sale_suspended</a></li>
 				<li><a href="class-Sales.html">Sales</a></li>
 				<li><a href="class-Secure_Controller.html">Secure_Controller</a></li>
 				<li><a href="class-Sms_lib.html">Sms_lib</a></li>
@@ -120,6 +120,7 @@
 				<li><a href="class-Token_lib.html">Token_lib</a></li>
 				<li><a href="class-Token_quote_sequence.html">Token_quote_sequence</a></li>
 				<li><a href="class-Token_suspended_invoice_count.html">Token_suspended_invoice_count</a></li>
+				<li><a href="class-Token_work_order_sequence.html">Token_work_order_sequence</a></li>
 				<li><a href="class-Token_year_invoice_count.html">Token_year_invoice_count</a></li>
 				<li><a href="class-Tracking_lib.html">Tracking_lib</a></li>
 			</ul>
@@ -130,6 +131,7 @@
 
 			<h3>Functions</h3>
 			<ul>
+				<li><a href="function-_load_language_files.html">_load_language_files</a></li>
 				<li><a href="function-cash_decimals.html">cash_decimals</a></li>
 				<li><a href="function-currency_side.html">currency_side</a></li>
 				<li><a href="function-current_language.html">current_language</a></li>
@@ -145,6 +147,7 @@
 				<li><a href="function-get_item_kit_data_row.html">get_item_kit_data_row</a></li>
 				<li><a href="function-get_item_kits_manage_table_headers.html">get_item_kits_manage_table_headers</a></li>
 				<li><a href="function-get_items_manage_table_headers.html">get_items_manage_table_headers</a></li>
+				<li><a href="function-get_languages.html">get_languages</a></li>
 				<li><a href="function-get_people_manage_table_headers.html">get_people_manage_table_headers</a></li>
 				<li><a href="function-get_person_data_row.html">get_person_data_row</a></li>
 				<li><a href="function-get_sale_data_last_row.html">get_sale_data_last_row</a></li>
@@ -156,7 +159,7 @@
 				<li><a href="function-get_tax_data_row.html">get_tax_data_row</a></li>
 				<li><a href="function-get_taxes_manage_table_headers.html">get_taxes_manage_table_headers</a></li>
 				<li><a href="function-load_config.html">load_config</a></li>
-				<li><a href="function-load_language_files.html">load_language_files</a></li>
+				<li><a href="function-load_language.html">load_language</a></li>
 				<li><a href="function-load_stats.html">load_stats</a></li>
 				<li><a href="function-parse_decimals.html">parse_decimals</a></li>
 				<li><a href="function-pdf_create.html">pdf_create</a></li>
@@ -222,6 +225,7 @@
 			<a href="class-Token_invoice_sequence.html">Token_invoice_sequence</a>, 
 			<a href="class-Token_quote_sequence.html">Token_quote_sequence</a>, 
 			<a href="class-Token_suspended_invoice_count.html">Token_suspended_invoice_count</a>, 
+			<a href="class-Token_work_order_sequence.html">Token_work_order_sequence</a>, 
 			<a href="class-Token_year_invoice_count.html">Token_year_invoice_count</a>
 	</div>
 
@@ -231,12 +235,12 @@
 
 
 	<div class="info">
-		
+		<b>Abstract</b><br>
 		
 		
 		
 
-			<b>Located at</b> <a href="source-class-Token.html#12-48" title="Go to source code">libraries/tokens/Token.php</a>
+			<b>Located at</b> <a href="source-class-Token.html#13-53" title="Go to source code">libraries/tokens/Token.php</a>
 		<br>
 	</div>
 
@@ -256,7 +260,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-Token.html#19-22" title="Go to source code">__construct</a>( )</code>
+		<code><a href="source-class-Token.html#22-26" title="Go to source code">__construct</a>( <span> <var>$value</var> = <span class="php-quote">''</span></span> )</code>
 
 		<div class="description short">
 			
@@ -286,7 +290,67 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_tokens">#</a>
-		<code><a href="source-class-Token.html#24-28" title="Go to source code">get_tokens</a>( )</code>
+		<code><a href="source-class-Token.html#28-33" title="Go to source code">get_tokens</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="token_id" id="_token_id">
+
+		<td class="attributes"><code>
+			abstract public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_token_id">#</a>
+		<code><a href="source-class-Token.html#35" title="Go to source code">token_id</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="get_value" id="_get_value">
+
+		<td class="attributes"><code>
+			abstract public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_get_value">#</a>
+		<code><a href="source-class-Token.html#37" title="Go to source code">get_value</a>( )</code>
 
 		<div class="description short">
 			
@@ -316,7 +380,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_matches">#</a>
-		<code><a href="source-class-Token.html#30-33" title="Go to source code">matches</a>( <span> <var>$token_id</var></span> )</code>
+		<code><a href="source-class-Token.html#39-42" title="Go to source code">matches</a>( <span> <var>$token_id</var></span> )</code>
 
 		<div class="description short">
 			
@@ -346,7 +410,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_replace">#</a>
-		<code><a href="source-class-Token.html#35-45" title="Go to source code">replace</a>( <span> <var>$token_id</var></span> )</code>
+		<code><a href="source-class-Token.html#44-51" title="Go to source code">replace</a>( <span> <var>$text</var></span> )</code>
 
 		<div class="description short">
 			
@@ -386,7 +450,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Token.html#17" title="Go to source code"><var>$CI</var></a>
+				<a href="source-class-Token.html#18" title="Go to source code"><var>$CI</var></a>
 
 			<div class="description short">
 				
@@ -401,6 +465,31 @@
 			<div>
 				<a href="#$CI" class="anchor">#</a>
 				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="value" id="$value">
+		<td class="attributes"><code>
+			protected  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Token.html#20" title="Go to source code"><var>$value</var></a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$value" class="anchor">#</a>
+				<code><span class="php-quote">''</span></code>
 			</div>
 		</td>
 	</tr>

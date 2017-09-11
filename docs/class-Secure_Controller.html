@@ -79,6 +79,7 @@
 				<li><a href="class-Module.html">Module</a></li>
 				<li><a href="class-MY_Lang.html">MY_Lang</a></li>
 				<li><a href="class-No_Access.html">No_Access</a></li>
+				<li><a href="class-Office.html">Office</a></li>
 				<li><a href="class-Person.html">Person</a></li>
 				<li><a href="class-Persons.html">Persons</a></li>
 				<li><a href="class-Receiving.html">Receiving</a></li>
@@ -90,7 +91,6 @@
 				<li><a href="class-Rounding_mode.html">Rounding_mode</a></li>
 				<li><a href="class-Sale.html">Sale</a></li>
 				<li><a href="class-Sale_lib.html">Sale_lib</a></li>
-				<li><a href="class-Sale_suspended.html">Sale_suspended</a></li>
 				<li><a href="class-Sales.html">Sales</a></li>
 				<li class="active"><a href="class-Secure_Controller.html">Secure_Controller</a></li>
 				<li><a href="class-Sms_lib.html">Sms_lib</a></li>
@@ -120,6 +120,7 @@
 				<li><a href="class-Token_lib.html">Token_lib</a></li>
 				<li><a href="class-Token_quote_sequence.html">Token_quote_sequence</a></li>
 				<li><a href="class-Token_suspended_invoice_count.html">Token_suspended_invoice_count</a></li>
+				<li><a href="class-Token_work_order_sequence.html">Token_work_order_sequence</a></li>
 				<li><a href="class-Token_year_invoice_count.html">Token_year_invoice_count</a></li>
 				<li><a href="class-Tracking_lib.html">Tracking_lib</a></li>
 			</ul>
@@ -130,6 +131,7 @@
 
 			<h3>Functions</h3>
 			<ul>
+				<li><a href="function-_load_language_files.html">_load_language_files</a></li>
 				<li><a href="function-cash_decimals.html">cash_decimals</a></li>
 				<li><a href="function-currency_side.html">currency_side</a></li>
 				<li><a href="function-current_language.html">current_language</a></li>
@@ -145,6 +147,7 @@
 				<li><a href="function-get_item_kit_data_row.html">get_item_kit_data_row</a></li>
 				<li><a href="function-get_item_kits_manage_table_headers.html">get_item_kits_manage_table_headers</a></li>
 				<li><a href="function-get_items_manage_table_headers.html">get_items_manage_table_headers</a></li>
+				<li><a href="function-get_languages.html">get_languages</a></li>
 				<li><a href="function-get_people_manage_table_headers.html">get_people_manage_table_headers</a></li>
 				<li><a href="function-get_person_data_row.html">get_person_data_row</a></li>
 				<li><a href="function-get_sale_data_last_row.html">get_sale_data_last_row</a></li>
@@ -156,7 +159,7 @@
 				<li><a href="function-get_tax_data_row.html">get_tax_data_row</a></li>
 				<li><a href="function-get_taxes_manage_table_headers.html">get_taxes_manage_table_headers</a></li>
 				<li><a href="function-load_config.html">load_config</a></li>
-				<li><a href="function-load_language_files.html">load_language_files</a></li>
+				<li><a href="function-load_language.html">load_language</a></li>
 				<li><a href="function-load_stats.html">load_stats</a></li>
 				<li><a href="function-parse_decimals.html">parse_decimals</a></li>
 				<li><a href="function-pdf_create.html">pdf_create</a></li>
@@ -229,6 +232,7 @@ CI_Controller
 		<h4>Direct known subclasses</h4>
 			<a href="class-Config.html">Config</a>, 
 			<a href="class-Giftcards.html">Giftcards</a>, 
+			<a href="class-Reports.html">Reports</a>, 
 			<a href="class-Sales.html">Sales</a>, 
 			<a href="class-Taxes.html">Taxes</a>, 
 			<a href="class-Home.html">Home</a>, 
@@ -236,9 +240,9 @@ CI_Controller
 			<a href="class-Items.html">Items</a>, 
 			<a href="class-Messages.html">Messages</a>, 
 			<a href="class-Migrate.html">Migrate</a>, 
+			<a href="class-Office.html">Office</a>, 
 			<a href="class-Persons.html">Persons</a>, 
-			<a href="class-Receivings.html">Receivings</a>, 
-			<a href="class-Reports.html">Reports</a>
+			<a href="class-Receivings.html">Receivings</a>
 	</div>
 
 	<div>
@@ -258,7 +262,7 @@ CI_Controller
 		
 		
 
-			<b>Located at</b> <a href="source-class-Secure_Controller.html#3-108" title="Go to source code">controllers/Secure_Controller.php</a>
+			<b>Located at</b> <a href="source-class-Secure_Controller.html#3-138" title="Go to source code">controllers/Secure_Controller.php</a>
 		<br>
 	</div>
 
@@ -278,7 +282,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-Secure_Controller.html#9-36" title="Go to source code">__construct</a>( <span> <var>$module_id</var> = <span class="php-keyword1">NULL</span></span>, <span> <var>$submodule_id</var> = <span class="php-keyword1">NULL</span></span> )</code>
+		<code><a href="source-class-Secure_Controller.html#9-66" title="Go to source code">__construct</a>( <span> <var>$module_id</var> = <span class="php-keyword1">NULL</span></span>, <span> <var>$submodule_id</var> = <span class="php-keyword1">NULL</span></span>, <span> <var>$menu_group</var> = <span class="php-keyword1">NULL</span></span> )</code>
 
 		<div class="description short">
 			
@@ -308,7 +312,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_xss_clean">#</a>
-		<code><a href="source-class-Secure_Controller.html#41-54" title="Go to source code">xss_clean</a>( <span> <var>$str</var></span>, <span> <var>$is_image</var> = <span class="php-keyword1">FALSE</span></span> )</code>
+		<code><a href="source-class-Secure_Controller.html#71-84" title="Go to source code">xss_clean</a>( <span> <var>$str</var></span>, <span> <var>$is_image</var> = <span class="php-keyword1">FALSE</span></span> )</code>
 
 		<div class="description short">
 			
@@ -338,7 +342,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_track_page">#</a>
-		<code><a href="source-class-Secure_Controller.html#56-70" title="Go to source code">track_page</a>( <span> <var>$path</var></span>, <span> <var>$page</var></span> )</code>
+		<code><a href="source-class-Secure_Controller.html#86-100" title="Go to source code">track_page</a>( <span> <var>$path</var></span>, <span> <var>$page</var></span> )</code>
 
 		<div class="description short">
 			
@@ -368,7 +372,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_track_event">#</a>
-		<code><a href="source-class-Secure_Controller.html#72-80" title="Go to source code">track_event</a>( <span> <var>$category</var></span>, <span> <var>$action</var></span>, <span> <var>$label</var></span>, <span> <var>$value</var> = <span class="php-keyword1">NULL</span></span> )</code>
+		<code><a href="source-class-Secure_Controller.html#102-110" title="Go to source code">track_event</a>( <span> <var>$category</var></span>, <span> <var>$action</var></span>, <span> <var>$label</var></span>, <span> <var>$value</var> = <span class="php-keyword1">NULL</span></span> )</code>
 
 		<div class="description short">
 			
@@ -398,7 +402,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_numeric">#</a>
-		<code><a href="source-class-Secure_Controller.html#82-85" title="Go to source code">numeric</a>( <span> <var>$str</var></span> )</code>
+		<code><a href="source-class-Secure_Controller.html#112-115" title="Go to source code">numeric</a>( <span> <var>$str</var></span> )</code>
 
 		<div class="description short">
 			
@@ -428,7 +432,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_check_numeric">#</a>
-		<code><a href="source-class-Secure_Controller.html#87-97" title="Go to source code">check_numeric</a>( )</code>
+		<code><a href="source-class-Secure_Controller.html#117-127" title="Go to source code">check_numeric</a>( )</code>
 
 		<div class="description short">
 			
@@ -458,7 +462,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_index">#</a>
-		<code><a href="source-class-Secure_Controller.html#101" title="Go to source code">index</a>( )</code>
+		<code><a href="source-class-Secure_Controller.html#131" title="Go to source code">index</a>( )</code>
 
 		<div class="description short">
 			
@@ -488,7 +492,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_search">#</a>
-		<code><a href="source-class-Secure_Controller.html#102" title="Go to source code">search</a>( )</code>
+		<code><a href="source-class-Secure_Controller.html#132" title="Go to source code">search</a>( )</code>
 
 		<div class="description short">
 			
@@ -518,7 +522,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_suggest_search">#</a>
-		<code><a href="source-class-Secure_Controller.html#103" title="Go to source code">suggest_search</a>( )</code>
+		<code><a href="source-class-Secure_Controller.html#133" title="Go to source code">suggest_search</a>( )</code>
 
 		<div class="description short">
 			
@@ -548,7 +552,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_view">#</a>
-		<code><a href="source-class-Secure_Controller.html#104" title="Go to source code">view</a>( <span> <var>$data_item_id</var> = -<span class="php-num">1</span></span> )</code>
+		<code><a href="source-class-Secure_Controller.html#134" title="Go to source code">view</a>( <span> <var>$data_item_id</var> = -<span class="php-num">1</span></span> )</code>
 
 		<div class="description short">
 			
@@ -578,7 +582,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_save">#</a>
-		<code><a href="source-class-Secure_Controller.html#105" title="Go to source code">save</a>( <span> <var>$data_item_id</var> = -<span class="php-num">1</span></span> )</code>
+		<code><a href="source-class-Secure_Controller.html#135" title="Go to source code">save</a>( <span> <var>$data_item_id</var> = -<span class="php-num">1</span></span> )</code>
 
 		<div class="description short">
 			
@@ -608,7 +612,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_delete">#</a>
-		<code><a href="source-class-Secure_Controller.html#106" title="Go to source code">delete</a>( )</code>
+		<code><a href="source-class-Secure_Controller.html#136" title="Go to source code">delete</a>( )</code>
 
 		<div class="description short">
 			

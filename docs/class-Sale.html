@@ -79,6 +79,7 @@
 				<li><a href="class-Module.html">Module</a></li>
 				<li><a href="class-MY_Lang.html">MY_Lang</a></li>
 				<li><a href="class-No_Access.html">No_Access</a></li>
+				<li><a href="class-Office.html">Office</a></li>
 				<li><a href="class-Person.html">Person</a></li>
 				<li><a href="class-Persons.html">Persons</a></li>
 				<li><a href="class-Receiving.html">Receiving</a></li>
@@ -90,7 +91,6 @@
 				<li><a href="class-Rounding_mode.html">Rounding_mode</a></li>
 				<li class="active"><a href="class-Sale.html">Sale</a></li>
 				<li><a href="class-Sale_lib.html">Sale_lib</a></li>
-				<li><a href="class-Sale_suspended.html">Sale_suspended</a></li>
 				<li><a href="class-Sales.html">Sales</a></li>
 				<li><a href="class-Secure_Controller.html">Secure_Controller</a></li>
 				<li><a href="class-Sms_lib.html">Sms_lib</a></li>
@@ -120,6 +120,7 @@
 				<li><a href="class-Token_lib.html">Token_lib</a></li>
 				<li><a href="class-Token_quote_sequence.html">Token_quote_sequence</a></li>
 				<li><a href="class-Token_suspended_invoice_count.html">Token_suspended_invoice_count</a></li>
+				<li><a href="class-Token_work_order_sequence.html">Token_work_order_sequence</a></li>
 				<li><a href="class-Token_year_invoice_count.html">Token_year_invoice_count</a></li>
 				<li><a href="class-Tracking_lib.html">Tracking_lib</a></li>
 			</ul>
@@ -130,6 +131,7 @@
 
 			<h3>Functions</h3>
 			<ul>
+				<li><a href="function-_load_language_files.html">_load_language_files</a></li>
 				<li><a href="function-cash_decimals.html">cash_decimals</a></li>
 				<li><a href="function-currency_side.html">currency_side</a></li>
 				<li><a href="function-current_language.html">current_language</a></li>
@@ -145,6 +147,7 @@
 				<li><a href="function-get_item_kit_data_row.html">get_item_kit_data_row</a></li>
 				<li><a href="function-get_item_kits_manage_table_headers.html">get_item_kits_manage_table_headers</a></li>
 				<li><a href="function-get_items_manage_table_headers.html">get_items_manage_table_headers</a></li>
+				<li><a href="function-get_languages.html">get_languages</a></li>
 				<li><a href="function-get_people_manage_table_headers.html">get_people_manage_table_headers</a></li>
 				<li><a href="function-get_person_data_row.html">get_person_data_row</a></li>
 				<li><a href="function-get_sale_data_last_row.html">get_sale_data_last_row</a></li>
@@ -156,7 +159,7 @@
 				<li><a href="function-get_tax_data_row.html">get_tax_data_row</a></li>
 				<li><a href="function-get_taxes_manage_table_headers.html">get_taxes_manage_table_headers</a></li>
 				<li><a href="function-load_config.html">load_config</a></li>
-				<li><a href="function-load_language_files.html">load_language_files</a></li>
+				<li><a href="function-load_language.html">load_language</a></li>
 				<li><a href="function-load_stats.html">load_stats</a></li>
 				<li><a href="function-parse_decimals.html">parse_decimals</a></li>
 				<li><a href="function-pdf_create.html">pdf_create</a></li>
@@ -240,7 +243,7 @@ CI_Model
 		
 		
 
-			<b>Located at</b> <a href="source-class-Sale.html#4-1320" title="Go to source code">models/Sale.php</a>
+			<b>Located at</b> <a href="source-class-Sale.html#14-1447" title="Go to source code">models/Sale.php</a>
 		<br>
 	</div>
 
@@ -260,7 +263,7 @@ CI_Model
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_info">#</a>
-		<code><a href="source-class-Sale.html#9-100" title="Go to source code">get_info</a>( <span> <var>$sale_id</var></span> )</code>
+		<code><a href="source-class-Sale.html#19-110" title="Go to source code">get_info</a>( <span> <var>$sale_id</var></span> )</code>
 
 		<div class="description short">
 			<p>Get sale info</p>
@@ -290,7 +293,7 @@ CI_Model
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_found_rows">#</a>
-		<code><a href="source-class-Sale.html#102-108" title="Go to source code">get_found_rows</a>( <span> <var>$search</var></span>, <span> <var>$filters</var></span> )</code>
+		<code><a href="source-class-Sale.html#112-118" title="Go to source code">get_found_rows</a>( <span> <var>$search</var></span>, <span> <var>$filters</var></span> )</code>
 
 		<div class="description short">
 			<p>Get number of rows for the takings (sales/manage) view</p>
@@ -320,7 +323,7 @@ CI_Model
 
 		<td class="name"><div>
 		<a class="anchor" href="#_search">#</a>
-		<code><a href="source-class-Sale.html#110-265" title="Go to source code">search</a>( <span> <var>$search</var></span>, <span> <var>$filters</var></span>, <span> <var>$rows</var> = <span class="php-num">0</span></span>, <span> <var>$limit_from</var> = <span class="php-num">0</span></span>, <span> <var>$sort</var> = <span class="php-quote">'sale_time'</span></span>, <span> <var>$order</var> = <span class="php-quote">'desc'</span></span> )</code>
+		<code><a href="source-class-Sale.html#120-280" title="Go to source code">search</a>( <span> <var>$search</var></span>, <span> <var>$filters</var></span>, <span> <var>$rows</var> = <span class="php-num">0</span></span>, <span> <var>$limit_from</var> = <span class="php-num">0</span></span>, <span> <var>$sort</var> = <span class="php-quote">'sale_time'</span></span>, <span> <var>$order</var> = <span class="php-quote">'desc'</span></span> )</code>
 
 		<div class="description short">
 			<p>Get the sales data for the takings (sales/manage) view</p>
@@ -350,7 +353,7 @@ CI_Model
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_payments_summary">#</a>
-		<code><a href="source-class-Sale.html#267-363" title="Go to source code">get_payments_summary</a>( <span> <var>$search</var></span>, <span> <var>$filters</var></span> )</code>
+		<code><a href="source-class-Sale.html#282-383" title="Go to source code">get_payments_summary</a>( <span> <var>$search</var></span>, <span> <var>$filters</var></span> )</code>
 
 		<div class="description short">
 			<p>Get the payment summary for the takings (sales/manage) view</p>
@@ -380,7 +383,7 @@ CI_Model
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_total_rows">#</a>
-		<code><a href="source-class-Sale.html#365-373" title="Go to source code">get_total_rows</a>( )</code>
+		<code><a href="source-class-Sale.html#385-393" title="Go to source code">get_total_rows</a>( )</code>
 
 		<div class="description short">
 			<p>Gets total of rows</p>
@@ -410,7 +413,7 @@ CI_Model
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_search_suggestions">#</a>
-		<code><a href="source-class-Sale.html#375-405" title="Go to source code">get_search_suggestions</a>( <span> <var>$search</var></span>, <span> <var>$limit</var> = <span class="php-num">25</span></span> )</code>
+		<code><a href="source-class-Sale.html#395-425" title="Go to source code">get_search_suggestions</a>( <span> <var>$search</var></span>, <span> <var>$limit</var> = <span class="php-num">25</span></span> )</code>
 
 		<div class="description short">
 			<p>Gets search suggestions</p>
@@ -440,7 +443,7 @@ CI_Model
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_invoice_count">#</a>
-		<code><a href="source-class-Sale.html#407-416" title="Go to source code">get_invoice_count</a>( )</code>
+		<code><a href="source-class-Sale.html#427-436" title="Go to source code">get_invoice_count</a>( )</code>
 
 		<div class="description short">
 			<p>Gets total of invoice rows</p>
@@ -470,7 +473,7 @@ CI_Model
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_sale_by_invoice_number">#</a>
-		<code><a href="source-class-Sale.html#418-427" title="Go to source code">get_sale_by_invoice_number</a>( <span> <var>$invoice_number</var></span> )</code>
+		<code><a href="source-class-Sale.html#438-447" title="Go to source code">get_sale_by_invoice_number</a>( <span> <var>$invoice_number</var></span> )</code>
 
 		<div class="description short">
 			<p>Gets sale by invoice number</p>
@@ -500,7 +503,7 @@ CI_Model
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_invoice_number_for_year">#</a>
-		<code><a href="source-class-Sale.html#429-442" title="Go to source code">get_invoice_number_for_year</a>( <span> <var>$year</var> = <span class="php-quote">''</span></span>, <span> <var>$start_from</var> = <span class="php-num">0</span></span> )</code>
+		<code><a href="source-class-Sale.html#449-462" title="Go to source code">get_invoice_number_for_year</a>( <span> <var>$year</var> = <span class="php-quote">''</span></span>, <span> <var>$start_from</var> = <span class="php-num">0</span></span> )</code>
 
 		<div class="description short">
 			<p>Gets invoice number by year</p>
@@ -530,7 +533,7 @@ CI_Model
 
 		<td class="name"><div>
 		<a class="anchor" href="#_is_valid_receipt">#</a>
-		<code><a href="source-class-Sale.html#444-471" title="Go to source code">is_valid_receipt</a>( <span> <var>&amp; $receipt_sale_id</var></span> )</code>
+		<code><a href="source-class-Sale.html#464-491" title="Go to source code">is_valid_receipt</a>( <span> <var>&amp; $receipt_sale_id</var></span> )</code>
 
 		<div class="description short">
 			<p>Checks if valid receipt</p>
@@ -560,7 +563,7 @@ CI_Model
 
 		<td class="name"><div>
 		<a class="anchor" href="#_exists">#</a>
-		<code><a href="source-class-Sale.html#473-482" title="Go to source code">exists</a>( <span> <var>$sale_id</var></span> )</code>
+		<code><a href="source-class-Sale.html#493-502" title="Go to source code">exists</a>( <span> <var>$sale_id</var></span> )</code>
 
 		<div class="description short">
 			<p>Checks if sale exists</p>
@@ -590,7 +593,7 @@ CI_Model
 
 		<td class="name"><div>
 		<a class="anchor" href="#_update">#</a>
-		<code><a href="source-class-Sale.html#484-519" title="Go to source code">update</a>( <span> <var>$sale_id</var></span>, <span> <var>$sale_data</var></span>, <span> <var>$payments</var></span> )</code>
+		<code><a href="source-class-Sale.html#504-539" title="Go to source code">update</a>( <span> <var>$sale_id</var></span>, <span> <var>$sale_data</var></span>, <span> <var>$payments</var></span> )</code>
 
 		<div class="description short">
 			<p>Update sale</p>
@@ -620,7 +623,7 @@ CI_Model
 
 		<td class="name"><div>
 		<a class="anchor" href="#_save">#</a>
-		<code><a href="source-class-Sale.html#522-757" title="Go to source code">save</a>( <span> <var>&amp; $sale_status</var></span>, <span> <var>&amp; $items</var></span>, <span> <var>$customer_id</var></span>, <span> <var>$employee_id</var></span>, <span> <var>$comment</var></span>, <span> <var>$invoice_number</var></span>, <span> <var>$quote_number</var></span>, <span> <var>$payments</var></span>, <span> <var>$dinner_table</var></span>, <span> <var>&amp; $sales_taxes</var></span>, <span> <var>$sale_id</var> = <span class="php-keyword1">FALSE</span></span> )</code>
+		<code><a href="source-class-Sale.html#542-763" title="Go to source code">save</a>( <span> <var>$sale_id</var></span>, <span> <var>&amp; $sale_status</var></span>, <span> <var>&amp; $items</var></span>, <span> <var>$customer_id</var></span>, <span> <var>$employee_id</var></span>, <span> <var>$comment</var></span>, <span> <var>$invoice_number</var></span>, <span> <var>$work_order_number</var></span>, <span> <var>$quote_number</var></span>, <span> <var>$sale_type</var></span>, <span> <var>$payments</var></span>, <span> <var>$dinner_table</var></span>, <span> <var>&amp; $sales_taxes</var></span> )</code>
 
 		<div class="description short">
 			<p>Save the sale information after the sales is complete but before the final document is printed
@@ -652,7 +655,7 @@ The sales_taxes variable needs to be initialized to an empty array before callin
 
 		<td class="name"><div>
 		<a class="anchor" href="#_save_sales_item_tax">#</a>
-		<code><a href="source-class-Sale.html#759-789" title="Go to source code">save_sales_item_tax</a>( <span> <var>&amp; $customer</var></span>, <span> <var>&amp; $sale_id</var></span>, <span> <var>&amp; $item</var></span>, <span> <var>$tax_basis</var></span>, <span> <var>&amp; $sales_taxes</var></span>, <span> <var>&amp; $sequence</var></span>, <span> <var>$tax_category_id</var></span> )</code>
+		<code><a href="source-class-Sale.html#765-795" title="Go to source code">save_sales_item_tax</a>( <span> <var>&amp; $customer</var></span>, <span> <var>&amp; $sale_id</var></span>, <span> <var>&amp; $item</var></span>, <span> <var>$tax_basis</var></span>, <span> <var>&amp; $sales_taxes</var></span>, <span> <var>&amp; $sequence</var></span>, <span> <var>$tax_category_id</var></span> )</code>
 
 		<div class="description short">
 			<p>Apply customer sales tax if the customer sales tax is enabledl
@@ -690,7 +693,7 @@ as a separate tax entry on the invoice.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_save_sales_tax">#</a>
-		<code><a href="source-class-Sale.html#791-800" title="Go to source code">save_sales_tax</a>( <span> <var>&amp; $sales_taxes</var></span> )</code>
+		<code><a href="source-class-Sale.html#797-806" title="Go to source code">save_sales_tax</a>( <span> <var>&amp; $sales_taxes</var></span> )</code>
 
 		<div class="description short">
 			<p>Saves sale tax</p>
@@ -720,7 +723,7 @@ as a separate tax entry on the invoice.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_delete_list">#</a>
-		<code><a href="source-class-Sale.html#802-815" title="Go to source code">delete_list</a>( <span> <var>$sale_ids</var></span>, <span> <var>$employee_id</var></span>, <span> <var>$update_inventory</var> = <span class="php-keyword1">TRUE</span></span> )</code>
+		<code><a href="source-class-Sale.html#808-821" title="Go to source code">delete_list</a>( <span> <var>$sale_ids</var></span>, <span> <var>$employee_id</var></span>, <span> <var>&amp; $reactivated</var></span>, <span> <var>$update_inventory</var> = <span class="php-keyword1">TRUE</span></span> )</code>
 
 		<div class="description short">
 			<p>Deletes list of sales</p>
@@ -750,14 +753,18 @@ as a separate tax entry on the invoice.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_delete">#</a>
-		<code><a href="source-class-Sale.html#817-867" title="Go to source code">delete</a>( <span> <var>$sale_id</var></span>, <span> <var>$employee_id</var></span>, <span> <var>$update_inventory</var> = <span class="php-keyword1">TRUE</span></span> )</code>
+		<code><a href="source-class-Sale.html#823-879" title="Go to source code">delete</a>( <span> <var>$sale_id</var></span>, <span> <var>$employee_id</var></span>, <span> <var>&amp; $reactivated</var></span>, <span> <var>$update_inventory</var> = <span class="php-keyword1">TRUE</span></span> )</code>
 
 		<div class="description short">
-			<p>Delete sale</p>
+			<p>Delete sale.  Hard deletes are not supported for sales transactions.
+When a sale is "deleted" it is simply changed to a status of canceled.
+However, if applicable the inventory still needs to be updated</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>Delete sale</p>
+			<p>Delete sale.  Hard deletes are not supported for sales transactions.
+When a sale is "deleted" it is simply changed to a status of canceled.
+However, if applicable the inventory still needs to be updated</p>
 
 
 
@@ -780,7 +787,7 @@ as a separate tax entry on the invoice.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_sale_items">#</a>
-		<code><a href="source-class-Sale.html#869-878" title="Go to source code">get_sale_items</a>( <span> <var>$sale_id</var></span> )</code>
+		<code><a href="source-class-Sale.html#881-890" title="Go to source code">get_sale_items</a>( <span> <var>$sale_id</var></span> )</code>
 
 		<div class="description short">
 			<p>Gets sale item</p>
@@ -810,7 +817,7 @@ as a separate tax entry on the invoice.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_sale_items_ordered">#</a>
-		<code><a href="source-class-Sale.html#880-931" title="Go to source code">get_sale_items_ordered</a>( <span> <var>$sale_id</var></span> )</code>
+		<code><a href="source-class-Sale.html#892-943" title="Go to source code">get_sale_items_ordered</a>( <span> <var>$sale_id</var></span> )</code>
 
 		<div class="description short">
 			<p>Used by the invoice and receipt programs</p>
@@ -840,7 +847,7 @@ as a separate tax entry on the invoice.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_sale_payments">#</a>
-		<code><a href="source-class-Sale.html#933-942" title="Go to source code">get_sale_payments</a>( <span> <var>$sale_id</var></span> )</code>
+		<code><a href="source-class-Sale.html#945-954" title="Go to source code">get_sale_payments</a>( <span> <var>$sale_id</var></span> )</code>
 
 		<div class="description short">
 			<p>Gets sale payments</p>
@@ -870,7 +877,7 @@ as a separate tax entry on the invoice.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_payment_options">#</a>
-		<code><a href="source-class-Sale.html#944-983" title="Go to source code">get_payment_options</a>( <span> <var>$giftcard</var> = <span class="php-keyword1">TRUE</span></span>, <span> <var>$reward_points</var> = <span class="php-keyword1">FALSE</span></span> )</code>
+		<code><a href="source-class-Sale.html#956-1002" title="Go to source code">get_payment_options</a>( <span> <var>$giftcard</var> = <span class="php-keyword1">TRUE</span></span>, <span> <var>$reward_points</var> = <span class="php-keyword1">FALSE</span></span> )</code>
 
 		<div class="description short">
 			<p>Gets sale payment options</p>
@@ -900,7 +907,7 @@ as a separate tax entry on the invoice.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_customer">#</a>
-		<code><a href="source-class-Sale.html#985-994" title="Go to source code">get_customer</a>( <span> <var>$sale_id</var></span> )</code>
+		<code><a href="source-class-Sale.html#1004-1013" title="Go to source code">get_customer</a>( <span> <var>$sale_id</var></span> )</code>
 
 		<div class="description short">
 			<p>Gets sale customer name</p>
@@ -930,7 +937,7 @@ as a separate tax entry on the invoice.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_employee">#</a>
-		<code><a href="source-class-Sale.html#996-1005" title="Go to source code">get_employee</a>( <span> <var>$sale_id</var></span> )</code>
+		<code><a href="source-class-Sale.html#1015-1024" title="Go to source code">get_employee</a>( <span> <var>$sale_id</var></span> )</code>
 
 		<div class="description short">
 			<p>Gets sale employee name</p>
@@ -960,7 +967,7 @@ as a separate tax entry on the invoice.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_check_quote_number_exists">#</a>
-		<code><a href="source-class-Sale.html#1011-1021" title="Go to source code">check_quote_number_exists</a>( <span> <var>$quote_number</var></span>, <span> <var>$sale_id</var> = <span class="php-quote">''</span></span> )</code>
+		<code><a href="source-class-Sale.html#1030-1040" title="Go to source code">check_quote_number_exists</a>( <span> <var>$quote_number</var></span>, <span> <var>$sale_id</var> = <span class="php-quote">''</span></span> )</code>
 
 		<div class="description short">
 			
@@ -990,7 +997,7 @@ as a separate tax entry on the invoice.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_check_invoice_number_exists">#</a>
-		<code><a href="source-class-Sale.html#1023-1036" title="Go to source code">check_invoice_number_exists</a>( <span> <var>$invoice_number</var></span>, <span> <var>$sale_id</var> = <span class="php-quote">''</span></span> )</code>
+		<code><a href="source-class-Sale.html#1042-1055" title="Go to source code">check_invoice_number_exists</a>( <span> <var>$invoice_number</var></span>, <span> <var>$sale_id</var> = <span class="php-quote">''</span></span> )</code>
 
 		<div class="description short">
 			<p>Checks if invoice number exists</p>
@@ -998,6 +1005,36 @@ as a separate tax entry on the invoice.</p>
 
 		<div class="description detailed hidden">
 			<p>Checks if invoice number exists</p>
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="check_work_order_number_exists" id="_check_work_order_number_exists">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_check_work_order_number_exists">#</a>
+		<code><a href="source-class-Sale.html#1057-1070" title="Go to source code">check_work_order_number_exists</a>( <span> <var>$work_order_number</var></span>, <span> <var>$sale_id</var> = <span class="php-quote">''</span></span> )</code>
+
+		<div class="description short">
+			<p>Checks if work order number exists</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Checks if work order number exists</p>
 
 
 
@@ -1020,7 +1057,7 @@ as a separate tax entry on the invoice.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_giftcard_value">#</a>
-		<code><a href="source-class-Sale.html#1038-1052" title="Go to source code">get_giftcard_value</a>( <span> <var>$giftcardNumber</var></span> )</code>
+		<code><a href="source-class-Sale.html#1072-1086" title="Go to source code">get_giftcard_value</a>( <span> <var>$giftcardNumber</var></span> )</code>
 
 		<div class="description short">
 			<p>Gets Giftcard value</p>
@@ -1050,7 +1087,7 @@ as a separate tax entry on the invoice.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_create_temp_table">#</a>
-		<code><a href="source-class-Sale.html#1054-1192" title="Go to source code">create_temp_table</a>( <span>array <var>$inputs</var></span> )</code>
+		<code><a href="source-class-Sale.html#1088-1227" title="Go to source code">create_temp_table</a>( <span>array <var>$inputs</var></span> )</code>
 
 		<div class="description short">
 			<p>Creates sales temporary dimentional table
@@ -1082,7 +1119,7 @@ We create a temp table that allows us to do easy report/sales queries</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_all_suspended">#</a>
-		<code><a href="source-class-Sale.html#1194-1216" title="Go to source code">get_all_suspended</a>( <span> <var>$customer_id</var> = <span class="php-keyword1">NULL</span></span> )</code>
+		<code><a href="source-class-Sale.html#1229-1247" title="Go to source code">get_all_suspended</a>( <span> <var>$customer_id</var> = <span class="php-keyword1">NULL</span></span> )</code>
 
 		<div class="description short">
 			<p>Retrieves all sales that are in a suspended state</p>
@@ -1112,7 +1149,7 @@ We create a temp table that allows us to do easy report/sales queries</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_dinner_table">#</a>
-		<code><a href="source-class-Sale.html#1218-1227" title="Go to source code">get_dinner_table</a>( <span> <var>$sale_id</var></span> )</code>
+		<code><a href="source-class-Sale.html#1249-1262" title="Go to source code">get_dinner_table</a>( <span> <var>$sale_id</var></span> )</code>
 
 		<div class="description short">
 			<p>Gets the dinner table for the selected sale</p>
@@ -1120,6 +1157,96 @@ We create a temp table that allows us to do easy report/sales queries</p>
 
 		<div class="description detailed hidden">
 			<p>Gets the dinner table for the selected sale</p>
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="get_sale_type" id="_get_sale_type">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_get_sale_type">#</a>
+		<code><a href="source-class-Sale.html#1264-1273" title="Go to source code">get_sale_type</a>( <span> <var>$sale_id</var></span> )</code>
+
+		<div class="description short">
+			<p>Gets the sale type for the selected sale</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Gets the sale type for the selected sale</p>
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="get_sale_status" id="_get_sale_status">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_get_sale_status">#</a>
+		<code><a href="source-class-Sale.html#1275-1284" title="Go to source code">get_sale_status</a>( <span> <var>$sale_id</var></span> )</code>
+
+		<div class="description short">
+			<p>Gets the sale status for the selected sale</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Gets the sale status for the selected sale</p>
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="update_sale_status" id="_update_sale_status">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_update_sale_status">#</a>
+		<code><a href="source-class-Sale.html#1286-1290" title="Go to source code">update_sale_status</a>( <span> <var>$sale_id</var></span>, <span> <var>$sale_status</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
 
 
 
@@ -1142,7 +1269,7 @@ We create a temp table that allows us to do easy report/sales queries</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_quote_number">#</a>
-		<code><a href="source-class-Sale.html#1229-1247" title="Go to source code">get_quote_number</a>( <span> <var>$sale_id</var></span> )</code>
+		<code><a href="source-class-Sale.html#1293-1311" title="Go to source code">get_quote_number</a>( <span> <var>$sale_id</var></span> )</code>
 
 		<div class="description short">
 			<p>Gets the quote_number for the selected sale</p>
@@ -1172,7 +1299,7 @@ We create a temp table that allows us to do easy report/sales queries</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_comment">#</a>
-		<code><a href="source-class-Sale.html#1249-1267" title="Go to source code">get_comment</a>( <span> <var>$sale_id</var></span> )</code>
+		<code><a href="source-class-Sale.html#1313-1331" title="Go to source code">get_comment</a>( <span> <var>$sale_id</var></span> )</code>
 
 		<div class="description short">
 			<p>Gets the quote_number for the selected sale</p>
@@ -1202,7 +1329,7 @@ We create a temp table that allows us to do easy report/sales queries</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_suspended_invoice_count">#</a>
-		<code><a href="source-class-Sale.html#1269-1279" title="Go to source code">get_suspended_invoice_count</a>( )</code>
+		<code><a href="source-class-Sale.html#1333-1343" title="Go to source code">get_suspended_invoice_count</a>( )</code>
 
 		<div class="description short">
 			<p>Gets total of suspended invoices rows</p>
@@ -1232,7 +1359,7 @@ We create a temp table that allows us to do easy report/sales queries</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_delete_suspended_sale">#</a>
-		<code><a href="source-class-Sale.html#1281-1307" title="Go to source code">delete_suspended_sale</a>( <span> <var>$sale_id</var></span> )</code>
+		<code><a href="source-class-Sale.html#1345-1367" title="Go to source code">delete_suspended_sale</a>( <span> <var>$sale_id</var></span> )</code>
 
 		<div class="description short">
 			<p>Removes a selected sale from the sales table.
@@ -1242,6 +1369,38 @@ This function should only be called for suspended sales that are being restored 
 		<div class="description detailed hidden">
 			<p>Removes a selected sale from the sales table.
 This function should only be called for suspended sales that are being restored to the current cart</p>
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="clear_suspended_sale_detail" id="_clear_suspended_sale_detail">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_clear_suspended_sale_detail">#</a>
+		<code><a href="source-class-Sale.html#1369-1393" title="Go to source code">clear_suspended_sale_detail</a>( <span> <var>$sale_id</var></span> )</code>
+
+		<div class="description short">
+			<p>This clears the sales detail for a given sale_id before the detail is resaved.
+This allows us to reuse the same sale_id</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>This clears the sales detail for a given sale_id before the detail is resaved.
+This allows us to reuse the same sale_id</p>
 
 
 
@@ -1264,7 +1423,7 @@ This function should only be called for suspended sales that are being restored 
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_suspended_sale_info">#</a>
-		<code><a href="source-class-Sale.html#1309-1319" title="Go to source code">get_suspended_sale_info</a>( <span> <var>$sale_id</var></span> )</code>
+		<code><a href="source-class-Sale.html#1394-1405" title="Go to source code">get_suspended_sale_info</a>( <span> <var>$sale_id</var></span> )</code>
 
 		<div class="description short">
 			<p>Gets suspended sale info</p>

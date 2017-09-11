@@ -85,6 +85,7 @@
 				<li><a href="class-Module.html">Module</a></li>
 				<li><a href="class-MY_Lang.html">MY_Lang</a></li>
 				<li><a href="class-No_Access.html">No_Access</a></li>
+				<li><a href="class-Office.html">Office</a></li>
 				<li><a href="class-Person.html">Person</a></li>
 				<li><a href="class-Persons.html">Persons</a></li>
 				<li><a href="class-Receiving.html">Receiving</a></li>
@@ -96,7 +97,6 @@
 				<li><a href="class-Rounding_mode.html">Rounding_mode</a></li>
 				<li><a href="class-Sale.html">Sale</a></li>
 				<li><a href="class-Sale_lib.html">Sale_lib</a></li>
-				<li><a href="class-Sale_suspended.html">Sale_suspended</a></li>
 				<li><a href="class-Sales.html">Sales</a></li>
 				<li><a href="class-Secure_Controller.html">Secure_Controller</a></li>
 				<li><a href="class-Sms_lib.html">Sms_lib</a></li>
@@ -126,6 +126,7 @@
 				<li><a href="class-Token_lib.html">Token_lib</a></li>
 				<li><a href="class-Token_quote_sequence.html">Token_quote_sequence</a></li>
 				<li><a href="class-Token_suspended_invoice_count.html">Token_suspended_invoice_count</a></li>
+				<li><a href="class-Token_work_order_sequence.html">Token_work_order_sequence</a></li>
 				<li><a href="class-Token_year_invoice_count.html">Token_year_invoice_count</a></li>
 				<li><a href="class-Tracking_lib.html">Tracking_lib</a></li>
 			</ul>
@@ -136,6 +137,7 @@
 
 			<h3>Functions</h3>
 			<ul>
+				<li><a href="function-_load_language_files.html">_load_language_files</a></li>
 				<li><a href="function-cash_decimals.html">cash_decimals</a></li>
 				<li><a href="function-currency_side.html">currency_side</a></li>
 				<li><a href="function-current_language.html">current_language</a></li>
@@ -151,6 +153,7 @@
 				<li><a href="function-get_item_kit_data_row.html">get_item_kit_data_row</a></li>
 				<li><a href="function-get_item_kits_manage_table_headers.html">get_item_kits_manage_table_headers</a></li>
 				<li><a href="function-get_items_manage_table_headers.html">get_items_manage_table_headers</a></li>
+				<li><a href="function-get_languages.html">get_languages</a></li>
 				<li><a href="function-get_people_manage_table_headers.html">get_people_manage_table_headers</a></li>
 				<li><a href="function-get_person_data_row.html">get_person_data_row</a></li>
 				<li><a href="function-get_sale_data_last_row.html">get_sale_data_last_row</a></li>
@@ -162,7 +165,7 @@
 				<li><a href="function-get_tax_data_row.html">get_tax_data_row</a></li>
 				<li><a href="function-get_taxes_manage_table_headers.html">get_taxes_manage_table_headers</a></li>
 				<li><a href="function-load_config.html">load_config</a></li>
-				<li><a href="function-load_language_files.html">load_language_files</a></li>
+				<li><a href="function-load_language.html">load_language</a></li>
 				<li><a href="function-load_stats.html">load_stats</a></li>
 				<li><a href="function-parse_decimals.html">parse_decimals</a></li>
 				<li><a href="function-pdf_create.html">pdf_create</a></li>
@@ -210,8 +213,8 @@
 		</ul>
 	</div>
 
-<pre class="numbers"><code><span class="l"><a href="#1"> 1: </a></span><span class="l"><a href="#2"> 2: </a></span><span class="l"><a href="#3"> 3: </a></span><span class="l"><a href="#4"> 4: </a></span><span class="l"><a href="#5"> 5: </a></span><span class="l"><a href="#6"> 6: </a></span><span class="l"><a href="#7"> 7: </a></span><span class="l"><a href="#8"> 8: </a></span><span class="l"><a href="#9"> 9: </a></span><span class="l"><a href="#10">10: </a></span><span class="l"><a href="#11">11: </a></span><span class="l"><a href="#12">12: </a></span><span class="l"><a href="#13">13: </a></span><span class="l"><a href="#14">14: </a></span><span class="l"><a href="#15">15: </a></span><span class="l"><a href="#16">16: </a></span><span class="l"><a href="#17">17: </a></span><span class="l"><a href="#18">18: </a></span><span class="l"><a href="#19">19: </a></span><span class="l"><a href="#20">20: </a></span><span class="l"><a href="#21">21: </a></span><span class="l"><a href="#22">22: </a></span><span class="l"><a href="#23">23: </a></span><span class="l"><a href="#24">24: </a></span><span class="l"><a href="#25">25: </a></span><span class="l"><a href="#26">26: </a></span><span class="l"><a href="#27">27: </a></span><span class="l"><a href="#28">28: </a></span><span class="l"><a href="#29">29: </a></span><span class="l"><a href="#30">30: </a></span><span class="l"><a href="#31">31: </a></span><span class="l"><a href="#32">32: </a></span><span class="l"><a href="#33">33: </a></span><span class="l"><a href="#34">34: </a></span><span class="l"><a href="#35">35: </a></span><span class="l"><a href="#36">36: </a></span><span class="l"><a href="#37">37: </a></span><span class="l"><a href="#38">38: </a></span><span class="l"><a href="#39">39: </a></span><span class="l"><a href="#40">40: </a></span><span class="l"><a href="#41">41: </a></span><span class="l"><a href="#42">42: </a></span><span class="l"><a href="#43">43: </a></span><span class="l"><a href="#44">44: </a></span><span class="l"><a href="#45">45: </a></span><span class="l"><a href="#46">46: </a></span><span class="l"><a href="#47">47: </a></span><span class="l"><a href="#48">48: </a></span><span class="l"><a href="#49">49: </a></span><span class="l"><a href="#50">50: </a></span><span class="l"><a href="#51">51: </a></span><span class="l"><a href="#52">52: </a></span><span class="l"><a href="#53">53: </a></span><span class="l"><a href="#54">54: </a></span><span class="l"><a href="#55">55: </a></span><span class="l"><a href="#56">56: </a></span><span class="l"><a href="#57">57: </a></span><span class="l"><a href="#58">58: </a></span></code></pre>
-<pre class="code"><code><span id="1" class="l"><span class="xlang">&lt;?php</span>
+<pre class="numbers"><code><span class="l"><a href="#1"> 1: </a></span><span class="l"><a href="#2"> 2: </a></span><span class="l"><a href="#3"> 3: </a></span><span class="l"><a href="#4"> 4: </a></span><span class="l"><a href="#5"> 5: </a></span><span class="l"><a href="#6"> 6: </a></span><span class="l"><a href="#7"> 7: </a></span><span class="l"><a href="#8"> 8: </a></span><span class="l"><a href="#9"> 9: </a></span><span class="l"><a href="#10">10: </a></span><span class="l"><a href="#11">11: </a></span><span class="l"><a href="#12">12: </a></span><span class="l"><a href="#13">13: </a></span><span class="l"><a href="#14">14: </a></span><span class="l"><a href="#15">15: </a></span><span class="l"><a href="#16">16: </a></span><span class="l"><a href="#17">17: </a></span><span class="l"><a href="#18">18: </a></span><span class="l"><a href="#19">19: </a></span><span class="l"><a href="#20">20: </a></span><span class="l"><a href="#21">21: </a></span><span class="l"><a href="#22">22: </a></span><span class="l"><a href="#23">23: </a></span><span class="l"><a href="#24">24: </a></span><span class="l"><a href="#25">25: </a></span><span class="l"><a href="#26">26: </a></span><span class="l"><a href="#27">27: </a></span><span class="l"><a href="#28">28: </a></span><span class="l"><a href="#29">29: </a></span><span class="l"><a href="#30">30: </a></span><span class="l"><a href="#31">31: </a></span><span class="l"><a href="#32">32: </a></span><span class="l"><a href="#33">33: </a></span><span class="l"><a href="#34">34: </a></span><span class="l"><a href="#35">35: </a></span><span class="l"><a href="#36">36: </a></span><span class="l"><a href="#37">37: </a></span><span class="l"><a href="#38">38: </a></span><span class="l"><a href="#39">39: </a></span><span class="l"><a href="#40">40: </a></span><span class="l"><a href="#41">41: </a></span><span class="l"><a href="#42">42: </a></span><span class="l"><a href="#43">43: </a></span><span class="l"><a href="#44">44: </a></span><span class="l"><a href="#45">45: </a></span><span class="l"><a href="#46">46: </a></span><span class="l"><a href="#47">47: </a></span><span class="l"><a href="#48">48: </a></span><span class="l"><a href="#49">49: </a></span><span class="l"><a href="#50">50: </a></span><span class="l"><a href="#51">51: </a></span><span class="l"><a href="#52">52: </a></span><span class="l"><a href="#53">53: </a></span><span class="l"><a href="#54">54: </a></span><span class="l"><a href="#55">55: </a></span><span class="l"><a href="#56">56: </a></span><span class="l"><a href="#57">57: </a></span><span class="l"><a href="#58">58: </a></span><span class="l"><a href="#59">59: </a></span></code></pre>
+<pre class="code"><code><span id="1" class="l"><span class="xlang">&lt;?php</span> <span class="php-keyword1">if</span> ( ! <span class="php-keyword2">defined</span>(<span class="php-quote">'BASEPATH'</span>)) <span class="php-keyword1">exit</span>(<span class="php-quote">'No direct script access allowed'</span>);
 </span><span id="2" class="l">
 </span><span id="3" class="l"><span class="php-keyword1">function</span> load_stats()
 </span><span id="4" class="l">{
@@ -268,7 +271,8 @@
 </span><span id="55" class="l">    }
 </span><span id="56" class="l">}
 </span><span id="57" class="l">
-</span><span id="58" class="l"><span class="xlang">?&gt;</span></span></code></pre>
+</span><span id="58" class="l"><span class="xlang">?&gt;</span>
+</span><span id="59" class="l"></span></code></pre>
 
 	<div id="footer">
 		 API documentation generated by <a href="http://apigen.org">ApiGen</a>
@@ -276,6 +280,6 @@
 </div>
 </div>
 <script src="resources/combined.js?ab7ddfe54adb05998edf888264c90e8da7a06c89"></script>
-<script src="elementlist.js?feb046d0ce822e87cb6be8691f855378535d6bb6"></script>
+<script src="elementlist.js?aae28486ac26fd49e4d73289cb1e1a7d3c82b97a"></script>
 </body>
 </html>

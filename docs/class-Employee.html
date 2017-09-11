@@ -79,6 +79,7 @@
 				<li><a href="class-Module.html">Module</a></li>
 				<li><a href="class-MY_Lang.html">MY_Lang</a></li>
 				<li><a href="class-No_Access.html">No_Access</a></li>
+				<li><a href="class-Office.html">Office</a></li>
 				<li><a href="class-Person.html">Person</a></li>
 				<li><a href="class-Persons.html">Persons</a></li>
 				<li><a href="class-Receiving.html">Receiving</a></li>
@@ -90,7 +91,6 @@
 				<li><a href="class-Rounding_mode.html">Rounding_mode</a></li>
 				<li><a href="class-Sale.html">Sale</a></li>
 				<li><a href="class-Sale_lib.html">Sale_lib</a></li>
-				<li><a href="class-Sale_suspended.html">Sale_suspended</a></li>
 				<li><a href="class-Sales.html">Sales</a></li>
 				<li><a href="class-Secure_Controller.html">Secure_Controller</a></li>
 				<li><a href="class-Sms_lib.html">Sms_lib</a></li>
@@ -120,6 +120,7 @@
 				<li><a href="class-Token_lib.html">Token_lib</a></li>
 				<li><a href="class-Token_quote_sequence.html">Token_quote_sequence</a></li>
 				<li><a href="class-Token_suspended_invoice_count.html">Token_suspended_invoice_count</a></li>
+				<li><a href="class-Token_work_order_sequence.html">Token_work_order_sequence</a></li>
 				<li><a href="class-Token_year_invoice_count.html">Token_year_invoice_count</a></li>
 				<li><a href="class-Tracking_lib.html">Tracking_lib</a></li>
 			</ul>
@@ -130,6 +131,7 @@
 
 			<h3>Functions</h3>
 			<ul>
+				<li><a href="function-_load_language_files.html">_load_language_files</a></li>
 				<li><a href="function-cash_decimals.html">cash_decimals</a></li>
 				<li><a href="function-currency_side.html">currency_side</a></li>
 				<li><a href="function-current_language.html">current_language</a></li>
@@ -145,6 +147,7 @@
 				<li><a href="function-get_item_kit_data_row.html">get_item_kit_data_row</a></li>
 				<li><a href="function-get_item_kits_manage_table_headers.html">get_item_kits_manage_table_headers</a></li>
 				<li><a href="function-get_items_manage_table_headers.html">get_items_manage_table_headers</a></li>
+				<li><a href="function-get_languages.html">get_languages</a></li>
 				<li><a href="function-get_people_manage_table_headers.html">get_people_manage_table_headers</a></li>
 				<li><a href="function-get_person_data_row.html">get_person_data_row</a></li>
 				<li><a href="function-get_sale_data_last_row.html">get_sale_data_last_row</a></li>
@@ -156,7 +159,7 @@
 				<li><a href="function-get_tax_data_row.html">get_tax_data_row</a></li>
 				<li><a href="function-get_taxes_manage_table_headers.html">get_taxes_manage_table_headers</a></li>
 				<li><a href="function-load_config.html">load_config</a></li>
-				<li><a href="function-load_language_files.html">load_language_files</a></li>
+				<li><a href="function-load_language.html">load_language</a></li>
 				<li><a href="function-load_stats.html">load_stats</a></li>
 				<li><a href="function-parse_decimals.html">parse_decimals</a></li>
 				<li><a href="function-pdf_create.html">pdf_create</a></li>
@@ -247,7 +250,7 @@ CI_Model
 		
 		
 
-			<b>Located at</b> <a href="source-class-Employee.html#4-462" title="Go to source code">models/Employee.php</a>
+			<b>Located at</b> <a href="source-class-Employee.html#4-487" title="Go to source code">models/Employee.php</a>
 		<br>
 	</div>
 
@@ -469,7 +472,7 @@ CI_Model
 
 		<td class="name"><div>
 		<a class="anchor" href="#_save_employee">#</a>
-		<code><a href="source-class-Employee.html#93-135" title="Go to source code">save_employee</a>( <span> <var>&amp; $person_data</var></span>, <span> <var>&amp; $employee_data</var></span>, <span> <var>&amp; $grants_data</var></span>, <span> <var>$employee_id</var> = <span class="php-keyword1">FALSE</span></span> )</code>
+		<code><a href="source-class-Employee.html#93-137" title="Go to source code">save_employee</a>( <span> <var>&amp; $person_data</var></span>, <span> <var>&amp; $employee_data</var></span>, <span> <var>&amp; $grants_data</var></span>, <span> <var>$employee_id</var> = <span class="php-keyword1">FALSE</span></span> )</code>
 
 		<div class="description short">
 			
@@ -499,7 +502,7 @@ CI_Model
 
 		<td class="name"><div>
 		<a class="anchor" href="#_delete">#</a>
-		<code><a href="source-class-Employee.html#140-163" title="Go to source code">delete</a>( <span>integer <var>$employee_id</var></span> )</code>
+		<code><a href="source-class-Employee.html#142-165" title="Go to source code">delete</a>( <span>integer <var>$employee_id</var></span> )</code>
 
 		<div class="description short">
 			<p>Deletes one Person (dummy base function)</p>
@@ -540,7 +543,7 @@ CI_Model
 
 		<td class="name"><div>
 		<a class="anchor" href="#_delete_list">#</a>
-		<code><a href="source-class-Employee.html#168-193" title="Go to source code">delete_list</a>( <span>array <var>$employee_ids</var></span> )</code>
+		<code><a href="source-class-Employee.html#170-195" title="Go to source code">delete_list</a>( <span>array <var>$employee_ids</var></span> )</code>
 
 		<div class="description short">
 			<p>Deletes a list of people (dummy base function)</p>
@@ -581,7 +584,7 @@ CI_Model
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_search_suggestions">#</a>
-		<code><a href="source-class-Employee.html#198-253" title="Go to source code">get_search_suggestions</a>( <span>string <var>$search</var></span>, <span>integer <var>$limit</var> = <span class="php-num">5</span></span> )</code>
+		<code><a href="source-class-Employee.html#200-255" title="Go to source code">get_search_suggestions</a>( <span>string <var>$search</var></span>, <span>integer <var>$limit</var> = <span class="php-num">5</span></span> )</code>
 
 		<div class="description short">
 			<p>Get search suggestions to find person</p>
@@ -624,7 +627,7 @@ CI_Model
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_found_rows">#</a>
-		<code><a href="source-class-Employee.html#258-273" title="Go to source code">get_found_rows</a>( <span> <var>$search</var></span> )</code>
+		<code><a href="source-class-Employee.html#260-275" title="Go to source code">get_found_rows</a>( <span> <var>$search</var></span> )</code>
 
 		<div class="description short">
 			
@@ -654,7 +657,7 @@ CI_Model
 
 		<td class="name"><div>
 		<a class="anchor" href="#_search">#</a>
-		<code><a href="source-class-Employee.html#278-299" title="Go to source code">search</a>( <span> <var>$search</var></span>, <span> <var>$rows</var> = <span class="php-num">0</span></span>, <span> <var>$limit_from</var> = <span class="php-num">0</span></span>, <span> <var>$sort</var> = <span class="php-quote">'last_name'</span></span>, <span> <var>$order</var> = <span class="php-quote">'asc'</span></span> )</code>
+		<code><a href="source-class-Employee.html#280-301" title="Go to source code">search</a>( <span> <var>$search</var></span>, <span> <var>$rows</var> = <span class="php-num">0</span></span>, <span> <var>$limit_from</var> = <span class="php-num">0</span></span>, <span> <var>$sort</var> = <span class="php-quote">'last_name'</span></span>, <span> <var>$order</var> = <span class="php-quote">'asc'</span></span> )</code>
 
 		<div class="description short">
 			
@@ -684,7 +687,7 @@ CI_Model
 
 		<td class="name"><div>
 		<a class="anchor" href="#_login">#</a>
-		<code><a href="source-class-Employee.html#304-331" title="Go to source code">login</a>( <span> <var>$username</var></span>, <span> <var>$password</var></span> )</code>
+		<code><a href="source-class-Employee.html#306-333" title="Go to source code">login</a>( <span> <var>$username</var></span>, <span> <var>$password</var></span> )</code>
 
 		<div class="description short">
 			
@@ -714,7 +717,7 @@ CI_Model
 
 		<td class="name"><div>
 		<a class="anchor" href="#_logout">#</a>
-		<code><a href="source-class-Employee.html#336-341" title="Go to source code">logout</a>( )</code>
+		<code><a href="source-class-Employee.html#338-343" title="Go to source code">logout</a>( )</code>
 
 		<div class="description short">
 			
@@ -744,7 +747,7 @@ CI_Model
 
 		<td class="name"><div>
 		<a class="anchor" href="#_is_logged_in">#</a>
-		<code><a href="source-class-Employee.html#346-349" title="Go to source code">is_logged_in</a>( )</code>
+		<code><a href="source-class-Employee.html#348-351" title="Go to source code">is_logged_in</a>( )</code>
 
 		<div class="description short">
 			
@@ -774,7 +777,7 @@ CI_Model
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_logged_in_employee_info">#</a>
-		<code><a href="source-class-Employee.html#354-362" title="Go to source code">get_logged_in_employee_info</a>( )</code>
+		<code><a href="source-class-Employee.html#356-364" title="Go to source code">get_logged_in_employee_info</a>( )</code>
 
 		<div class="description short">
 			
@@ -804,7 +807,7 @@ CI_Model
 
 		<td class="name"><div>
 		<a class="anchor" href="#_has_module_grant">#</a>
-		<code><a href="source-class-Employee.html#367-380" title="Go to source code">has_module_grant</a>( <span> <var>$permission_id</var></span>, <span> <var>$person_id</var></span> )</code>
+		<code><a href="source-class-Employee.html#369-382" title="Go to source code">has_module_grant</a>( <span> <var>$permission_id</var></span>, <span> <var>$person_id</var></span> )</code>
 
 		<div class="description short">
 			
@@ -834,7 +837,7 @@ CI_Model
 
 		<td class="name"><div>
 		<a class="anchor" href="#_has_subpermissions">#</a>
-		<code><a href="source-class-Employee.html#385-391" title="Go to source code">has_subpermissions</a>( <span> <var>$permission_id</var></span> )</code>
+		<code><a href="source-class-Employee.html#387-393" title="Go to source code">has_subpermissions</a>( <span> <var>$permission_id</var></span> )</code>
 
 		<div class="description short">
 			
@@ -864,14 +867,44 @@ CI_Model
 
 		<td class="name"><div>
 		<a class="anchor" href="#_has_grant">#</a>
-		<code><a href="source-class-Employee.html#396-407" title="Go to source code">has_grant</a>( <span> <var>$permission_id</var></span>, <span> <var>$person_id</var></span> )</code>
+		<code><a href="source-class-Employee.html#395-409" title="Go to source code">has_grant</a>( <span> <var>$permission_id</var></span>, <span> <var>$person_id</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Determines whether the employee specified employee has access the specific module.</p>
 		</div>
 
 		<div class="description detailed hidden">
+			<p>Determines whether the employee specified employee has access the specific module.</p>
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="get_menu_group" id="_get_menu_group">
+
+		<td class="attributes"><code>
+			 public 
+
 			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_get_menu_group">#</a>
+		<code><a href="source-class-Employee.html#411-432" title="Go to source code">get_menu_group</a>( <span> <var>$permission_id</var></span>, <span> <var>$person_id</var></span> )</code>
+
+		<div class="description short">
+			<p>Returns the menu group designation that this module is to appear in</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Returns the menu group designation that this module is to appear in</p>
 
 
 
@@ -894,7 +927,7 @@ CI_Model
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_employee_grants">#</a>
-		<code><a href="source-class-Employee.html#412-418" title="Go to source code">get_employee_grants</a>( <span> <var>$person_id</var></span> )</code>
+		<code><a href="source-class-Employee.html#437-443" title="Go to source code">get_employee_grants</a>( <span> <var>$person_id</var></span> )</code>
 
 		<div class="description short">
 			
@@ -924,7 +957,7 @@ CI_Model
 
 		<td class="name"><div>
 		<a class="anchor" href="#_check_password">#</a>
-		<code><a href="source-class-Employee.html#424-441" title="Go to source code">check_password</a>( <span> <var>$username</var></span>, <span> <var>$password</var></span> )</code>
+		<code><a href="source-class-Employee.html#449-466" title="Go to source code">check_password</a>( <span> <var>$username</var></span>, <span> <var>$password</var></span> )</code>
 
 		<div class="description short">
 			
@@ -954,7 +987,7 @@ CI_Model
 
 		<td class="name"><div>
 		<a class="anchor" href="#_change_password">#</a>
-		<code><a href="source-class-Employee.html#446-461" title="Go to source code">change_password</a>( <span> <var>$employee_data</var></span>, <span> <var>$employee_id</var> = <span class="php-keyword1">FALSE</span></span> )</code>
+		<code><a href="source-class-Employee.html#471-486" title="Go to source code">change_password</a>( <span> <var>$employee_data</var></span>, <span> <var>$employee_id</var> = <span class="php-keyword1">FALSE</span></span> )</code>
 
 		<div class="description short">
 			

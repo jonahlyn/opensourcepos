@@ -79,6 +79,7 @@
 				<li><a href="class-Module.html">Module</a></li>
 				<li><a href="class-MY_Lang.html">MY_Lang</a></li>
 				<li><a href="class-No_Access.html">No_Access</a></li>
+				<li><a href="class-Office.html">Office</a></li>
 				<li><a href="class-Person.html">Person</a></li>
 				<li><a href="class-Persons.html">Persons</a></li>
 				<li><a href="class-Receiving.html">Receiving</a></li>
@@ -90,7 +91,6 @@
 				<li><a href="class-Rounding_mode.html">Rounding_mode</a></li>
 				<li><a href="class-Sale.html">Sale</a></li>
 				<li class="active"><a href="class-Sale_lib.html">Sale_lib</a></li>
-				<li><a href="class-Sale_suspended.html">Sale_suspended</a></li>
 				<li><a href="class-Sales.html">Sales</a></li>
 				<li><a href="class-Secure_Controller.html">Secure_Controller</a></li>
 				<li><a href="class-Sms_lib.html">Sms_lib</a></li>
@@ -120,6 +120,7 @@
 				<li><a href="class-Token_lib.html">Token_lib</a></li>
 				<li><a href="class-Token_quote_sequence.html">Token_quote_sequence</a></li>
 				<li><a href="class-Token_suspended_invoice_count.html">Token_suspended_invoice_count</a></li>
+				<li><a href="class-Token_work_order_sequence.html">Token_work_order_sequence</a></li>
 				<li><a href="class-Token_year_invoice_count.html">Token_year_invoice_count</a></li>
 				<li><a href="class-Tracking_lib.html">Tracking_lib</a></li>
 			</ul>
@@ -130,6 +131,7 @@
 
 			<h3>Functions</h3>
 			<ul>
+				<li><a href="function-_load_language_files.html">_load_language_files</a></li>
 				<li><a href="function-cash_decimals.html">cash_decimals</a></li>
 				<li><a href="function-currency_side.html">currency_side</a></li>
 				<li><a href="function-current_language.html">current_language</a></li>
@@ -145,6 +147,7 @@
 				<li><a href="function-get_item_kit_data_row.html">get_item_kit_data_row</a></li>
 				<li><a href="function-get_item_kits_manage_table_headers.html">get_item_kits_manage_table_headers</a></li>
 				<li><a href="function-get_items_manage_table_headers.html">get_items_manage_table_headers</a></li>
+				<li><a href="function-get_languages.html">get_languages</a></li>
 				<li><a href="function-get_people_manage_table_headers.html">get_people_manage_table_headers</a></li>
 				<li><a href="function-get_person_data_row.html">get_person_data_row</a></li>
 				<li><a href="function-get_sale_data_last_row.html">get_sale_data_last_row</a></li>
@@ -156,7 +159,7 @@
 				<li><a href="function-get_tax_data_row.html">get_tax_data_row</a></li>
 				<li><a href="function-get_taxes_manage_table_headers.html">get_taxes_manage_table_headers</a></li>
 				<li><a href="function-load_config.html">load_config</a></li>
-				<li><a href="function-load_language_files.html">load_language_files</a></li>
+				<li><a href="function-load_language.html">load_language</a></li>
 				<li><a href="function-load_stats.html">load_stats</a></li>
 				<li><a href="function-parse_decimals.html">parse_decimals</a></li>
 				<li><a href="function-pdf_create.html">pdf_create</a></li>
@@ -229,7 +232,7 @@
 		
 		
 
-			<b>Located at</b> <a href="source-class-Sale_lib.html#4-1220" title="Go to source code">libraries/Sale_lib.php</a>
+			<b>Located at</b> <a href="source-class-Sale_lib.html#4-1233" title="Go to source code">libraries/Sale_lib.php</a>
 		<br>
 	</div>
 
@@ -309,7 +312,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_register_mode_options">#</a>
-		<code><a href="source-class-Sale_lib.html#29-36" title="Go to source code">get_register_mode_options</a>( )</code>
+		<code><a href="source-class-Sale_lib.html#29-48" title="Go to source code">get_register_mode_options</a>( )</code>
 
 		<div class="description short">
 			
@@ -339,7 +342,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_cart">#</a>
-		<code><a href="source-class-Sale_lib.html#38-46" title="Go to source code">get_cart</a>( )</code>
+		<code><a href="source-class-Sale_lib.html#50-58" title="Go to source code">get_cart</a>( )</code>
 
 		<div class="description short">
 			
@@ -369,7 +372,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_sort_and_filter_cart">#</a>
-		<code><a href="source-class-Sale_lib.html#48-111" title="Go to source code">sort_and_filter_cart</a>( <span> <var>$cart</var></span> )</code>
+		<code><a href="source-class-Sale_lib.html#60-123" title="Go to source code">sort_and_filter_cart</a>( <span> <var>$cart</var></span> )</code>
 
 		<div class="description short">
 			
@@ -399,7 +402,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_set_cart">#</a>
-		<code><a href="source-class-Sale_lib.html#113-116" title="Go to source code">set_cart</a>( <span> <var>$cart_data</var></span> )</code>
+		<code><a href="source-class-Sale_lib.html#125-128" title="Go to source code">set_cart</a>( <span> <var>$cart_data</var></span> )</code>
 
 		<div class="description short">
 			
@@ -429,7 +432,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_empty_cart">#</a>
-		<code><a href="source-class-Sale_lib.html#118-121" title="Go to source code">empty_cart</a>( )</code>
+		<code><a href="source-class-Sale_lib.html#130-133" title="Go to source code">empty_cart</a>( )</code>
 
 		<div class="description short">
 			
@@ -459,7 +462,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_comment">#</a>
-		<code><a href="source-class-Sale_lib.html#123-129" title="Go to source code">get_comment</a>( )</code>
+		<code><a href="source-class-Sale_lib.html#135-141" title="Go to source code">get_comment</a>( )</code>
 
 		<div class="description short">
 			
@@ -489,7 +492,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_set_comment">#</a>
-		<code><a href="source-class-Sale_lib.html#131-134" title="Go to source code">set_comment</a>( <span> <var>$comment</var></span> )</code>
+		<code><a href="source-class-Sale_lib.html#143-146" title="Go to source code">set_comment</a>( <span> <var>$comment</var></span> )</code>
 
 		<div class="description short">
 			
@@ -519,7 +522,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_clear_comment">#</a>
-		<code><a href="source-class-Sale_lib.html#136-139" title="Go to source code">clear_comment</a>( )</code>
+		<code><a href="source-class-Sale_lib.html#148-151" title="Go to source code">clear_comment</a>( )</code>
 
 		<div class="description short">
 			
@@ -549,7 +552,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_invoice_number">#</a>
-		<code><a href="source-class-Sale_lib.html#141-144" title="Go to source code">get_invoice_number</a>( )</code>
+		<code><a href="source-class-Sale_lib.html#153-156" title="Go to source code">get_invoice_number</a>( )</code>
 
 		<div class="description short">
 			
@@ -579,7 +582,67 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_quote_number">#</a>
-		<code><a href="source-class-Sale_lib.html#146-149" title="Go to source code">get_quote_number</a>( )</code>
+		<code><a href="source-class-Sale_lib.html#158-161" title="Go to source code">get_quote_number</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="get_work_order_number" id="_get_work_order_number">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_get_work_order_number">#</a>
+		<code><a href="source-class-Sale_lib.html#163-166" title="Go to source code">get_work_order_number</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="get_sale_type" id="_get_sale_type">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_get_sale_type">#</a>
+		<code><a href="source-class-Sale_lib.html#168-171" title="Go to source code">get_sale_type</a>( )</code>
 
 		<div class="description short">
 			
@@ -609,7 +672,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_set_invoice_number">#</a>
-		<code><a href="source-class-Sale_lib.html#151-158" title="Go to source code">set_invoice_number</a>( <span> <var>$invoice_number</var></span>, <span> <var>$keep_custom</var> = <span class="php-keyword1">FALSE</span></span> )</code>
+		<code><a href="source-class-Sale_lib.html#173-180" title="Go to source code">set_invoice_number</a>( <span> <var>$invoice_number</var></span>, <span> <var>$keep_custom</var> = <span class="php-keyword1">FALSE</span></span> )</code>
 
 		<div class="description short">
 			
@@ -639,7 +702,67 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_set_quote_number">#</a>
-		<code><a href="source-class-Sale_lib.html#160-167" title="Go to source code">set_quote_number</a>( <span> <var>$quote_number</var></span>, <span> <var>$keep_custom</var> = <span class="php-keyword1">FALSE</span></span> )</code>
+		<code><a href="source-class-Sale_lib.html#182-189" title="Go to source code">set_quote_number</a>( <span> <var>$quote_number</var></span>, <span> <var>$keep_custom</var> = <span class="php-keyword1">FALSE</span></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="set_work_order_number" id="_set_work_order_number">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_set_work_order_number">#</a>
+		<code><a href="source-class-Sale_lib.html#191-198" title="Go to source code">set_work_order_number</a>( <span> <var>$work_order_number</var></span>, <span> <var>$keep_custom</var> = <span class="php-keyword1">FALSE</span></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="set_sale_type" id="_set_sale_type">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_set_sale_type">#</a>
+		<code><a href="source-class-Sale_lib.html#200-207" title="Go to source code">set_sale_type</a>( <span> <var>$sale_type</var></span>, <span> <var>$keep_custom</var> = <span class="php-keyword1">FALSE</span></span> )</code>
 
 		<div class="description short">
 			
@@ -669,7 +792,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_clear_invoice_number">#</a>
-		<code><a href="source-class-Sale_lib.html#169-172" title="Go to source code">clear_invoice_number</a>( )</code>
+		<code><a href="source-class-Sale_lib.html#209-212" title="Go to source code">clear_invoice_number</a>( )</code>
 
 		<div class="description short">
 			
@@ -699,7 +822,37 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_clear_quote_number">#</a>
-		<code><a href="source-class-Sale_lib.html#174-177" title="Go to source code">clear_quote_number</a>( )</code>
+		<code><a href="source-class-Sale_lib.html#214-217" title="Go to source code">clear_quote_number</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="clear_sale_type" id="_clear_sale_type">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_clear_sale_type">#</a>
+		<code><a href="source-class-Sale_lib.html#219-222" title="Go to source code">clear_sale_type</a>( )</code>
 
 		<div class="description short">
 			
@@ -729,7 +882,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_set_suspended_id">#</a>
-		<code><a href="source-class-Sale_lib.html#179-182" title="Go to source code">set_suspended_id</a>( <span> <var>$suspended_id</var></span> )</code>
+		<code><a href="source-class-Sale_lib.html#224-227" title="Go to source code">set_suspended_id</a>( <span> <var>$suspended_id</var></span> )</code>
 
 		<div class="description short">
 			
@@ -759,7 +912,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_suspended_id">#</a>
-		<code><a href="source-class-Sale_lib.html#184-187" title="Go to source code">get_suspended_id</a>( )</code>
+		<code><a href="source-class-Sale_lib.html#229-232" title="Go to source code">get_suspended_id</a>( )</code>
 
 		<div class="description short">
 			
@@ -789,7 +942,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_is_invoice_mode">#</a>
-		<code><a href="source-class-Sale_lib.html#189-195" title="Go to source code">is_invoice_mode</a>( )</code>
+		<code><a href="source-class-Sale_lib.html#234-240" title="Go to source code">is_invoice_mode</a>( )</code>
 
 		<div class="description short">
 			
@@ -819,7 +972,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_is_sale_by_receipt_mode">#</a>
-		<code><a href="source-class-Sale_lib.html#197-200" title="Go to source code">is_sale_by_receipt_mode</a>( )</code>
+		<code><a href="source-class-Sale_lib.html#242-245" title="Go to source code">is_sale_by_receipt_mode</a>( )</code>
 
 		<div class="description short">
 			
@@ -849,7 +1002,67 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_is_quote_mode">#</a>
-		<code><a href="source-class-Sale_lib.html#202-205" title="Go to source code">is_quote_mode</a>( )</code>
+		<code><a href="source-class-Sale_lib.html#247-250" title="Go to source code">is_quote_mode</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="is_return_mode" id="_is_return_mode">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_is_return_mode">#</a>
+		<code><a href="source-class-Sale_lib.html#252-255" title="Go to source code">is_return_mode</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="is_work_order_mode" id="_is_work_order_mode">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_is_work_order_mode">#</a>
+		<code><a href="source-class-Sale_lib.html#257-260" title="Go to source code">is_work_order_mode</a>( )</code>
 
 		<div class="description short">
 			
@@ -879,7 +1092,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_set_invoice_number_enabled">#</a>
-		<code><a href="source-class-Sale_lib.html#207-210" title="Go to source code">set_invoice_number_enabled</a>( <span> <var>$invoice_number_enabled</var></span> )</code>
+		<code><a href="source-class-Sale_lib.html#262-265" title="Go to source code">set_invoice_number_enabled</a>( <span> <var>$invoice_number_enabled</var></span> )</code>
 
 		<div class="description short">
 			
@@ -909,7 +1122,37 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_is_print_after_sale">#</a>
-		<code><a href="source-class-Sale_lib.html#212-216" title="Go to source code">is_print_after_sale</a>( )</code>
+		<code><a href="source-class-Sale_lib.html#267-271" title="Go to source code">is_print_after_sale</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="is_price_work_orders" id="_is_price_work_orders">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_is_price_work_orders">#</a>
+		<code><a href="source-class-Sale_lib.html#273-277" title="Go to source code">is_price_work_orders</a>( )</code>
 
 		<div class="description short">
 			
@@ -939,7 +1182,37 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_set_print_after_sale">#</a>
-		<code><a href="source-class-Sale_lib.html#218-221" title="Go to source code">set_print_after_sale</a>( <span> <var>$print_after_sale</var></span> )</code>
+		<code><a href="source-class-Sale_lib.html#279-282" title="Go to source code">set_print_after_sale</a>( <span> <var>$print_after_sale</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="set_price_work_orders" id="_set_price_work_orders">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_set_price_work_orders">#</a>
+		<code><a href="source-class-Sale_lib.html#284-287" title="Go to source code">set_price_work_orders</a>( <span> <var>$price_work_orders</var></span> )</code>
 
 		<div class="description short">
 			
@@ -969,7 +1242,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_email_receipt">#</a>
-		<code><a href="source-class-Sale_lib.html#223-226" title="Go to source code">get_email_receipt</a>( )</code>
+		<code><a href="source-class-Sale_lib.html#289-292" title="Go to source code">get_email_receipt</a>( )</code>
 
 		<div class="description short">
 			
@@ -999,7 +1272,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_set_email_receipt">#</a>
-		<code><a href="source-class-Sale_lib.html#228-231" title="Go to source code">set_email_receipt</a>( <span> <var>$email_receipt</var></span> )</code>
+		<code><a href="source-class-Sale_lib.html#294-297" title="Go to source code">set_email_receipt</a>( <span> <var>$email_receipt</var></span> )</code>
 
 		<div class="description short">
 			
@@ -1029,7 +1302,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_clear_email_receipt">#</a>
-		<code><a href="source-class-Sale_lib.html#233-236" title="Go to source code">clear_email_receipt</a>( )</code>
+		<code><a href="source-class-Sale_lib.html#299-302" title="Go to source code">clear_email_receipt</a>( )</code>
 
 		<div class="description short">
 			
@@ -1059,7 +1332,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_payments">#</a>
-		<code><a href="source-class-Sale_lib.html#239-247" title="Go to source code">get_payments</a>( )</code>
+		<code><a href="source-class-Sale_lib.html#305-313" title="Go to source code">get_payments</a>( )</code>
 
 		<div class="description short">
 			
@@ -1089,7 +1362,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_set_payments">#</a>
-		<code><a href="source-class-Sale_lib.html#250-253" title="Go to source code">set_payments</a>( <span> <var>$payments_data</var></span> )</code>
+		<code><a href="source-class-Sale_lib.html#316-319" title="Go to source code">set_payments</a>( <span> <var>$payments_data</var></span> )</code>
 
 		<div class="description short">
 			
@@ -1119,7 +1392,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_add_payment">#</a>
-		<code><a href="source-class-Sale_lib.html#256-273" title="Go to source code">add_payment</a>( <span> <var>$payment_id</var></span>, <span> <var>$payment_amount</var></span> )</code>
+		<code><a href="source-class-Sale_lib.html#322-339" title="Go to source code">add_payment</a>( <span> <var>$payment_id</var></span>, <span> <var>$payment_amount</var></span> )</code>
 
 		<div class="description short">
 			
@@ -1149,7 +1422,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_edit_payment">#</a>
-		<code><a href="source-class-Sale_lib.html#276-289" title="Go to source code">edit_payment</a>( <span> <var>$payment_id</var></span>, <span> <var>$payment_amount</var></span> )</code>
+		<code><a href="source-class-Sale_lib.html#342-355" title="Go to source code">edit_payment</a>( <span> <var>$payment_id</var></span>, <span> <var>$payment_amount</var></span> )</code>
 
 		<div class="description short">
 			
@@ -1179,7 +1452,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_delete_payment">#</a>
-		<code><a href="source-class-Sale_lib.html#292-297" title="Go to source code">delete_payment</a>( <span> <var>$payment_id</var></span> )</code>
+		<code><a href="source-class-Sale_lib.html#358-363" title="Go to source code">delete_payment</a>( <span> <var>$payment_id</var></span> )</code>
 
 		<div class="description short">
 			
@@ -1209,7 +1482,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_empty_payments">#</a>
-		<code><a href="source-class-Sale_lib.html#300-303" title="Go to source code">empty_payments</a>( )</code>
+		<code><a href="source-class-Sale_lib.html#366-369" title="Go to source code">empty_payments</a>( )</code>
 
 		<div class="description short">
 			
@@ -1239,37 +1512,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_payments_total">#</a>
-		<code><a href="source-class-Sale_lib.html#306-320" title="Go to source code">get_payments_total</a>( )</code>
-
-		<div class="description short">
-			
-		</div>
-
-		<div class="description detailed hidden">
-			
-
-
-
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="get_cash_rounding" id="_get_cash_rounding">
-
-		<td class="attributes"><code>
-			 public 
-
-			
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_get_cash_rounding">#</a>
-		<code><a href="source-class-Sale_lib.html#322-325" title="Go to source code">get_cash_rounding</a>( )</code>
+		<code><a href="source-class-Sale_lib.html#372-386" title="Go to source code">get_payments_total</a>( )</code>
 
 		<div class="description short">
 			
@@ -1299,7 +1542,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_totals">#</a>
-		<code><a href="source-class-Sale_lib.html#327-422" title="Go to source code">get_totals</a>( )</code>
+		<code><a href="source-class-Sale_lib.html#388-482" title="Go to source code">get_totals</a>( )</code>
 
 		<div class="description short">
 			<p>Returns 'subtotal', 'total', 'cash_total', 'payment_total', 'amount_due', 'cash_amount_due', 'paid_in_full'
@@ -1331,7 +1574,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_amount_due">#</a>
-		<code><a href="source-class-Sale_lib.html#426-436" title="Go to source code">get_amount_due</a>( )</code>
+		<code><a href="source-class-Sale_lib.html#486-496" title="Go to source code">get_amount_due</a>( )</code>
 
 		<div class="description short">
 			
@@ -1361,7 +1604,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_customer">#</a>
-		<code><a href="source-class-Sale_lib.html#438-446" title="Go to source code">get_customer</a>( )</code>
+		<code><a href="source-class-Sale_lib.html#498-506" title="Go to source code">get_customer</a>( )</code>
 
 		<div class="description short">
 			
@@ -1391,7 +1634,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_set_customer">#</a>
-		<code><a href="source-class-Sale_lib.html#448-451" title="Go to source code">set_customer</a>( <span> <var>$customer_id</var></span> )</code>
+		<code><a href="source-class-Sale_lib.html#508-511" title="Go to source code">set_customer</a>( <span> <var>$customer_id</var></span> )</code>
 
 		<div class="description short">
 			
@@ -1421,7 +1664,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_remove_customer">#</a>
-		<code><a href="source-class-Sale_lib.html#453-456" title="Go to source code">remove_customer</a>( )</code>
+		<code><a href="source-class-Sale_lib.html#513-516" title="Go to source code">remove_customer</a>( )</code>
 
 		<div class="description short">
 			
@@ -1451,7 +1694,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_employee">#</a>
-		<code><a href="source-class-Sale_lib.html#458-466" title="Go to source code">get_employee</a>( )</code>
+		<code><a href="source-class-Sale_lib.html#518-526" title="Go to source code">get_employee</a>( )</code>
 
 		<div class="description short">
 			
@@ -1481,7 +1724,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_set_employee">#</a>
-		<code><a href="source-class-Sale_lib.html#468-471" title="Go to source code">set_employee</a>( <span> <var>$employee_id</var></span> )</code>
+		<code><a href="source-class-Sale_lib.html#528-531" title="Go to source code">set_employee</a>( <span> <var>$employee_id</var></span> )</code>
 
 		<div class="description short">
 			
@@ -1511,7 +1754,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_remove_employee">#</a>
-		<code><a href="source-class-Sale_lib.html#473-476" title="Go to source code">remove_employee</a>( )</code>
+		<code><a href="source-class-Sale_lib.html#533-536" title="Go to source code">remove_employee</a>( )</code>
 
 		<div class="description short">
 			
@@ -1541,7 +1784,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_mode">#</a>
-		<code><a href="source-class-Sale_lib.html#478-492" title="Go to source code">get_mode</a>( )</code>
+		<code><a href="source-class-Sale_lib.html#538-553" title="Go to source code">get_mode</a>( )</code>
 
 		<div class="description short">
 			
@@ -1571,7 +1814,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_set_mode">#</a>
-		<code><a href="source-class-Sale_lib.html#494-497" title="Go to source code">set_mode</a>( <span> <var>$mode</var></span> )</code>
+		<code><a href="source-class-Sale_lib.html#555-558" title="Go to source code">set_mode</a>( <span> <var>$mode</var></span> )</code>
 
 		<div class="description short">
 			
@@ -1601,7 +1844,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_clear_mode">#</a>
-		<code><a href="source-class-Sale_lib.html#499-502" title="Go to source code">clear_mode</a>( )</code>
+		<code><a href="source-class-Sale_lib.html#560-563" title="Go to source code">clear_mode</a>( )</code>
 
 		<div class="description short">
 			
@@ -1631,7 +1874,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_dinner_table">#</a>
-		<code><a href="source-class-Sale_lib.html#504-515" title="Go to source code">get_dinner_table</a>( )</code>
+		<code><a href="source-class-Sale_lib.html#565-576" title="Go to source code">get_dinner_table</a>( )</code>
 
 		<div class="description short">
 			
@@ -1661,7 +1904,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_set_dinner_table">#</a>
-		<code><a href="source-class-Sale_lib.html#517-520" title="Go to source code">set_dinner_table</a>( <span> <var>$dinner_table</var></span> )</code>
+		<code><a href="source-class-Sale_lib.html#578-581" title="Go to source code">set_dinner_table</a>( <span> <var>$dinner_table</var></span> )</code>
 
 		<div class="description short">
 			
@@ -1691,7 +1934,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_clear_table">#</a>
-		<code><a href="source-class-Sale_lib.html#522-525" title="Go to source code">clear_table</a>( )</code>
+		<code><a href="source-class-Sale_lib.html#583-586" title="Go to source code">clear_table</a>( )</code>
 
 		<div class="description short">
 			
@@ -1721,7 +1964,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_sale_location">#</a>
-		<code><a href="source-class-Sale_lib.html#527-535" title="Go to source code">get_sale_location</a>( )</code>
+		<code><a href="source-class-Sale_lib.html#588-596" title="Go to source code">get_sale_location</a>( )</code>
 
 		<div class="description short">
 			
@@ -1751,7 +1994,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_set_sale_location">#</a>
-		<code><a href="source-class-Sale_lib.html#537-540" title="Go to source code">set_sale_location</a>( <span> <var>$location</var></span> )</code>
+		<code><a href="source-class-Sale_lib.html#598-601" title="Go to source code">set_sale_location</a>( <span> <var>$location</var></span> )</code>
 
 		<div class="description short">
 			
@@ -1781,7 +2024,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_set_payment_type">#</a>
-		<code><a href="source-class-Sale_lib.html#542-545" title="Go to source code">set_payment_type</a>( <span> <var>$payment_type</var></span> )</code>
+		<code><a href="source-class-Sale_lib.html#603-606" title="Go to source code">set_payment_type</a>( <span> <var>$payment_type</var></span> )</code>
 
 		<div class="description short">
 			
@@ -1811,7 +2054,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_payment_type">#</a>
-		<code><a href="source-class-Sale_lib.html#547-550" title="Go to source code">get_payment_type</a>( )</code>
+		<code><a href="source-class-Sale_lib.html#608-611" title="Go to source code">get_payment_type</a>( )</code>
 
 		<div class="description short">
 			
@@ -1841,7 +2084,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_clear_sale_location">#</a>
-		<code><a href="source-class-Sale_lib.html#552-555" title="Go to source code">clear_sale_location</a>( )</code>
+		<code><a href="source-class-Sale_lib.html#613-616" title="Go to source code">clear_sale_location</a>( )</code>
 
 		<div class="description short">
 			
@@ -1871,7 +2114,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_set_giftcard_remainder">#</a>
-		<code><a href="source-class-Sale_lib.html#557-560" title="Go to source code">set_giftcard_remainder</a>( <span> <var>$value</var></span> )</code>
+		<code><a href="source-class-Sale_lib.html#618-621" title="Go to source code">set_giftcard_remainder</a>( <span> <var>$value</var></span> )</code>
 
 		<div class="description short">
 			
@@ -1901,7 +2144,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_giftcard_remainder">#</a>
-		<code><a href="source-class-Sale_lib.html#562-565" title="Go to source code">get_giftcard_remainder</a>( )</code>
+		<code><a href="source-class-Sale_lib.html#623-626" title="Go to source code">get_giftcard_remainder</a>( )</code>
 
 		<div class="description short">
 			
@@ -1931,7 +2174,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_clear_giftcard_remainder">#</a>
-		<code><a href="source-class-Sale_lib.html#567-570" title="Go to source code">clear_giftcard_remainder</a>( )</code>
+		<code><a href="source-class-Sale_lib.html#628-631" title="Go to source code">clear_giftcard_remainder</a>( )</code>
 
 		<div class="description short">
 			
@@ -1961,7 +2204,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_set_rewards_remainder">#</a>
-		<code><a href="source-class-Sale_lib.html#572-575" title="Go to source code">set_rewards_remainder</a>( <span> <var>$value</var></span> )</code>
+		<code><a href="source-class-Sale_lib.html#633-636" title="Go to source code">set_rewards_remainder</a>( <span> <var>$value</var></span> )</code>
 
 		<div class="description short">
 			
@@ -1991,7 +2234,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_rewards_remainder">#</a>
-		<code><a href="source-class-Sale_lib.html#577-580" title="Go to source code">get_rewards_remainder</a>( )</code>
+		<code><a href="source-class-Sale_lib.html#638-641" title="Go to source code">get_rewards_remainder</a>( )</code>
 
 		<div class="description short">
 			
@@ -2021,7 +2264,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_clear_rewards_remainder">#</a>
-		<code><a href="source-class-Sale_lib.html#582-585" title="Go to source code">clear_rewards_remainder</a>( )</code>
+		<code><a href="source-class-Sale_lib.html#643-646" title="Go to source code">clear_rewards_remainder</a>( )</code>
 
 		<div class="description short">
 			
@@ -2051,7 +2294,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_add_item">#</a>
-		<code><a href="source-class-Sale_lib.html#587-704" title="Go to source code">add_item</a>( <span> <var>&amp; $item_id</var></span>, <span> <var>$quantity</var></span>, <span> <var>$item_location</var></span>, <span> <var>$discount</var> = <span class="php-num">0</span></span>, <span> <var>$price</var> = <span class="php-keyword1">NULL</span></span>, <span> <var>$description</var> = <span class="php-keyword1">NULL</span></span>, <span> <var>$serialnumber</var> = <span class="php-keyword1">NULL</span></span>, <span> <var>$include_deleted</var> = <span class="php-keyword1">FALSE</span></span>, <span> <var>$print_option</var> = <span class="php-quote">'0'</span></span>, <span> <var>$stock_type</var> = <span class="php-quote">'0'</span></span> )</code>
+		<code><a href="source-class-Sale_lib.html#648-758" title="Go to source code">add_item</a>( <span> <var>&amp; $item_id</var></span>, <span> <var>$quantity</var></span>, <span> <var>$item_location</var></span>, <span> <var>$discount</var> = <span class="php-num">0</span></span>, <span> <var>$price</var> = <span class="php-keyword1">NULL</span></span>, <span> <var>$description</var> = <span class="php-keyword1">NULL</span></span>, <span> <var>$serialnumber</var> = <span class="php-keyword1">NULL</span></span>, <span> <var>$include_deleted</var> = <span class="php-keyword1">FALSE</span></span>, <span> <var>$print_option</var> = <span class="php-quote">'0'</span></span>, <span> <var>$stock_type</var> = HAS_STOCK</span> )</code>
 
 		<div class="description short">
 			
@@ -2081,7 +2324,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_out_of_stock">#</a>
-		<code><a href="source-class-Sale_lib.html#706-730" title="Go to source code">out_of_stock</a>( <span> <var>$item_id</var></span>, <span> <var>$item_location</var></span> )</code>
+		<code><a href="source-class-Sale_lib.html#760-784" title="Go to source code">out_of_stock</a>( <span> <var>$item_id</var></span>, <span> <var>$item_location</var></span> )</code>
 
 		<div class="description short">
 			
@@ -2111,7 +2354,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_quantity_already_added">#</a>
-		<code><a href="source-class-Sale_lib.html#732-745" title="Go to source code">get_quantity_already_added</a>( <span> <var>$item_id</var></span>, <span> <var>$item_location</var></span> )</code>
+		<code><a href="source-class-Sale_lib.html#786-799" title="Go to source code">get_quantity_already_added</a>( <span> <var>$item_id</var></span>, <span> <var>$item_location</var></span> )</code>
 
 		<div class="description short">
 			
@@ -2141,7 +2384,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_item_id">#</a>
-		<code><a href="source-class-Sale_lib.html#747-760" title="Go to source code">get_item_id</a>( <span> <var>$line_to_get</var></span> )</code>
+		<code><a href="source-class-Sale_lib.html#801-814" title="Go to source code">get_item_id</a>( <span> <var>$line_to_get</var></span> )</code>
 
 		<div class="description short">
 			
@@ -2171,7 +2414,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_edit_item">#</a>
-		<code><a href="source-class-Sale_lib.html#762-779" title="Go to source code">edit_item</a>( <span> <var>$line</var></span>, <span> <var>$description</var></span>, <span> <var>$serialnumber</var></span>, <span> <var>$quantity</var></span>, <span> <var>$discount</var></span>, <span> <var>$price</var></span> )</code>
+		<code><a href="source-class-Sale_lib.html#816-833" title="Go to source code">edit_item</a>( <span> <var>$line</var></span>, <span> <var>$description</var></span>, <span> <var>$serialnumber</var></span>, <span> <var>$quantity</var></span>, <span> <var>$discount</var></span>, <span> <var>$price</var></span> )</code>
 
 		<div class="description short">
 			
@@ -2201,7 +2444,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_delete_item">#</a>
-		<code><a href="source-class-Sale_lib.html#781-786" title="Go to source code">delete_item</a>( <span> <var>$line</var></span> )</code>
+		<code><a href="source-class-Sale_lib.html#835-840" title="Go to source code">delete_item</a>( <span> <var>$line</var></span> )</code>
 
 		<div class="description short">
 			
@@ -2231,7 +2474,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_return_entire_sale">#</a>
-		<code><a href="source-class-Sale_lib.html#788-803" title="Go to source code">return_entire_sale</a>( <span> <var>$receipt_sale_id</var></span> )</code>
+		<code><a href="source-class-Sale_lib.html#842-857" title="Go to source code">return_entire_sale</a>( <span> <var>$receipt_sale_id</var></span> )</code>
 
 		<div class="description short">
 			
@@ -2261,7 +2504,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_add_item_kit">#</a>
-		<code><a href="source-class-Sale_lib.html#805-856" title="Go to source code">add_item_kit</a>( <span> <var>$external_item_kit_id</var></span>, <span> <var>$item_location</var></span>, <span> <var>$discount</var></span>, <span> <var>$price_option</var></span>, <span> <var>$kit_print_option</var></span>, <span> <var>&amp; $stock_warning</var></span> )</code>
+		<code><a href="source-class-Sale_lib.html#859-910" title="Go to source code">add_item_kit</a>( <span> <var>$external_item_kit_id</var></span>, <span> <var>$item_location</var></span>, <span> <var>$discount</var></span>, <span> <var>$price_option</var></span>, <span> <var>$kit_print_option</var></span>, <span> <var>&amp; $stock_warning</var></span> )</code>
 
 		<div class="description short">
 			
@@ -2291,7 +2534,37 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_copy_entire_sale">#</a>
-		<code><a href="source-class-Sale_lib.html#858-878" title="Go to source code">copy_entire_sale</a>( <span> <var>$sale_id</var></span> )</code>
+		<code><a href="source-class-Sale_lib.html#912-934" title="Go to source code">copy_entire_sale</a>( <span> <var>$sale_id</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="get_sale_id" id="_get_sale_id">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_get_sale_id">#</a>
+		<code><a href="source-class-Sale_lib.html#936-938" title="Go to source code">get_sale_id</a>( )</code>
 
 		<div class="description short">
 			
@@ -2321,67 +2594,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_cart_reordered">#</a>
-		<code><a href="source-class-Sale_lib.html#880-890" title="Go to source code">get_cart_reordered</a>( <span> <var>$sale_id</var></span> )</code>
-
-		<div class="description short">
-			
-		</div>
-
-		<div class="description detailed hidden">
-			
-
-
-
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="copy_entire_suspended_sale" id="_copy_entire_suspended_sale">
-
-		<td class="attributes"><code>
-			 public 
-
-			
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_copy_entire_suspended_sale">#</a>
-		<code><a href="source-class-Sale_lib.html#892-914" title="Go to source code">copy_entire_suspended_sale</a>( <span> <var>$sale_id</var></span> )</code>
-
-		<div class="description short">
-			
-		</div>
-
-		<div class="description detailed hidden">
-			
-
-
-
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="copy_entire_suspended_tables_sale" id="_copy_entire_suspended_tables_sale">
-
-		<td class="attributes"><code>
-			 public 
-
-			
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_copy_entire_suspended_tables_sale">#</a>
-		<code><a href="source-class-Sale_lib.html#916-939" title="Go to source code">copy_entire_suspended_tables_sale</a>( <span> <var>$sale_id</var></span> )</code>
+		<code><a href="source-class-Sale_lib.html#940-950" title="Go to source code">get_cart_reordered</a>( <span> <var>$sale_id</var></span> )</code>
 
 		<div class="description short">
 			
@@ -2411,7 +2624,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_clear_all">#</a>
-		<code><a href="source-class-Sale_lib.html#941-954" title="Go to source code">clear_all</a>( )</code>
+		<code><a href="source-class-Sale_lib.html#952-967" title="Go to source code">clear_all</a>( )</code>
 
 		<div class="description short">
 			
@@ -2441,7 +2654,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_clear_cash_flags">#</a>
-		<code><a href="source-class-Sale_lib.html#956-961" title="Go to source code">clear_cash_flags</a>( )</code>
+		<code><a href="source-class-Sale_lib.html#969-974" title="Go to source code">clear_cash_flags</a>( )</code>
 
 		<div class="description short">
 			
@@ -2471,7 +2684,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_reset_cash_flags">#</a>
-		<code><a href="source-class-Sale_lib.html#963-984" title="Go to source code">reset_cash_flags</a>( )</code>
+		<code><a href="source-class-Sale_lib.html#976-997" title="Go to source code">reset_cash_flags</a>( )</code>
 
 		<div class="description short">
 			
@@ -2501,7 +2714,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_is_customer_taxable">#</a>
-		<code><a href="source-class-Sale_lib.html#986-993" title="Go to source code">is_customer_taxable</a>( )</code>
+		<code><a href="source-class-Sale_lib.html#999-1006" title="Go to source code">is_customer_taxable</a>( )</code>
 
 		<div class="description short">
 			
@@ -2531,7 +2744,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_taxes">#</a>
-		<code><a href="source-class-Sale_lib.html#998-1055" title="Go to source code">get_taxes</a>( )</code>
+		<code><a href="source-class-Sale_lib.html#1011-1068" title="Go to source code">get_taxes</a>( )</code>
 
 		<div class="description short">
 			
@@ -2561,7 +2774,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_apply_customer_discount">#</a>
-		<code><a href="source-class-Sale_lib.html#1057-1077" title="Go to source code">apply_customer_discount</a>( <span> <var>$discount_percent</var></span> )</code>
+		<code><a href="source-class-Sale_lib.html#1070-1090" title="Go to source code">apply_customer_discount</a>( <span> <var>$discount_percent</var></span> )</code>
 
 		<div class="description short">
 			
@@ -2591,7 +2804,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_discount">#</a>
-		<code><a href="source-class-Sale_lib.html#1079-1092" title="Go to source code">get_discount</a>( )</code>
+		<code><a href="source-class-Sale_lib.html#1092-1105" title="Go to source code">get_discount</a>( )</code>
 
 		<div class="description short">
 			
@@ -2621,7 +2834,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_subtotal">#</a>
-		<code><a href="source-class-Sale_lib.html#1094-1097" title="Go to source code">get_subtotal</a>( <span> <var>$include_discount</var> = <span class="php-keyword1">FALSE</span></span>, <span> <var>$exclude_tax</var> = <span class="php-keyword1">FALSE</span></span> )</code>
+		<code><a href="source-class-Sale_lib.html#1107-1110" title="Go to source code">get_subtotal</a>( <span> <var>$include_discount</var> = <span class="php-keyword1">FALSE</span></span>, <span> <var>$exclude_tax</var> = <span class="php-keyword1">FALSE</span></span> )</code>
 
 		<div class="description short">
 			
@@ -2651,7 +2864,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_item_total_tax_exclusive">#</a>
-		<code><a href="source-class-Sale_lib.html#1099-1111" title="Go to source code">get_item_total_tax_exclusive</a>( <span> <var>$item_id</var></span>, <span> <var>$quantity</var></span>, <span> <var>$price</var></span>, <span> <var>$discount_percentage</var></span>, <span> <var>$include_discount</var> = <span class="php-keyword1">FALSE</span></span> )</code>
+		<code><a href="source-class-Sale_lib.html#1112-1124" title="Go to source code">get_item_total_tax_exclusive</a>( <span> <var>$item_id</var></span>, <span> <var>$quantity</var></span>, <span> <var>$price</var></span>, <span> <var>$discount_percentage</var></span>, <span> <var>$include_discount</var> = <span class="php-keyword1">FALSE</span></span> )</code>
 
 		<div class="description short">
 			
@@ -2681,7 +2894,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_extended_total_tax_exclusive">#</a>
-		<code><a href="source-class-Sale_lib.html#1113-1124" title="Go to source code">get_extended_total_tax_exclusive</a>( <span> <var>$item_id</var></span>, <span> <var>$discounted_extended_amount</var></span>, <span> <var>$quantity</var></span>, <span> <var>$price</var></span>, <span> <var>$discount_percentage</var> = <span class="php-num">0</span></span> )</code>
+		<code><a href="source-class-Sale_lib.html#1126-1137" title="Go to source code">get_extended_total_tax_exclusive</a>( <span> <var>$item_id</var></span>, <span> <var>$discounted_extended_amount</var></span>, <span> <var>$quantity</var></span>, <span> <var>$price</var></span>, <span> <var>$discount_percentage</var> = <span class="php-num">0</span></span> )</code>
 
 		<div class="description short">
 			
@@ -2711,7 +2924,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_item_total">#</a>
-		<code><a href="source-class-Sale_lib.html#1126-1137" title="Go to source code">get_item_total</a>( <span> <var>$quantity</var></span>, <span> <var>$price</var></span>, <span> <var>$discount_percentage</var></span>, <span> <var>$include_discount</var> = <span class="php-keyword1">FALSE</span></span> )</code>
+		<code><a href="source-class-Sale_lib.html#1139-1150" title="Go to source code">get_item_total</a>( <span> <var>$quantity</var></span>, <span> <var>$price</var></span>, <span> <var>$discount_percentage</var></span>, <span> <var>$include_discount</var> = <span class="php-keyword1">FALSE</span></span> )</code>
 
 		<div class="description short">
 			
@@ -2741,7 +2954,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_extended_amount">#</a>
-		<code><a href="source-class-Sale_lib.html#1139-1144" title="Go to source code">get_extended_amount</a>( <span> <var>$quantity</var></span>, <span> <var>$price</var></span>, <span> <var>$discount_amount</var> = <span class="php-num">0</span></span> )</code>
+		<code><a href="source-class-Sale_lib.html#1152-1157" title="Go to source code">get_extended_amount</a>( <span> <var>$quantity</var></span>, <span> <var>$price</var></span>, <span> <var>$discount_amount</var> = <span class="php-num">0</span></span> )</code>
 
 		<div class="description short">
 			
@@ -2771,7 +2984,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_item_discount">#</a>
-		<code><a href="source-class-Sale_lib.html#1146-1152" title="Go to source code">get_item_discount</a>( <span> <var>$quantity</var></span>, <span> <var>$price</var></span>, <span> <var>$discount_percentage</var></span> )</code>
+		<code><a href="source-class-Sale_lib.html#1159-1165" title="Go to source code">get_item_discount</a>( <span> <var>$quantity</var></span>, <span> <var>$price</var></span>, <span> <var>$discount_percentage</var></span> )</code>
 
 		<div class="description short">
 			
@@ -2801,7 +3014,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_item_tax">#</a>
-		<code><a href="source-class-Sale_lib.html#1154-1168" title="Go to source code">get_item_tax</a>( <span> <var>$quantity</var></span>, <span> <var>$price</var></span>, <span> <var>$discount_percentage</var></span>, <span> <var>$tax_percentage</var></span> )</code>
+		<code><a href="source-class-Sale_lib.html#1167-1181" title="Go to source code">get_item_tax</a>( <span> <var>$quantity</var></span>, <span> <var>$price</var></span>, <span> <var>$discount_percentage</var></span>, <span> <var>$tax_percentage</var></span> )</code>
 
 		<div class="description short">
 			
@@ -2831,7 +3044,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_calculate_subtotal">#</a>
-		<code><a href="source-class-Sale_lib.html#1170-1186" title="Go to source code">calculate_subtotal</a>( <span> <var>$include_discount</var> = <span class="php-keyword1">FALSE</span></span>, <span> <var>$exclude_tax</var> = <span class="php-keyword1">FALSE</span></span> )</code>
+		<code><a href="source-class-Sale_lib.html#1183-1199" title="Go to source code">calculate_subtotal</a>( <span> <var>$include_discount</var> = <span class="php-keyword1">FALSE</span></span>, <span> <var>$exclude_tax</var> = <span class="php-keyword1">FALSE</span></span> )</code>
 
 		<div class="description short">
 			
@@ -2861,7 +3074,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_total">#</a>
-		<code><a href="source-class-Sale_lib.html#1188-1205" title="Go to source code">get_total</a>( )</code>
+		<code><a href="source-class-Sale_lib.html#1201-1218" title="Go to source code">get_total</a>( )</code>
 
 		<div class="description short">
 			
@@ -2891,7 +3104,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_empty_tables">#</a>
-		<code><a href="source-class-Sale_lib.html#1207-1210" title="Go to source code">get_empty_tables</a>( )</code>
+		<code><a href="source-class-Sale_lib.html#1220-1223" title="Go to source code">get_empty_tables</a>( )</code>
 
 		<div class="description short">
 			
@@ -2921,7 +3134,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_check_for_cash_rounding">#</a>
-		<code><a href="source-class-Sale_lib.html#1212-1219" title="Go to source code">check_for_cash_rounding</a>( <span> <var>$total</var></span> )</code>
+		<code><a href="source-class-Sale_lib.html#1225-1232" title="Go to source code">check_for_cash_rounding</a>( <span> <var>$total</var></span> )</code>
 
 		<div class="description short">
 			

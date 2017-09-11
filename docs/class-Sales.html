@@ -79,6 +79,7 @@
 				<li><a href="class-Module.html">Module</a></li>
 				<li><a href="class-MY_Lang.html">MY_Lang</a></li>
 				<li><a href="class-No_Access.html">No_Access</a></li>
+				<li><a href="class-Office.html">Office</a></li>
 				<li><a href="class-Person.html">Person</a></li>
 				<li><a href="class-Persons.html">Persons</a></li>
 				<li><a href="class-Receiving.html">Receiving</a></li>
@@ -90,7 +91,6 @@
 				<li><a href="class-Rounding_mode.html">Rounding_mode</a></li>
 				<li><a href="class-Sale.html">Sale</a></li>
 				<li><a href="class-Sale_lib.html">Sale_lib</a></li>
-				<li><a href="class-Sale_suspended.html">Sale_suspended</a></li>
 				<li class="active"><a href="class-Sales.html">Sales</a></li>
 				<li><a href="class-Secure_Controller.html">Secure_Controller</a></li>
 				<li><a href="class-Sms_lib.html">Sms_lib</a></li>
@@ -120,6 +120,7 @@
 				<li><a href="class-Token_lib.html">Token_lib</a></li>
 				<li><a href="class-Token_quote_sequence.html">Token_quote_sequence</a></li>
 				<li><a href="class-Token_suspended_invoice_count.html">Token_suspended_invoice_count</a></li>
+				<li><a href="class-Token_work_order_sequence.html">Token_work_order_sequence</a></li>
 				<li><a href="class-Token_year_invoice_count.html">Token_year_invoice_count</a></li>
 				<li><a href="class-Tracking_lib.html">Tracking_lib</a></li>
 			</ul>
@@ -130,6 +131,7 @@
 
 			<h3>Functions</h3>
 			<ul>
+				<li><a href="function-_load_language_files.html">_load_language_files</a></li>
 				<li><a href="function-cash_decimals.html">cash_decimals</a></li>
 				<li><a href="function-currency_side.html">currency_side</a></li>
 				<li><a href="function-current_language.html">current_language</a></li>
@@ -145,6 +147,7 @@
 				<li><a href="function-get_item_kit_data_row.html">get_item_kit_data_row</a></li>
 				<li><a href="function-get_item_kits_manage_table_headers.html">get_item_kits_manage_table_headers</a></li>
 				<li><a href="function-get_items_manage_table_headers.html">get_items_manage_table_headers</a></li>
+				<li><a href="function-get_languages.html">get_languages</a></li>
 				<li><a href="function-get_people_manage_table_headers.html">get_people_manage_table_headers</a></li>
 				<li><a href="function-get_person_data_row.html">get_person_data_row</a></li>
 				<li><a href="function-get_sale_data_last_row.html">get_sale_data_last_row</a></li>
@@ -156,7 +159,7 @@
 				<li><a href="function-get_tax_data_row.html">get_tax_data_row</a></li>
 				<li><a href="function-get_taxes_manage_table_headers.html">get_taxes_manage_table_headers</a></li>
 				<li><a href="function-load_config.html">load_config</a></li>
-				<li><a href="function-load_language_files.html">load_language_files</a></li>
+				<li><a href="function-load_language.html">load_language</a></li>
 				<li><a href="function-load_stats.html">load_stats</a></li>
 				<li><a href="function-parse_decimals.html">parse_decimals</a></li>
 				<li><a href="function-pdf_create.html">pdf_create</a></li>
@@ -244,7 +247,7 @@ CI_Controller
 		
 		
 
-			<b>Located at</b> <a href="source-class-Sales.html#5-1278" title="Go to source code">controllers/Sales.php</a>
+			<b>Located at</b> <a href="source-class-Sales.html#5-1265" title="Go to source code">controllers/Sales.php</a>
 		<br>
 	</div>
 
@@ -328,7 +331,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_manage">#</a>
-		<code><a href="source-class-Sales.html#23-50" title="Go to source code">manage</a>( )</code>
+		<code><a href="source-class-Sales.html#23-52" title="Go to source code">manage</a>( )</code>
 
 		<div class="description short">
 			
@@ -358,7 +361,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_row">#</a>
-		<code><a href="source-class-Sales.html#52-58" title="Go to source code">get_row</a>( <span> <var>$row_id</var></span> )</code>
+		<code><a href="source-class-Sales.html#54-60" title="Go to source code">get_row</a>( <span> <var>$row_id</var></span> )</code>
 
 		<div class="description short">
 			
@@ -388,7 +391,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_search">#</a>
-		<code><a href="source-class-Sales.html#60-98" title="Go to source code">search</a>( )</code>
+		<code><a href="source-class-Sales.html#62-101" title="Go to source code">search</a>( )</code>
 
 		<div class="description short">
 			
@@ -420,7 +423,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_item_search">#</a>
-		<code><a href="source-class-Sales.html#100-116" title="Go to source code">item_search</a>( )</code>
+		<code><a href="source-class-Sales.html#103-119" title="Go to source code">item_search</a>( )</code>
 
 		<div class="description short">
 			
@@ -450,7 +453,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_suggest_search">#</a>
-		<code><a href="source-class-Sales.html#118-125" title="Go to source code">suggest_search</a>( )</code>
+		<code><a href="source-class-Sales.html#121-128" title="Go to source code">suggest_search</a>( )</code>
 
 		<div class="description short">
 			
@@ -482,7 +485,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_select_customer">#</a>
-		<code><a href="source-class-Sales.html#127-143" title="Go to source code">select_customer</a>( )</code>
+		<code><a href="source-class-Sales.html#130-146" title="Go to source code">select_customer</a>( )</code>
 
 		<div class="description short">
 			
@@ -512,7 +515,37 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_change_mode">#</a>
-		<code><a href="source-class-Sales.html#145-161" title="Go to source code">change_mode</a>( )</code>
+		<code><a href="source-class-Sales.html#148-187" title="Go to source code">change_mode</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="change_register_mode" id="_change_register_mode">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_change_register_mode">#</a>
+		<code><a href="source-class-Sales.html#189-215" title="Go to source code">change_register_mode</a>( <span> <var>$sale_type</var></span> )</code>
 
 		<div class="description short">
 			
@@ -542,7 +575,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_set_comment">#</a>
-		<code><a href="source-class-Sales.html#163-166" title="Go to source code">set_comment</a>( )</code>
+		<code><a href="source-class-Sales.html#217-220" title="Go to source code">set_comment</a>( )</code>
 
 		<div class="description short">
 			
@@ -572,7 +605,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_set_invoice_number">#</a>
-		<code><a href="source-class-Sales.html#168-171" title="Go to source code">set_invoice_number</a>( )</code>
+		<code><a href="source-class-Sales.html#222-225" title="Go to source code">set_invoice_number</a>( )</code>
 
 		<div class="description short">
 			
@@ -602,7 +635,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_set_invoice_number_enabled">#</a>
-		<code><a href="source-class-Sales.html#173-176" title="Go to source code">set_invoice_number_enabled</a>( )</code>
+		<code><a href="source-class-Sales.html#227-230" title="Go to source code">set_invoice_number_enabled</a>( )</code>
 
 		<div class="description short">
 			
@@ -632,7 +665,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_set_payment_type">#</a>
-		<code><a href="source-class-Sales.html#178-182" title="Go to source code">set_payment_type</a>( )</code>
+		<code><a href="source-class-Sales.html#232-236" title="Go to source code">set_payment_type</a>( )</code>
 
 		<div class="description short">
 			
@@ -662,7 +695,37 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_set_print_after_sale">#</a>
-		<code><a href="source-class-Sales.html#184-187" title="Go to source code">set_print_after_sale</a>( )</code>
+		<code><a href="source-class-Sales.html#238-241" title="Go to source code">set_print_after_sale</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="set_price_work_orders" id="_set_price_work_orders">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_set_price_work_orders">#</a>
+		<code><a href="source-class-Sales.html#243-246" title="Go to source code">set_price_work_orders</a>( )</code>
 
 		<div class="description short">
 			
@@ -692,7 +755,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_set_email_receipt">#</a>
-		<code><a href="source-class-Sales.html#189-192" title="Go to source code">set_email_receipt</a>( )</code>
+		<code><a href="source-class-Sales.html#248-251" title="Go to source code">set_email_receipt</a>( )</code>
 
 		<div class="description short">
 			
@@ -722,7 +785,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_add_payment">#</a>
-		<code><a href="source-class-Sales.html#195-293" title="Go to source code">add_payment</a>( )</code>
+		<code><a href="source-class-Sales.html#254-352" title="Go to source code">add_payment</a>( )</code>
 
 		<div class="description short">
 			
@@ -752,7 +815,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_delete_payment">#</a>
-		<code><a href="source-class-Sales.html#296-301" title="Go to source code">delete_payment</a>( <span> <var>$payment_id</var></span> )</code>
+		<code><a href="source-class-Sales.html#355-360" title="Go to source code">delete_payment</a>( <span> <var>$payment_id</var></span> )</code>
 
 		<div class="description short">
 			
@@ -782,7 +845,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_add">#</a>
-		<code><a href="source-class-Sales.html#303-391" title="Go to source code">add</a>( )</code>
+		<code><a href="source-class-Sales.html#362-450" title="Go to source code">add</a>( )</code>
 
 		<div class="description short">
 			
@@ -812,7 +875,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_edit_item">#</a>
-		<code><a href="source-class-Sales.html#393-420" title="Go to source code">edit_item</a>( <span> <var>$item_id</var></span> )</code>
+		<code><a href="source-class-Sales.html#452-479" title="Go to source code">edit_item</a>( <span> <var>$item_id</var></span> )</code>
 
 		<div class="description short">
 			
@@ -842,7 +905,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_delete_item">#</a>
-		<code><a href="source-class-Sales.html#422-427" title="Go to source code">delete_item</a>( <span> <var>$item_number</var></span> )</code>
+		<code><a href="source-class-Sales.html#481-486" title="Go to source code">delete_item</a>( <span> <var>$item_number</var></span> )</code>
 
 		<div class="description short">
 			
@@ -872,37 +935,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_remove_customer">#</a>
-		<code><a href="source-class-Sales.html#429-439" title="Go to source code">remove_customer</a>( )</code>
-
-		<div class="description short">
-			
-		</div>
-
-		<div class="description detailed hidden">
-			
-
-
-
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="complete_receipt" id="_complete_receipt">
-
-		<td class="attributes"><code>
-			 public 
-
-			
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_complete_receipt">#</a>
-		<code><a href="source-class-Sales.html#441-444" title="Go to source code">complete_receipt</a>( )</code>
+		<code><a href="source-class-Sales.html#488-498" title="Go to source code">remove_customer</a>( )</code>
 
 		<div class="description short">
 			
@@ -932,7 +965,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_complete">#</a>
-		<code><a href="source-class-Sales.html#446-620" title="Go to source code">complete</a>( )</code>
+		<code><a href="source-class-Sales.html#500-746" title="Go to source code">complete</a>( )</code>
 
 		<div class="description short">
 			
@@ -950,7 +983,7 @@ CI_Controller
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="send_invoice" id="_send_invoice">
+	<tr data-order="send_pdf" id="_send_pdf">
 
 		<td class="attributes"><code>
 			 public 
@@ -961,38 +994,8 @@ CI_Controller
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_send_invoice">#</a>
-		<code><a href="source-class-Sales.html#622-657" title="Go to source code">send_invoice</a>( <span> <var>$sale_id</var></span> )</code>
-
-		<div class="description short">
-			
-		</div>
-
-		<div class="description detailed hidden">
-			
-
-
-
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="send_quote" id="_send_quote">
-
-		<td class="attributes"><code>
-			 public 
-
-			
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_send_quote">#</a>
-		<code><a href="source-class-Sales.html#659-694" title="Go to source code">send_quote</a>( <span> <var>$sale_id</var></span> )</code>
+		<a class="anchor" href="#_send_pdf">#</a>
+		<code><a href="source-class-Sales.html#748-785" title="Go to source code">send_pdf</a>( <span> <var>$sale_id</var></span>, <span> <var>$type</var> = <span class="php-quote">'invoice'</span></span> )</code>
 
 		<div class="description short">
 			
@@ -1022,7 +1025,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_send_receipt">#</a>
-		<code><a href="source-class-Sales.html#696-722" title="Go to source code">send_receipt</a>( <span> <var>$sale_id</var></span> )</code>
+		<code><a href="source-class-Sales.html#787-813" title="Go to source code">send_receipt</a>( <span> <var>$sale_id</var></span> )</code>
 
 		<div class="description short">
 			
@@ -1052,7 +1055,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_receipt">#</a>
-		<code><a href="source-class-Sales.html#1030-1035" title="Go to source code">receipt</a>( <span> <var>$sale_id</var></span> )</code>
+		<code><a href="source-class-Sales.html#1048-1053" title="Go to source code">receipt</a>( <span> <var>$sale_id</var></span> )</code>
 
 		<div class="description short">
 			
@@ -1082,7 +1085,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_invoice">#</a>
-		<code><a href="source-class-Sales.html#1037-1042" title="Go to source code">invoice</a>( <span> <var>$sale_id</var></span> )</code>
+		<code><a href="source-class-Sales.html#1055-1060" title="Go to source code">invoice</a>( <span> <var>$sale_id</var></span> )</code>
 
 		<div class="description short">
 			
@@ -1112,7 +1115,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_edit">#</a>
-		<code><a href="source-class-Sales.html#1044-1077" title="Go to source code">edit</a>( <span> <var>$sale_id</var></span> )</code>
+		<code><a href="source-class-Sales.html#1062-1095" title="Go to source code">edit</a>( <span> <var>$sale_id</var></span> )</code>
 
 		<div class="description short">
 			
@@ -1142,7 +1145,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_delete">#</a>
-		<code><a href="source-class-Sales.html#1079-1093" title="Go to source code">delete</a>( <span> <var>$sale_id</var> = -<span class="php-num">1</span></span>, <span> <var>$update_inventory</var> = <span class="php-keyword1">TRUE</span></span> )</code>
+		<code><a href="source-class-Sales.html#1097-1129" title="Go to source code">delete</a>( <span> <var>$sale_id</var> = -<span class="php-num">1</span></span>, <span> <var>$update_inventory</var> = <span class="php-keyword1">TRUE</span></span> )</code>
 
 		<div class="description short">
 			
@@ -1162,38 +1165,6 @@ CI_Controller
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="save" id="_save">
-
-		<td class="attributes"><code>
-			 public 
-
-			
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_save">#</a>
-		<code><a href="source-class-Sales.html#1095-1150" title="Go to source code">save</a>( <span> <var>$sale_id</var> = -<span class="php-num">1</span></span> )</code>
-
-		<div class="description short">
-			
-		</div>
-
-		<div class="description detailed hidden">
-			
-
-
-
-
-
-
-				<h4>Overrides</h4>
-				<div class="list"><code><a href="class-Secure_Controller.html#_save">Secure_Controller::save()</a></code></div>
-
-		</div>
-		</div></td>
-	</tr>
 	<tr data-order="cancel" id="_cancel">
 
 		<td class="attributes"><code>
@@ -1206,14 +1177,18 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_cancel">#</a>
-		<code><a href="source-class-Sales.html#1152-1156" title="Go to source code">cancel</a>( )</code>
+		<code><a href="source-class-Sales.html#1131-1155" title="Go to source code">cancel</a>( )</code>
 
 		<div class="description short">
-			
+			<p>This is used to cancel a suspended pos sale, quote.
+Completed sales (POS Sales or Invoiced Sales) can not be removed from the system
+Work orders can be canceled but are not physically removed from the sales history</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>This is used to cancel a suspended pos sale, quote.
+Completed sales (POS Sales or Invoiced Sales) can not be removed from the system
+Work orders can be canceled but are not physically removed from the sales history</p>
 
 
 
@@ -1224,7 +1199,7 @@ CI_Controller
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="discard_quote" id="_discard_quote">
+	<tr data-order="discard_suspended_sale" id="_discard_suspended_sale">
 
 		<td class="attributes"><code>
 			 public 
@@ -1235,8 +1210,8 @@ CI_Controller
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_discard_quote">#</a>
-		<code><a href="source-class-Sales.html#1158-1164" title="Go to source code">discard_quote</a>( )</code>
+		<a class="anchor" href="#_discard_suspended_sale">#</a>
+		<code><a href="source-class-Sales.html#1157-1163" title="Go to source code">discard_suspended_sale</a>( )</code>
 
 		<div class="description short">
 			
@@ -1266,44 +1241,18 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_suspend">#</a>
-		<code><a href="source-class-Sales.html#1166-1192" title="Go to source code">suspend</a>( )</code>
+		<code><a href="source-class-Sales.html#1165-1205" title="Go to source code">suspend</a>( )</code>
 
 		<div class="description short">
-			
+			<p>Suspend the current sale.
+If the current sale is already suspended then update the existing suspended sale.
+Otherwise create it as a new suspended sale</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
-
-
-
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="suspend_quote" id="_suspend_quote">
-
-		<td class="attributes"><code>
-			 public 
-
-			
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_suspend_quote">#</a>
-		<code><a href="source-class-Sales.html#1194-1216" title="Go to source code">suspend_quote</a>( <span> <var>$quote_number</var></span> )</code>
-
-		<div class="description short">
-			
-		</div>
-
-		<div class="description detailed hidden">
-			
+			<p>Suspend the current sale.
+If the current sale is already suspended then update the existing suspended sale.
+Otherwise create it as a new suspended sale</p>
 
 
 
@@ -1326,14 +1275,14 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_suspended">#</a>
-		<code><a href="source-class-Sales.html#1218-1225" title="Go to source code">suspended</a>( )</code>
+		<code><a href="source-class-Sales.html#1207-1217" title="Go to source code">suspended</a>( )</code>
 
 		<div class="description short">
-			
+			<p>List suspended sales</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>List suspended sales</p>
 
 
 
@@ -1356,7 +1305,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_unsuspend">#</a>
-		<code><a href="source-class-Sales.html#1231-1250" title="Go to source code">unsuspend</a>( )</code>
+		<code><a href="source-class-Sales.html#1223-1237" title="Go to source code">unsuspend</a>( )</code>
 
 		<div class="description short">
 			
@@ -1386,7 +1335,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_check_invoice_number">#</a>
-		<code><a href="source-class-Sales.html#1252-1258" title="Go to source code">check_invoice_number</a>( )</code>
+		<code><a href="source-class-Sales.html#1239-1245" title="Go to source code">check_invoice_number</a>( )</code>
 
 		<div class="description short">
 			
@@ -1416,7 +1365,7 @@ CI_Controller
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_filtered">#</a>
-		<code><a href="source-class-Sales.html#1260-1277" title="Go to source code">get_filtered</a>( <span> <var>$cart</var></span> )</code>
+		<code><a href="source-class-Sales.html#1247-1264" title="Go to source code">get_filtered</a>( <span> <var>$cart</var></span> )</code>
 
 		<div class="description short">
 			
@@ -1442,6 +1391,7 @@ CI_Controller
 		<td><code>
 			<a href="class-Secure_Controller.html#_check_numeric">check_numeric()</a>, 
 			<a href="class-Secure_Controller.html#_numeric">numeric()</a>, 
+			<a href="class-Secure_Controller.html#_save">save()</a>, 
 			<a href="class-Secure_Controller.html#_track_event">track_event()</a>, 
 			<a href="class-Secure_Controller.html#_track_page">track_page()</a>, 
 			<a href="class-Secure_Controller.html#_view">view()</a>, 
