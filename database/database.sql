@@ -449,8 +449,6 @@ INSERT INTO `ospos_permissions` (`permission_id`, `module_id`) VALUES
 ('suppliers', 'suppliers'),
 ('taxes', 'taxes');
 
-
-
 INSERT INTO `ospos_permissions` (`permission_id`, `module_id`, `location_id`) VALUES
 ('items_stock', 'items', 1),
 ('sales_stock', 'sales', 1),
