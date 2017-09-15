@@ -193,46 +193,43 @@ class Barcode_lib
 	public function display_barcode($item, $barcode_config)
 	{
 		$display_table = "<table>";
-		$display_table .= "<tr><td align='center'>" . $this->manage_display_layout($barcode_config['barcode_first_row'], $item, $barcode_config) . "</td></tr>";
+		$display_table .= $this->manage_display_layout($barcode_config['barcode_first_row'], $item, $barcode_config);
+		$display_table .= $this->manage_display_layout($barcode_config['barcode_second_row'], $item, $barcode_config);
 		$barcode = $this->generate_barcode($item, $barcode_config);
-		$display_table .= "<tr><td align='center'><img src='data:image/png;base64,$barcode' /></td></tr>";
-		$display_table .= "<tr><td align='center'>" . $this->manage_display_layout($barcode_config['barcode_second_row'], $item, $barcode_config) . "</td></tr>";
-		$display_table .= "<tr><td align='center'>" . $this->manage_display_layout($barcode_config['barcode_third_row'], $item, $barcode_config) . "</td></tr>";
+		$display_table .= "<tr><td align='center'><img src='data:image/png;base64,$barcode' /></td></tr>\n";
+		$display_table .= $this->manage_display_layout($barcode_config['barcode_third_row'], $item, $barcode_config);
 		$display_table .= "</table>";
-
 		return $display_table;
 	}
 
 	private function manage_display_layout($layout_type, $item, $barcode_config)
 	{
-		$result = '';
-
-		if($layout_type == 'name')
-		{
-			$result = $this->CI->lang->line('items_name') . " " . $item['name'];
+		if($layout_type == 'not_show'){
+			return "";
 		}
-		elseif($layout_type == 'category' && isset($item['category']))
-		{
-			$result = $this->CI->lang->line('items_category') . " " . $item['category'];
-		}
-		elseif($layout_type == 'cost_price' && isset($item['cost_price']))
-		{
-			$result = $this->CI->lang->line('items_cost_price') . " " . to_currency($item['cost_price']);
-		}
-		elseif($layout_type == 'unit_price' && isset($item['unit_price']))
-		{
-			$result = $this->CI->lang->line('items_unit_price') . " " . to_currency($item['unit_price']);
-		}
-		elseif($layout_type == 'company_name')
-		{
-			$result = $barcode_config['company'];
-		}
-		elseif($layout_type == 'item_code')
-		{
-			$result = $barcode_config['barcode_content'] !== "id" && isset($item['item_number']) ? $item['item_number'] : $item['item_id'];
+		if($layout_type == 'unit_price' && isset($item['unit_price'])){
+			$result = "<tr><td align='center' style='font-size: 250%'>";
+		}else{
+			$result = "<tr><td align='center'>";
 		}
 
-		return character_limiter($result, 40);
+		if($layout_type == 'name' && !isset($item['category'])){
+			$result .= character_limiter($item['name']);
+		}elseif($layout_type == 'name' && isset($item['category'])){
+			$result .= character_limiter($item['name'] . ' [' . $item['category'] . "]");
+		}elseif($layout_type == 'category' && isset($item['category'])){
+			$result .= character_limiter($item['category']);
+		}elseif($layout_type == 'cost_price' && isset($item['cost_price'])){
+			$result .= $this->CI->lang->line('items_cost_price') . " " . to_currency($item['cost_price']);
+		}elseif($layout_type == 'unit_price' && isset($item['unit_price'])){
+			$result .= to_currency($item['unit_price']);
+		}elseif($layout_type == 'company_name'){
+			$result .= $barcode_config['company'];
+		}elseif($layout_type == 'item_code'){
+			$result .= $barcode_config['barcode_content'] !== "id" && isset($item['item_number']) ? $item['item_number'] : $item['item_id'];
+		}
+		$result .= "</td></tr>\n";
+		return $result;
 	}
 
 	public function listfonts($folder)
@@ -262,5 +259,3 @@ class Barcode_lib
 		return substr($font_file_name, 0, -4);
 	}
 }
-
-?>
