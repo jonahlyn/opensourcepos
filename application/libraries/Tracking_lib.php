@@ -29,7 +29,7 @@ class Tracking_lib
 		 * optional
 		 */
 		$options = array(
-			'client_create_random_id' => TRUE, // create a random client id when the class can't fetch the current cliend id or none is provided by "client_id"
+			'client_create_random_id' => TRUE, // create a random client id when the class can't fetch the current client id or none is provided by "client_id"
 			'client_fallback_id' => 555, // fallback client id when cid was not found and random client id is off
 			'client_id' => $clientId, // override client id
 			'user_id' => NULL,  // determine current user id

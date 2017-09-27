@@ -185,7 +185,7 @@ CREATE TABLE `ospos_giftcards` (
   PRIMARY KEY (`giftcard_id`),
   UNIQUE KEY `giftcard_number` (`giftcard_number`),
   KEY `person_id` (`person_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=FEDERATED DEFAULT CHARSET=utf8 CONNECTION='master_customer/ospos_giftcards';
 
 --
 -- Dumping data for table `ospos_giftcards`
