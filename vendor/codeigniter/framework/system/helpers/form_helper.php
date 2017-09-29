@@ -232,7 +232,10 @@ if ( ! function_exists('form_date'))
         function form_date($data = '', $value = '', $extra = '')
         {
                 $defaults = array(
-                        'type' => 'date',
+			'type' => "text",
+			'title' => "Year-Month-Day",
+			'placeholder' => "YYYY-MM-DD",
+			'maxlength' => "10",
                         'name' => is_array($data) ? '' : $data,
                         'value' => $value
                 );

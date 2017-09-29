@@ -55,7 +55,7 @@
 						<?php echo form_date(array(
 								'name'=>'company_name',
 								'id'=>'company_name',
-								'class'=>'form-control input-sm',
+								'class'=>'form-control input-sm datepicker',
 								'value'=>$person_info->company_name)
 								);?>
 					</div>
