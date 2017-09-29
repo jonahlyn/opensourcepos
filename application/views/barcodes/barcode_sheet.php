@@ -6,26 +6,21 @@
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<title><?php echo $this->lang->line('items_generate_barcodes'); ?></title>
 	<link rel="stylesheet" rev="stylesheet" href="<?php echo base_url();?>css/barcode_font.css" />
+	<style>
+		.pba {
+			page-break-after: always;
+			display:block;
+		}
+	</style>
 </head>
 
 <body class=<?php echo "font_".$this->barcode_lib->get_font_name($barcode_config['barcode_font']); ?> 
       style="font-size:<?php echo $barcode_config['barcode_font_size']; ?>px">
-	<table cellspacing=<?php echo $barcode_config['barcode_page_cellspacing']; ?> width='<?php echo $barcode_config['barcode_page_width']."%"; ?>' >
-		<tr>
-			<?php
-			$count = 0;
-			foreach($items as $item)
-			{
-				if ($count % $barcode_config['barcode_num_in_row'] == 0 and $count != 0)
-				{
-					echo '</tr><tr>';
-				}
-				echo '<td>' . $this->barcode_lib->display_barcode($item, $barcode_config) . '</td>';
-				++$count;
-			}
-			?>
-		</tr>
-	</table>
+<?php
+	foreach($items as $item){
+		echo "<div class='pba' style='padding:".$barcode_config['barcode_page_cellspacing']."; width:".$barcode_config['barcode_page_width']."%'>" . $this->barcode_lib->display_barcode($item, $barcode_config) . '</div>'. "\n";
+	}
+?>
 </body>
 
 </html>

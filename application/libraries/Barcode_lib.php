@@ -213,12 +213,14 @@ class Barcode_lib
 			$result = "<tr><td align='center'>";
 		}
 
-		if($layout_type == 'name' && !isset($item['category'])){
-			$result .= character_limiter($item['name']);
-		}elseif($layout_type == 'name' && isset($item['category'])){
-			$result .= character_limiter($item['name'] . ' [' . $item['category'] . "]");
+		if($layout_type == 'name'){
+                      $result .= character_limiter($item['name'], 35);
+//		if($layout_type == 'name' && !isset($item['category'])){
+//			$result .= character_limiter($item['name'], 35);
+//		}elseif($layout_type == 'name' && isset($item['category'])){
+//			$result .= character_limiter($item['name'] . ' [' . $item['category'] . "]", 35);
 		}elseif($layout_type == 'category' && isset($item['category'])){
-			$result .= character_limiter($item['category']);
+			$result .= character_limiter($item['category'], 35);
 		}elseif($layout_type == 'cost_price' && isset($item['cost_price'])){
 			$result .= $this->CI->lang->line('items_cost_price') . " " . to_currency($item['cost_price']);
 		}elseif($layout_type == 'unit_price' && isset($item['unit_price'])){
