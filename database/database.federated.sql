@@ -15,7 +15,7 @@ CREATE TABLE `ospos_app_config` (
 
 INSERT INTO `ospos_app_config` (`key`, `value`) VALUES
 ('address', '123 Nowhere street'),
-('company', 'Open Source Point of Sale'),
+('company', 'Open Source Point of Sale Federated DB'),
 ('default_register_mode', 'sale'),
 ('default_tax_rate', '8'),
 ('default_tax_category', 'Standard'),
@@ -23,27 +23,27 @@ INSERT INTO `ospos_app_config` (`key`, `value`) VALUES
 ('fax', ''),
 ('phone', '555-555-5555'),
 ('return_policy', 'Test'),
-('timezone', 'America/New_York'),
+('timezone', 'America/Denver'),
 ('website', ''),
 ('company_logo', ''),
 ('tax_included', '0'),
-('barcode_content', 'id'),
-('barcode_type', 'Code39'),
+('barcode_content', 'number'),
+('barcode_type', 'Code128'),
 ('barcode_formats', '[]'),
-('barcode_width', '250'),
+('barcode_width', '200'),
 ('barcode_height', '50'),
 ('barcode_quality', '100'),
-('barcode_font', 'Arial'),
+('barcode_font', 'Arial.ttf'),
 ('barcode_font_size', '10'),
-('barcode_first_row', 'category'),
-('barcode_second_row', 'item_code'),
-('barcode_third_row', 'unit_price'),
-('barcode_num_in_row', '2'),
+('barcode_first_row', 'name'),
+('barcode_second_row', 'unit_price'),
+('barcode_third_row', 'not_show'),
+('barcode_num_in_row', '1'),
 ('barcode_page_width', '100'),      
-('barcode_page_cellspacing', '20'),
-('barcode_generate_if_empty', '0'),
+('barcode_page_cellspacing', '0'),
+('barcode_generate_if_empty', '1'),
 ('receipt_show_company_name', '1'),
-('receipt_show_taxes', '0'),
+('receipt_show_taxes', '1'),
 ('receipt_show_total_discount', '1'),
 ('receipt_show_description', '1'),
 ('receipt_show_serialnumber', '1'),
@@ -160,14 +160,7 @@ CREATE TABLE `ospos_employees` (
   `language_code` VARCHAR(8) DEFAULT NULL,
   UNIQUE KEY `username` (`username`),
   KEY `person_id` (`person_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `ospos_employees`
---
-
-INSERT INTO `ospos_employees` (`username`, `password`, `person_id`, `deleted`, `hash_version`) VALUES
-  ('admin', '$2y$10$vJBSMlD02EC7ENSrKfVQXuvq9tNRHMtcOA8MSK2NYS748HHWm.gcG', 1, 0, 2);
+) ENGINE=FEDERATED DEFAULT CHARSET=utf8 CONNECTION='master_customer/ospos_employees';
 
 -- --------------------------------------------------------
 
@@ -736,7 +729,7 @@ CREATE TABLE `ospos_suppliers` (
   `deleted` int(1) NOT NULL DEFAULT '0',
   UNIQUE KEY `account_number` (`account_number`),
   KEY `person_id` (`person_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+) ENGINE=FEDERATED DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 CONNECTION='master_customer/ospos_suppliers';
 
 
 -- --------------------------------------------------------
@@ -836,13 +829,6 @@ CREATE TABLE IF NOT EXISTS `ospos_customers_packages` (
   PRIMARY KEY (`package_id`)
 ) ENGINE=FEDERATED DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 CONNECTION='master_customer/ospos_customers_packages';
 
-INSERT INTO `ospos_customers_packages` (`package_name`, `points_percent`) VALUES
-  ('Default', 0),
-  ('Bronze', 10),
-  ('Silver', 20),
-  ('Gold', 30),
-  ('Premium', 50);
-
 
 -- --------------------------------------------------------
 
@@ -891,14 +877,7 @@ CREATE TABLE IF NOT EXISTS `ospos_sales_reward_points` (
 --
 ALTER TABLE `ospos_inventory`
   ADD CONSTRAINT `ospos_inventory_ibfk_1` FOREIGN KEY (`trans_items`) REFERENCES `ospos_items` (`item_id`),
-  ADD CONSTRAINT `ospos_inventory_ibfk_2` FOREIGN KEY (`trans_user`) REFERENCES `ospos_employees` (`person_id`),
   ADD CONSTRAINT `ospos_inventory_ibfk_3` FOREIGN KEY (`trans_location`) REFERENCES `ospos_stock_locations` (`location_id`);
-
---
--- Constraints for table `ospos_items`
---
-ALTER TABLE `ospos_items`
-  ADD CONSTRAINT `ospos_items_ibfk_1` FOREIGN KEY (`supplier_id`) REFERENCES `ospos_suppliers` (`person_id`);
 
 --
 -- Constraints for table `ospos_items_taxes`
@@ -924,15 +903,7 @@ ALTER TABLE `ospos_permissions`
 -- Constraints for table `ospos_grants`
 --
 ALTER TABLE `ospos_grants`
-  ADD CONSTRAINT `ospos_grants_ibfk_1` foreign key (`permission_id`) references `ospos_permissions` (`permission_id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `ospos_grants_ibfk_2` foreign key (`person_id`) references `ospos_employees` (`person_id`) ON DELETE CASCADE;
-
---
--- Constraints for table `ospos_receivings`
---
-ALTER TABLE `ospos_receivings`
-  ADD CONSTRAINT `ospos_receivings_ibfk_1` FOREIGN KEY (`employee_id`) REFERENCES `ospos_employees` (`person_id`),
-  ADD CONSTRAINT `ospos_receivings_ibfk_2` FOREIGN KEY (`supplier_id`) REFERENCES `ospos_suppliers` (`person_id`);
+  ADD CONSTRAINT `ospos_grants_ibfk_1` foreign key (`permission_id`) references `ospos_permissions` (`permission_id`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `ospos_receivings_items`
@@ -945,7 +916,6 @@ ALTER TABLE `ospos_receivings_items`
 -- Constraints for table `ospos_sales`
 --
 ALTER TABLE `ospos_sales`
-  ADD CONSTRAINT `ospos_sales_ibfk_1` FOREIGN KEY (`employee_id`) REFERENCES `ospos_employees` (`person_id`),
   ADD CONSTRAINT `ospos_sales_ibfk_3` FOREIGN KEY (`dinner_table_id`) REFERENCES `ospos_dinner_tables` (`dinner_table_id`);
 
 --
