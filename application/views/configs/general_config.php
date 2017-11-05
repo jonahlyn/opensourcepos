@@ -169,6 +169,10 @@
 						'id' => 'custom1_name',
 						'class' => 'form-control input-sm',
 						'value' => $this->config->item('custom1_name'))); ?>
+					&nbsp
+					<label class="control-label">
+                                                <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-placement="right" title="<?php echo $this->lang->line('config_custom1_tooltip'); ?>"></span>
+                                        </label>
 				</div>
 			</div>
 
