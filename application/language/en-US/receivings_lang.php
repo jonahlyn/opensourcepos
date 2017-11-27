@@ -20,6 +20,7 @@ $lang["receivings_error_editing_item"] = "Item edit failed.";
 $lang["receivings_error_requisition"] = "Unable to move Inventory from or to the same Stock Location.";
 $lang["receivings_find_or_scan_item"] = "Find or Scan Item";
 $lang["receivings_find_or_scan_item_or_receipt"] = "Find or Scan Item or Receipt";
+$lang["receivings_giftcard"] = "Receive to Store Credit";
 $lang["receivings_id"] = "Receiving ID";
 $lang["receivings_item_name"] = "Item Name";
 $lang["receivings_mode"] = "Receiving Mode";

@@ -117,6 +117,21 @@ class Receiving_lib
 	{
 		$this->CI->session->unset_userdata('recv_reference');
 	}
+
+    public function get_giftcardno()
+    {
+        return $this->CI->session->userdata('recv_giftcardno');
+    }
+
+    public function set_giftcardno($giftcard_no)
+    {
+        $this->CI->session->set_userdata('recv_giftcardno', $giftcard_no);
+    }
+
+    public function clear_giftcardno()
+    {
+        $this->CI->session->unset_userdata('recv_giftcardno');
+    }
 	
 	public function is_print_after_sale()
 	{
@@ -328,6 +343,7 @@ class Receiving_lib
 		$this->remove_supplier();
 		$this->clear_comment();
 		$this->clear_reference();
+		$this->clear_giftcardno();
 	}
 
 	public function get_item_total($quantity, $price, $discount_percentage)

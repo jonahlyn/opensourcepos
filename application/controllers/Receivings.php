@@ -83,6 +83,11 @@ class Receivings extends Secure_Controller
 	{
 		$this->receiving_lib->set_reference($this->input->post('recv_reference'));
 	}
+
+    public function set_giftcardno()
+    {
+        $this->receiving_lib->set_giftcardno($this->input->post('recv_giftcardno'));
+    }
 	
 	public function add()
 	{
@@ -91,7 +96,7 @@ class Receivings extends Secure_Controller
 		$mode = $this->receiving_lib->get_mode();
 		$item_id_or_number_or_item_kit_or_receipt = $this->input->post('item');
 		$this->barcode_lib->parse_barcode_fields($quantity, $item_id_or_number_or_item_kit_or_receipt);
-		$quantity = ($mode == 'receive' || $mode == 'requisition') ? $quantity : -$quantity;
+		$quantity = ($mode == 'receive' || $mode == 'requisition' || $mode == 'receive_to_giftcard') ? $quantity : -$quantity;
 		$item_location = $this->receiving_lib->get_stock_source();
 
 		if($mode == 'return' && $this->Receiving->is_valid_receipt($item_id_or_number_or_item_kit_or_receipt))
@@ -235,8 +240,28 @@ class Receivings extends Secure_Controller
 			}
 		}
 
+		// Handle receive to giftcard
+		if($data['mode'] == 'receive_to_giftcard')
+ 		{
+			$giftcard_number = trim($this->input->post('giftcard_no'));
+            $giftcard_id = $this->Giftcard->get_giftcard_id($giftcard_number);
+
+            $giftcard_info = $this->Giftcard->get_info($giftcard_id);
+
+            $data['giftcard'] = array(
+                'record_time' => date('Y-m-d H:i:s'),
+				'giftcard_number' => $giftcard_number
+            );
+
+			$value = (($data['amount_change']) ? $data['amount_change'] : $data['total']);
+            $data['giftcard']['value'] = $value + $this->Giftcard->get_giftcard_value($giftcard_number);
+
+            $customer = $this->Giftcard->get_giftcard_customer($giftcard_number);
+            $data['giftcard']['person_id'] = ($customer > 0) ? $customer : NULL;
+		} // End handle receive to giftcard
+
 		//SAVE receiving to database
-		$data['receiving_id'] = 'RECV ' . $this->Receiving->save($data['cart'], $supplier_id, $employee_id, $data['comment'], $data['reference'], $data['payment_type'], $data['stock_location']);
+		$data['receiving_id'] = 'RECV ' . $this->Receiving->save($data['cart'], $supplier_id, $employee_id, $data['comment'], $data['reference'], $data['payment_type'], $data['stock_location'], $data['giftcard']);
 
 		$data = $this->xss_clean($data);
 
@@ -324,7 +349,10 @@ class Receivings extends Secure_Controller
 	private function _reload($data = array())
 	{
 		$data['cart'] = $this->receiving_lib->get_cart();
-		$data['modes'] = array('receive' => $this->lang->line('receivings_receiving'), 'return' => $this->lang->line('receivings_return'));
+		$data['modes'] = array(
+			'receive' => $this->lang->line('receivings_receiving'),
+			'receive_to_giftcard' => $this->lang->line('receivings_giftcard'),
+			'return' => $this->lang->line('receivings_return'));
 		$data['mode'] = $this->receiving_lib->get_mode();
 		$data['stock_locations'] = $this->Stock_location->get_allowed_locations('receivings');
 		$data['show_stock_locations'] = count($data['stock_locations']) > 1;
@@ -340,6 +368,12 @@ class Receivings extends Secure_Controller
 		$data['comment'] = $this->receiving_lib->get_comment();
 		$data['reference'] = $this->receiving_lib->get_reference();
 		$data['payment_options'] = $this->Receiving->get_payment_options();
+
+		if($data['mode'] == 'receive_to_giftcard'){
+            $data['payment_options'] = array();
+			$data['payment_options'][$this->lang->line('sales_giftcard')] = $this->lang->line('sales_giftcard');
+            $data['giftcard_no'] = $this->receiving_lib->get_giftcardno();
+		}
 
 		$supplier_id = $this->receiving_lib->get_supplier();
 		$supplier_info = '';

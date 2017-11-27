@@ -380,6 +380,20 @@ if (isset($success))
 									</td>
 								</tr>
 
+                                <?php
+                                if ($mode == "receive_to_giftcard")
+                                {
+                                    ?>
+                                    <tr>
+                                        <td><?php echo $this->lang->line('giftcards_giftcard_number');?></td>
+                                        <td>
+                                            <?php echo form_input(array('name'=>'giftcard_no', 'id'=>'giftcard_no', 'class'=>'form-control input-sm', 'value'=>$giftcard_no, 'size'=>5));?>
+                                        </td>
+                                    </tr>
+                                    <?php
+                                }
+                                ?>
+
 								<tr>
 									<td><?php echo $this->lang->line('sales_amount_tendered'); ?></td>
 									<td>
@@ -471,10 +485,12 @@ $(document).ready(function()
     	$(this).attr('value',"<?php echo $this->lang->line('receivings_start_typing_supplier_name'); ?>");
     });
 
-    $("#finish_receiving_button").click(function()
+	var formSubmit = function()
     {
-   		$('#finish_receiving_form').submit();
-    });
+        $('#finish_receiving_form').submit();
+    };
+
+    $("#finish_receiving_button").click(formSubmit);
 
     $("#cancel_receiving_button").click(function()
     {
@@ -521,6 +537,23 @@ $(document).ready(function()
 		$(this).parents("tr").prevAll("form:first").submit()
 	});
 
+    var $mode = "<?php echo $mode; ?>",
+        $giftcardno = "<?php echo $giftcard_no; ?>";
+    if($mode == "receive_to_giftcard" && $giftcardno == "") {
+        $("#finish_receiving_button").attr("disabled", "disabled").off("click");
+    }
+
+    $('#giftcard_no').autocomplete(
+        {
+            source: '<?php echo site_url("giftcards/suggest"); ?>',
+            minChars:5,
+            delay:10,
+            select: function (a, ui) {
+                $(this).val(ui.item.number);
+                $.post('<?php echo site_url($controller_name."/set_giftcardno");?>', {recv_giftcardno: $('#giftcard_no').val()});
+                $("#finish_receiving_button").removeAttr("disabled").click(formSubmit);
+            }
+        });
 });
 
 </script>
