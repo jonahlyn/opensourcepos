@@ -118,20 +118,20 @@ class Receiving_lib
 		$this->CI->session->unset_userdata('recv_reference');
 	}
 
-    public function get_giftcardno()
-    {
-        return $this->CI->session->userdata('recv_giftcardno');
-    }
+	public function get_giftcardno()
+	{
+		return $this->CI->session->userdata('recv_giftcardno');
+	}
 
-    public function set_giftcardno($giftcard_no)
-    {
-        $this->CI->session->set_userdata('recv_giftcardno', $giftcard_no);
-    }
+	public function set_giftcardno($giftcard_no)
+	{
+		$this->CI->session->set_userdata('recv_giftcardno', $giftcard_no);
+	}
 
-    public function clear_giftcardno()
-    {
-        $this->CI->session->unset_userdata('recv_giftcardno');
-    }
+	public function clear_giftcardno()
+	{
+		$this->CI->session->unset_userdata('recv_giftcardno');
+	}
 	
 	public function is_print_after_sale()
 	{

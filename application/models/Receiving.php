@@ -81,13 +81,13 @@ class Receiving extends CI_Model
 		$this->db->insert('receivings', $receivings_data);
 		$receiving_id = $this->db->insert_id();
 
-        if($payment_type == 'Store Credit' && $giftcard_data != NULL){
-            $giftcard_id = $this->Giftcard->get_giftcard_id($giftcard_data['giftcard_number']);
-            if(!$giftcard_id) {
-                $giftcard_id = -1;
-            }
-            $this->Giftcard->save($giftcard_data, $giftcard_id);
-        }
+		if($payment_type == 'Store Credit' && $giftcard_data != NULL){
+			$giftcard_id = $this->Giftcard->get_giftcard_id($giftcard_data['giftcard_number']);
+			if(!$giftcard_id) {
+				$giftcard_id = -1;
+			}
+			$this->Giftcard->save($giftcard_data, $giftcard_id);
+		}
 
 		foreach($items as $line=>$item)
 		{

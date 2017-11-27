@@ -84,10 +84,10 @@ class Receivings extends Secure_Controller
 		$this->receiving_lib->set_reference($this->input->post('recv_reference'));
 	}
 
-    public function set_giftcardno()
-    {
-        $this->receiving_lib->set_giftcardno($this->input->post('recv_giftcardno'));
-    }
+	public function set_giftcardno()
+	{
+		$this->receiving_lib->set_giftcardno($this->input->post('recv_giftcardno'));
+	}
 	
 	public function add()
 	{
@@ -242,22 +242,22 @@ class Receivings extends Secure_Controller
 
 		// Handle receive to giftcard
 		if($data['mode'] == 'receive_to_giftcard')
- 		{
+		{
 			$giftcard_number = trim($this->input->post('giftcard_no'));
-            $giftcard_id = $this->Giftcard->get_giftcard_id($giftcard_number);
+			$giftcard_id = $this->Giftcard->get_giftcard_id($giftcard_number);
 
-            $giftcard_info = $this->Giftcard->get_info($giftcard_id);
+			$giftcard_info = $this->Giftcard->get_info($giftcard_id);
 
-            $data['giftcard'] = array(
-                'record_time' => date('Y-m-d H:i:s'),
+			$data['giftcard'] = array(
+				'record_time' => date('Y-m-d H:i:s'),
 				'giftcard_number' => $giftcard_number
-            );
+			);
 
 			$value = (($data['amount_change']) ? $data['amount_change'] : $data['total']);
-            $data['giftcard']['value'] = $value + $this->Giftcard->get_giftcard_value($giftcard_number);
+			$data['giftcard']['value'] = $value + $this->Giftcard->get_giftcard_value($giftcard_number);
 
-            $customer = $this->Giftcard->get_giftcard_customer($giftcard_number);
-            $data['giftcard']['person_id'] = ($customer > 0) ? $customer : NULL;
+			$customer = $this->Giftcard->get_giftcard_customer($giftcard_number);
+			$data['giftcard']['person_id'] = ($customer > 0) ? $customer : NULL;
 		} // End handle receive to giftcard
 
 		//SAVE receiving to database
@@ -370,9 +370,9 @@ class Receivings extends Secure_Controller
 		$data['payment_options'] = $this->Receiving->get_payment_options();
 
 		if($data['mode'] == 'receive_to_giftcard'){
-            $data['payment_options'] = array();
+			$data['payment_options'] = array();
 			$data['payment_options'][$this->lang->line('sales_giftcard')] = $this->lang->line('sales_giftcard');
-            $data['giftcard_no'] = $this->receiving_lib->get_giftcardno();
+			$data['giftcard_no'] = $this->receiving_lib->get_giftcardno();
 		}
 
 		$supplier_id = $this->receiving_lib->get_supplier();

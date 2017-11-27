@@ -210,7 +210,7 @@ if (isset($success))
 									if ($item['description']!='')
 									{
 										echo $item['description'];
-	        							echo form_hidden('description',$item['description']);
+										echo form_hidden('description',$item['description']);
 									}
 									else
 									{
@@ -380,19 +380,19 @@ if (isset($success))
 									</td>
 								</tr>
 
-                                <?php
-                                if ($mode == "receive_to_giftcard")
-                                {
-                                    ?>
-                                    <tr>
-                                        <td><?php echo $this->lang->line('giftcards_giftcard_number');?></td>
-                                        <td>
-                                            <?php echo form_input(array('name'=>'giftcard_no', 'id'=>'giftcard_no', 'class'=>'form-control input-sm', 'value'=>$giftcard_no, 'size'=>5));?>
-                                        </td>
-                                    </tr>
-                                    <?php
-                                }
-                                ?>
+								<?php
+								if ($mode == "receive_to_giftcard")
+								{
+									?>
+									<tr>
+										<td><?php echo $this->lang->line('giftcards_giftcard_number');?></td>
+										<td>
+											<?php echo form_input(array('name'=>'giftcard_no', 'id'=>'giftcard_no', 'class'=>'form-control input-sm', 'value'=>$giftcard_no, 'size'=>5));?>
+										</td>
+									</tr>
+									<?php
+								}
+								?>
 
 								<tr>
 									<td><?php echo $this->lang->line('sales_amount_tendered'); ?></td>
@@ -420,20 +420,20 @@ if (isset($success))
 <script type="text/javascript">
 $(document).ready(function()
 {
-    $("#item").autocomplete(
-    {
+	$("#item").autocomplete(
+	{
 		source: '<?php echo site_url($controller_name."/stock_item_search"); ?>',
-    	minChars:0,
-       	delay:10,
-       	autoFocus: false,
+		minChars:0,
+		delay:10,
+		autoFocus: false,
 		select:	function (a, ui) {
 			$(this).val(ui.item.value);
 			$("#add_item_form").submit();
 			return false;
 		}
-    });
+	});
 
-    $('#item').focus();
+	$('#item').focus();
 
 	$('#item').keypress(function (e) {
 		if (e.which == 13){
@@ -446,9 +446,9 @@ $(document).ready(function()
 	});
 
 	$('#item').blur(function()
-    {
-    	$(this).attr('value',"<?php echo $this->lang->line('sales_start_typing_item_name'); ?>");
-    });
+	{
+		$(this).attr('value',"<?php echo $this->lang->line('sales_start_typing_item_name'); ?>");
+	});
 
 	$('#comment').keyup(function() 
 	{
@@ -466,43 +466,43 @@ $(document).ready(function()
 	});
 
 	$('#item,#supplier').click(function()
-    {
-    	$(this).attr('value','');
-    });
+	{
+		$(this).attr('value','');
+	});
 
-    $("#supplier").autocomplete(
-    {
+	$("#supplier").autocomplete(
+	{
 		source: '<?php echo site_url("suppliers/suggest"); ?>',
-    	minChars:0,
-    	delay:10,
+		minChars:0,
+		delay:10,
 		select: function (a, ui) {
 			$(this).val(ui.item.value);
 			$("#select_supplier_form").submit();
 		}
-    });
+	});
 
 	dialog_support.init("a.modal-dlg, button.modal-dlg");
 
 	$('#supplier').blur(function()
-    {
-    	$(this).attr('value',"<?php echo $this->lang->line('receivings_start_typing_supplier_name'); ?>");
-    });
+	{
+		$(this).attr('value',"<?php echo $this->lang->line('receivings_start_typing_supplier_name'); ?>");
+	});
 
 	var formSubmit = function()
-    {
-        $('#finish_receiving_form').submit();
-    };
+	{
+		$('#finish_receiving_form').submit();
+	};
 
-    $("#finish_receiving_button").click(formSubmit);
+	$("#finish_receiving_button").click(formSubmit);
 
-    $("#cancel_receiving_button").click(function()
-    {
-    	if (confirm('<?php echo $this->lang->line("receivings_confirm_cancel_receiving"); ?>'))
-    	{
+	$("#cancel_receiving_button").click(function()
+	{
+		if (confirm('<?php echo $this->lang->line("receivings_confirm_cancel_receiving"); ?>'))
+		{
 			$('#finish_receiving_form').attr('action', '<?php echo site_url($controller_name."/cancel_receiving"); ?>');
-    		$('#finish_receiving_form').submit();
-    	}
-    });
+			$('#finish_receiving_form').submit();
+		}
+	});
 
 	$("#cart_contents input").keypress(function(event)
 	{
@@ -540,23 +540,23 @@ $(document).ready(function()
 		$(this).parents("tr").prevAll("form:first").submit()
 	});
 
-    var $mode = "<?php echo $mode; ?>",
-        $giftcardno = "<?php echo $giftcard_no; ?>";
-    if($mode == "receive_to_giftcard" && $giftcardno == "") {
-        $("#finish_receiving_button").attr("disabled", "disabled").off("click");
-    }
+	var $mode = "<?php echo $mode; ?>",
+		$giftcardno = "<?php echo $giftcard_no; ?>";
+	if($mode == "receive_to_giftcard" && $giftcardno == "") {
+		$("#finish_receiving_button").attr("disabled", "disabled").off("click");
+	}
 
-    $('#giftcard_no').autocomplete(
-        {
-            source: '<?php echo site_url("giftcards/suggest"); ?>',
-            minChars:5,
-            delay:10,
-            select: function (a, ui) {
-                $(this).val(ui.item.number);
-                $.post('<?php echo site_url($controller_name."/set_giftcardno");?>', {recv_giftcardno: $('#giftcard_no').val()});
-                $("#finish_receiving_button").removeAttr("disabled").click(formSubmit);
-            }
-        });
+	$('#giftcard_no').autocomplete(
+		{
+			source: '<?php echo site_url("giftcards/suggest"); ?>',
+			minChars:5,
+			delay:10,
+			select: function (a, ui) {
+				$(this).val(ui.item.number);
+				$.post('<?php echo site_url($controller_name."/set_giftcardno");?>', {recv_giftcardno: $('#giftcard_no').val()});
+				$("#finish_receiving_button").removeAttr("disabled").click(formSubmit);
+			}
+		});
 });
 
 </script>

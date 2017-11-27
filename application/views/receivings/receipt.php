@@ -129,21 +129,21 @@
 			}
 			?>
 
-            <?php if(isset($giftcard))
-            {
-            ?>
-            <tr>
-                <td colspan="3" style='text-align:right;'><?php echo $this->lang->line('giftcards_giftcard_number'); ?></td>
-                <td><div class="total-value"><?php echo $giftcard['giftcard_number']; ?></div></td>
-            </tr>
+			<?php if(isset($giftcard))
+			{
+			?>
+			<tr>
+				<td colspan="3" style='text-align:right;'><?php echo $this->lang->line('giftcards_giftcard_number'); ?></td>
+				<td><div class="total-value"><?php echo $giftcard['giftcard_number']; ?></div></td>
+			</tr>
 
-            <tr>
-                <td colspan="3" style='text-align:right;'><?php echo $this->lang->line('giftcards_card_value'); ?></td>
-                <td><div class="total-value"><?php echo to_currency($giftcard['value']); ?></div></td>
-            </tr>
-            <?php
-            }
-            ?>
+			<tr>
+				<td colspan="3" style='text-align:right;'><?php echo $this->lang->line('giftcards_card_value'); ?></td>
+				<td><div class="total-value"><?php echo to_currency($giftcard['value']); ?></div></td>
+			</tr>
+			<?php
+			}
+			?>
 		<?php 
 		}
 		?>
