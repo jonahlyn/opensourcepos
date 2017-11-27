@@ -27,21 +27,21 @@ INSERT INTO `ospos_app_config` (`key`, `value`) VALUES
 ('website', ''),
 ('company_logo', ''),
 ('tax_included', '0'),
-('barcode_content', 'id'),
-('barcode_type', 'Code39'),
+('barcode_content', 'number'),
+('barcode_type', 'Code128'),
 ('barcode_formats', '[]'),
-('barcode_width', '250'),
+('barcode_width', '200'),
 ('barcode_height', '50'),
 ('barcode_quality', '100'),
-('barcode_font', 'Arial'),
+('barcode_font', 'Arial.ttf'),
 ('barcode_font_size', '10'),
-('barcode_first_row', 'category'),
-('barcode_second_row', 'item_code'),
-('barcode_third_row', 'unit_price'),
-('barcode_num_in_row', '2'),
+('barcode_first_row', 'name'),
+('barcode_second_row', 'unit_price'),
+('barcode_third_row', 'not_show'),
+('barcode_num_in_row', '1'),
 ('barcode_page_width', '100'),      
-('barcode_page_cellspacing', '20'),
-('barcode_generate_if_empty', '0'),
+('barcode_page_cellspacing', '0'),
+('barcode_generate_if_empty', '1'),
 ('receipt_show_company_name', '1'),
 ('receipt_show_taxes', '0'),
 ('receipt_show_total_discount', '1'),
@@ -839,11 +839,8 @@ CREATE TABLE IF NOT EXISTS `ospos_customers_packages` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
 INSERT INTO `ospos_customers_packages` (`package_name`, `points_percent`) VALUES
-  ('Default', 0),
-  ('Bronze', 10),
-  ('Silver', 20),
-  ('Gold', 30),
-  ('Premium', 50);
+  ('Example', 100),
+  ('NoPoints', 0);
 
 
 -- --------------------------------------------------------

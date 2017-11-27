@@ -436,8 +436,11 @@ $(document).ready(function()
     $('#item').focus();
 
 	$('#item').keypress(function (e) {
-		if (e.which == 13) {
-			$('#add_item_form').submit();
+		if (e.which == 13){
+			entSubmit="<?php echo $this->config->item('custom1_name') ?>".split("|");
+			if(entSubmit=="" || entSubmit[0]=="1") {
+				$('#add_item_form').submit();
+			}
 			return false;
 		}
 	});
