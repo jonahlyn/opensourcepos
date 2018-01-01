@@ -59,7 +59,7 @@ class Receiving extends CI_Model
 		return $this->db->update('receivings', $receiving_data);
 	}
 
-	public function save($items, $supplier_id, $employee_id, $comment, $reference, $payment_type, $receiving_id = FALSE)
+	public function save($items, $supplier_id, $employee_id, $comment, $reference, $payment_type, $payments, $receiving_id = FALSE)
 	{
 		if(count($items) == 0)
 		{
@@ -77,6 +77,20 @@ class Receiving extends CI_Model
 
 		//Run these queries as a transaction, we want to make sure we do all or nothing
 		$this->db->trans_start();
+		
+		foreach($payments as $payment_id=>$payment)
+		{
+			if( substr( $payment['payment_type'], 0, strlen( $this->lang->line('sales_giftcard') ) ) == $this->lang->line('sales_giftcard') ) {
+				// We have a gift card
+				$splitpayment = explode( ':', $payment['payment_type'] );
+				$giftcard_number = $splitpayment[1];
+
+				if($this->Giftcard->exists($this->Giftcard->get_giftcard_id($giftcard_number))){
+					$new_value = $this->Giftcard->get_giftcard_value($giftcard_number) + $payment['payment_amount'];
+					$this->Giftcard->update_giftcard_value($giftcard_number, $new_value);
+				}
+			}
+		}
 
 		$this->db->insert('receivings', $receivings_data);
 		$receiving_id = $this->db->insert_id();
@@ -221,7 +235,8 @@ class Receiving extends CI_Model
 			$this->lang->line('sales_cash') => $this->lang->line('sales_cash'),
 			$this->lang->line('sales_check') => $this->lang->line('sales_check'),
 			$this->lang->line('sales_debit') => $this->lang->line('sales_debit'),
-			$this->lang->line('sales_credit') => $this->lang->line('sales_credit')
+			$this->lang->line('sales_credit') => $this->lang->line('sales_credit'),
+            $this->lang->line('sales_giftcard') => $this->lang->line('sales_giftcard')
 		);
 	}
 

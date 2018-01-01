@@ -84,6 +84,69 @@ class Receivings extends Secure_Controller
 		$this->receiving_lib->set_reference($this->input->post('recv_reference'));
 	}
 	
+	// Multiple Payments
+	public function add_payment()
+	{
+		$data = array();
+		
+		$payment_type = $this->input->post('payment_type');
+		$this->receiving_lib->set_payment_type($payment_type);
+		if($payment_type != $this->lang->line('sales_giftcard'))
+		{
+			$this->form_validation->set_rules('amount_tendered', 'lang:sales_amount_tendered', 'trim|required|callback_numeric');
+		}
+		else
+		{
+			//$this->form_validation->set_rules('amount_tendered', 'lang:sales_amount_tendered', 'trim|required');
+			$this->form_validation->set_rules('amount_tendered', 'lang:sales_amount_tendered', 'trim|required|callback_numeric');
+			$this->form_validation->set_rules('giftcard_no', 'lang:sales_giftcard_number', 'trim|required');
+		}
+		
+		if($this->form_validation->run() == FALSE)
+		{
+			if($payment_type == $this->lang->line('sales_giftcard'))
+			{
+				$data['error'] = $this->lang->line('sales_must_enter_numeric_giftcard');
+			}
+			else
+			{
+				$data['error'] = $this->lang->line('sales_must_enter_numeric');
+			}
+		}
+		else
+		{
+			if($payment_type == $this->lang->line('sales_giftcard')) {
+				$giftcard_num = $this->input->post('giftcard_no');
+				
+				if($this->Giftcard->exists($this->Giftcard->get_giftcard_id($giftcard_num))){
+					$payment_type = $payment_type . ':' . $giftcard_num;
+					$cur_giftcard_value = $this->Giftcard->get_giftcard_value($giftcard_num);
+					$data['warning'] = $this->lang->line('giftcards_current_value', $giftcard_num, $cur_giftcard_value);
+					
+					$amount_tendered = $this->input->post('amount_tendered');
+					$this->receiving_lib->add_payment($payment_type, $amount_tendered);
+				} else {
+					$data['error'] = $this->lang->line('giftcards_cannot_find_giftcard');
+				}
+			}
+			else {
+				$amount_tendered = $this->input->post('amount_tendered');
+				$this->receiving_lib->add_payment($payment_type, $amount_tendered);
+			}
+		}
+		
+		$this->_reload($data);
+	}
+	
+	// Multiple Payments
+	public function delete_payment($payment_id)
+	{
+		$this->receiving_lib->delete_payment($payment_id);
+		
+		$this->_reload();
+	}
+	
+	
 	public function add()
 	{
 		$data = array();
@@ -202,14 +265,28 @@ class Receivings extends Secure_Controller
 		$data['mode'] = $this->receiving_lib->get_mode();
 		$data['comment'] = $this->receiving_lib->get_comment();
 		$data['reference'] = $this->receiving_lib->get_reference();
-		$data['payment_type'] = $this->input->post('payment_type');
+		$data['payments'] = $this->receiving_lib->get_payments(); // jdg added
+		$data['payment_type'] = join(array_keys($data['payments']), "|");
+		//$data['payment_type'] = $this->input->post('payment_type'); // jdg removed
+		
+		
 		$data['show_stock_locations'] = $this->Stock_location->show_locations('receivings');
 		$data['stock_location'] = $this->receiving_lib->get_stock_source();
-		if($this->input->post('amount_tendered') != NULL)
+		// jdg removed
+		/*if($this->input->post('amount_tendered') != NULL)
 		{
 			$data['amount_tendered'] = $this->input->post('amount_tendered');
 			$data['amount_change'] = to_currency($data['amount_tendered'] - $data['total']);
+		}*/
+		// end jdg removed
+		// jdg added
+		$data['payments_total'] = $this->receiving_lib->get_payments_total();
+		$data['amount_tendered'] = $data['payments_total'];
+		if($data['payments_total'] > 0)
+		{
+			$data['amount_change'] = to_currency($data['payments_total'] - $data['total']);
 		}
+		// end jdg added
 		
 		$employee_id = $this->Employee->get_logged_in_employee_info()->person_id;
 		$employee_info = $this->Employee->get_info($employee_id);
@@ -236,7 +313,7 @@ class Receivings extends Secure_Controller
 		}
 
 		//SAVE receiving to database
-		$data['receiving_id'] = 'RECV ' . $this->Receiving->save($data['cart'], $supplier_id, $employee_id, $data['comment'], $data['reference'], $data['payment_type'], $data['stock_location']);
+		$data['receiving_id'] = 'RECV ' . $this->Receiving->save($data['cart'], $supplier_id, $employee_id, $data['comment'], $data['reference'], $data['payment_type'], $data['payments']); //, $data['stock_location']); // jdg removed unused?
 
 		$data = $this->xss_clean($data);
 
@@ -362,6 +439,8 @@ class Receivings extends Secure_Controller
 		}
 		
 		$data['print_after_sale'] = $this->receiving_lib->is_print_after_sale();
+		$data['payments'] = $this->receiving_lib->get_payments(); // jdg added
+		$data['selected_payment_type'] = $this->receiving_lib->get_payment_type(); // jdg added
 
 		$data = $this->xss_clean($data);
 

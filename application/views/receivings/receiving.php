@@ -373,26 +373,120 @@ if (isset($success))
 								<?php 
 								}
 								?>
+								
+								<!-- jdg removed
 								<tr>
 									<td><?php echo $this->lang->line('sales_payment'); ?></td>
 									<td>
 										<?php echo form_dropdown('payment_type', $payment_options, array(), array('id'=>'payment_types', 'class'=>'selectpicker show-menu-arrow', 'data-style'=>'btn-default btn-sm', 'data-width'=>'auto')); ?>
 									</td>
 								</tr>
-
+								-- end jdg removed -->
+								
+								<!-- jdg added and removed
+								<tr>
+									<td><?php echo $this->lang->line('giftcards_giftcard_number');?></td>
+									<td>
+										<?php echo form_input(array('name'=>'giftcard_no', 'id'=>'giftcard_no', 'class'=>'form-control input-sm', 'value'=>$giftcard_no, 'size'=>5));?>
+									</td>
+								</tr>
+								-- end jdg added and removed -->
+								
+								<!-- jdg removed
 								<tr>
 									<td><?php echo $this->lang->line('sales_amount_tendered'); ?></td>
 									<td>
 										<?php echo form_input(array('name'=>'amount_tendered', 'value'=>'', 'class'=>'form-control input-sm', 'size'=>'5')); ?>
 									</td>
 								</tr>
+								-- end jdg removed -->
 							</table>
-
+							
+							<!-- jdg removed
 							<div class='btn btn-sm btn-danger pull-left' id='cancel_receiving_button'><span class="glyphicon glyphicon-remove">&nbsp</span><?php echo $this->lang->line('receivings_cancel_receiving') ?></div>
 							
 							<div class='btn btn-sm btn-success pull-right' id='finish_receiving_button'><span class="glyphicon glyphicon-ok">&nbsp</span><?php echo $this->lang->line('receivings_complete_receiving') ?></div>
+							-- end jdg removed -->
 						</div>
 					<?php echo form_close(); ?>
+					
+					<!-- jdg added -->
+					<div>
+						<?php
+						// Only show this part if there is at least one payment entered.
+						if(count($payments) > 0)
+						{
+							?>
+							<table class="sales_table_100" id="register">
+								<thead>
+								<tr>
+									<th style="width: 10%;"><?php echo $this->lang->line('common_delete'); ?></th>
+									<th style="width: 60%;"><?php echo $this->lang->line('sales_payment_type'); ?></th>
+									<th style="width: 20%;"><?php echo $this->lang->line('sales_payment_amount'); ?></th>
+								</tr>
+								</thead>
+								
+								<tbody id="payment_contents">
+								<?php
+								foreach($payments as $payment_id=>$payment)
+								{
+									?>
+									<tr>
+										<td><?php echo anchor($controller_name."/delete_payment/$payment_id", '<span class="glyphicon glyphicon-trash"></span>'); ?></td>
+										<td><?php echo $payment['payment_type']; ?></td>
+										<td style="text-align: right;"><?php echo to_currency( $payment['payment_amount'] ); ?></td>
+									</tr>
+									<?php
+								}
+								?>
+								</tbody>
+							</table>
+							
+							<div class='btn btn-sm btn-danger pull-left' id='cancel_receiving_button'><span class="glyphicon glyphicon-remove">&nbsp</span><?php echo $this->lang->line('receivings_cancel_receiving') ?></div>
+							
+							<div class='btn btn-sm btn-success pull-right' id='finish_receiving_button'><span class="glyphicon glyphicon-ok">&nbsp</span><?php echo $this->lang->line('receivings_complete_receiving') ?></div>
+							
+							<?php
+						}
+						else
+						{
+							?>
+							<?php echo form_open($controller_name."/add_payment", array('id'=>'add_payment_form', 'class'=>'form-horizontal')); ?>
+							<table id="payment_details" class="sales_table_100">
+								<tr>
+									<td><?php echo $this->lang->line('sales_payment');?></td>
+									<td>
+										<?php echo form_dropdown('payment_type', $payment_options, $selected_payment_type, array('id'=>'payment_types', 'class'=>'selectpicker show-menu-arrow', 'data-style'=>'btn-default btn-sm', 'data-width'=>'fit')); ?>
+									</td>
+								</tr>
+								<tr>
+									<td><span id="amount_tendered_label"><?php echo $this->lang->line('sales_amount_tendered'); ?></span></td>
+									<td>
+										<?php echo form_input(array('name'=>'amount_tendered', 'id'=>'amount_tendered', 'class'=>'form-control input-sm non-giftcard-input', 'value'=>'', 'size'=>'5', 'tabindex'=>++$tabindex)); ?>
+									</td>
+								</tr>
+								<tr class="giftcard-input">
+									<td><span id="giftcard_number_label"><?php echo $this->lang->line('sales_giftcard_number'); ?></span></td>
+									<td>
+										<?php echo form_input(array('name'=>'giftcard_no',     'id'=>'giftcard_no', 'class'=>'form-control input-sm', 'disabled' => true, 'value'=>'', 'size'=>'5', 'tabindex'=>++$tabindex)); ?>
+									</td>
+								</tr>
+							</table>
+							<?php echo form_close(); ?>
+							
+							<div class='btn btn-sm btn-success pull-right' id='add_payment_button' tabindex='<?php echo ++$tabindex; ?>'><span class="glyphicon glyphicon-credit-card">&nbsp</span><?php echo $this->lang->line('sales_add_payment'); ?></div>
+							<?php
+						}
+						?>
+					</div>
+					<!-- end jdg added -->
+					
+					<!-- jdg removed -->
+<!--					<div class='btn btn-sm btn-danger pull-left' id='cancel_receiving_button'><span class="glyphicon glyphicon-remove">&nbsp</span>--><?php //echo $this->lang->line('receivings_cancel_receiving') ?><!--</div>-->
+<!--					-->
+<!--					<div class='btn btn-sm btn-success pull-right' id='finish_receiving_button'><span class="glyphicon glyphicon-ok">&nbsp</span>--><?php //echo $this->lang->line('receivings_complete_receiving') ?><!--</div>-->
+<!--					-->
+					<!-- end jdg removed -->
 				<?php
 				}
 				?>
@@ -524,6 +618,40 @@ $(document).ready(function()
 		$(this).parents("tr").prevAll("form:first").submit()
 	});
 
+	// jdg added
+    $("#payment_types").change(check_payment_type).ready(check_payment_type);
+
+    $("#giftcard_no").autocomplete(
+    {
+        source: '<?php echo site_url("giftcards/suggest"); ?>',
+        minChars: 0,
+        delay: 10,
+        select: function (a, ui) {
+            $(this).val(ui.item.value);
+        }
+    });
+    
+    $("#add_payment_button").click(function()
+    {
+        $('#add_payment_form').submit();
+    });
+
+    function check_payment_type()
+    {
+        if($("#payment_types").val() == "<?php echo $this->lang->line('sales_giftcard'); ?>")
+        {
+            $("#giftcard_no").attr('disabled', false);
+            $(".giftcard-input").css({'display':'table-row'});
+        }
+        else
+        {
+            $("#giftcard_no").attr('disabled', true);
+            $(".giftcard-input").css({'display':'none'});
+        }
+        $("#amount_tendered").val('');
+        $("#giftcard_no").val('');
+    }
+    // end jdg added
 });
 
 </script>

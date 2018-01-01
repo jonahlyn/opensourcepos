@@ -23,3 +23,5 @@ git-svn-diff.py
 *.~
 *.log
 .env
+Dockerfile.jdg
+docker-compose.jdg.yml

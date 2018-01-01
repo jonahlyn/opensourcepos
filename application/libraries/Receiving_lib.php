@@ -328,6 +328,8 @@ class Receiving_lib
 		$this->remove_supplier();
 		$this->clear_comment();
 		$this->clear_reference();
+		$this->empty_payments(); // jdg added
+		$this->clear_payment_type(); // jdg added
 	}
 
 	public function get_item_total($quantity, $price, $discount_percentage)
@@ -349,6 +351,86 @@ class Receiving_lib
 		
 		return $total;
 	}
+
+	/* jdg added */
+	// Multiple Payments
+	public function get_payments()
+	{
+		if(!$this->CI->session->userdata('receiving_payments'))
+		{
+			$this->set_payments(array());
+		}
+		
+		return $this->CI->session->userdata('receiving_payments');
+	}
+	
+	// Multiple Payments
+	public function set_payments($payments_data)
+	{
+		$this->CI->session->set_userdata('receiving_payments', $payments_data);
+	}
+	
+	// Multiple Payments
+	public function add_payment($payment_id, $payment_amount)
+	{
+		$payments = $this->get_payments();
+		if(isset($payments[$payment_id]))
+		{
+			//payment_method already exists, add to payment_amount
+			$payments[$payment_id]['payment_amount'] = bcadd($payments[$payment_id]['payment_amount'], $payment_amount);
+		}
+		else
+		{
+			//add to existing array
+			$payment = array($payment_id => array('payment_type' => $payment_id, 'payment_amount' => $payment_amount));
+			
+			$payments += $payment;
+		}
+		
+		$this->set_payments($payments);
+	}
+	
+	// Multiple Payments
+	public function delete_payment($payment_id)
+	{
+		$payments = $this->get_payments();
+		unset($payments[urldecode($payment_id)]);
+		$this->set_payments($payments);
+	}
+	
+	// Multiple Payments
+	public function empty_payments()
+	{
+		$this->CI->session->unset_userdata('receiving_payments');
+	}
+	
+	public function set_payment_type($payment_type)
+	{
+		$this->CI->session->set_userdata('payment_type', $payment_type);
+	}
+	
+	public function get_payment_type()
+	{
+		return $this->CI->session->userdata('payment_type');
+	}
+	
+	public function clear_payment_type(){
+		$this->CI->session->unset_userdata('payment_type');
+	}
+	
+	// Multiple Payments
+	public function get_payments_total()
+	{
+		$subtotal = 0;
+		foreach($this->get_payments() as $payments)
+		{
+			$subtotal = bcadd($payments['payment_amount'], $subtotal);
+		}
+		
+		return $subtotal;
+	}
+	/* end jdg added */
+
 }
 
 ?>

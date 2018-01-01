@@ -68,3 +68,5 @@ $lang["giftcards_update"] = "Update Store Credit";
 $lang["giftcards_use_inventory_menu"] = "Use Inventory Menu";
 $lang["giftcards_value"] = "Store Credit Value must be a number.";
 $lang["giftcards_value_required"] = "Store Credit Value is a required field.";
+
+$lang["giftcards_current_value"] = "Store Credit %1 current value is %2";
