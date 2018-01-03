@@ -93,11 +93,11 @@ class Receivings extends Secure_Controller
 		$this->receiving_lib->set_payment_type($payment_type);
 		if($payment_type != $this->lang->line('sales_giftcard'))
 		{
+			// Question: should amount_tendered be required?
 			$this->form_validation->set_rules('amount_tendered', 'lang:sales_amount_tendered', 'trim|required|callback_numeric');
 		}
 		else
 		{
-			//$this->form_validation->set_rules('amount_tendered', 'lang:sales_amount_tendered', 'trim|required');
 			$this->form_validation->set_rules('amount_tendered', 'lang:sales_amount_tendered', 'trim|required|callback_numeric');
 			$this->form_validation->set_rules('giftcard_no', 'lang:sales_giftcard_number', 'trim|required');
 		}
@@ -106,7 +106,7 @@ class Receivings extends Secure_Controller
 		{
 			if($payment_type == $this->lang->line('sales_giftcard'))
 			{
-				$data['error'] = $this->lang->line('sales_must_enter_numeric_giftcard');
+				$data['error'] = $this->lang->line('giftcards_number_required');
 			}
 			else
 			{
@@ -126,7 +126,7 @@ class Receivings extends Secure_Controller
 					$amount_tendered = $this->input->post('amount_tendered');
 					$this->receiving_lib->add_payment($payment_type, $amount_tendered);
 				} else {
-					$data['error'] = $this->lang->line('giftcards_cannot_find_giftcard');
+					$data['error'] = $this->lang->line('giftcards_cannot_find_giftcard_long');
 				}
 			}
 			else {
