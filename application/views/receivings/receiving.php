@@ -303,25 +303,37 @@ if (isset($success))
 		?>
 
 		<table class="sales_table_100" id="sale_totals">
-			<tr>
 				<?php
 				if($mode != 'requisition')
 				{
 				?>
-					<th style="width: 55%;"><?php echo $this->lang->line('sales_total'); ?></th>
-					<th style="width: 45%; text-align: right;"><?php echo to_currency($total); ?></th>
+					<tr>
+						<th style="width: 55%;"><?php echo $this->lang->line('sales_total'); ?></th>
+						<th style="width: 45%; text-align: right;"><?php echo to_currency($total); ?></th>
+					</tr>
+					<tr>
+						<th style="width: 55%;"><?php echo $this->lang->line('sales_payments_total');?></th>
+						<th style="width: 45%; text-align: right;"><?php echo to_currency($payments_total); ?></th>
+					</tr>
+					<tr>
+						<th style="width: 55%;"><?php echo $this->lang->line('sales_amount_due');?></th>
+						<th style="width: 45%; text-align: right;"><span id="sale_amount_due"><?php echo to_currency($amount_due); ?></span></th>
+					</tr>
 				<?php 
 				}
 				else
 				{
 				?>
-					<th style="width: 55%;"></th>
-					<th style="width: 45%; text-align: right;"></th>
+					<tr>
+						<th style="width: 55%;"></th>
+						<th style="width: 45%; text-align: right;"></th>
+					</tr>
 				<?php 
 				}
 				?>
-			</tr>
 		</table>
+		
+		
 
 		<?php
 		if(count($cart) > 0)
@@ -373,44 +385,11 @@ if (isset($success))
 								<?php 
 								}
 								?>
-								
-								<!-- jdg removed
-								<tr>
-									<td><?php echo $this->lang->line('sales_payment'); ?></td>
-									<td>
-										<?php echo form_dropdown('payment_type', $payment_options, array(), array('id'=>'payment_types', 'class'=>'selectpicker show-menu-arrow', 'data-style'=>'btn-default btn-sm', 'data-width'=>'auto')); ?>
-									</td>
-								</tr>
-								-- end jdg removed -->
-								
-								<!-- jdg added and removed
-								<tr>
-									<td><?php echo $this->lang->line('giftcards_giftcard_number');?></td>
-									<td>
-										<?php echo form_input(array('name'=>'giftcard_no', 'id'=>'giftcard_no', 'class'=>'form-control input-sm', 'value'=>$giftcard_no, 'size'=>5));?>
-									</td>
-								</tr>
-								-- end jdg added and removed -->
-								
-								<!-- jdg removed
-								<tr>
-									<td><?php echo $this->lang->line('sales_amount_tendered'); ?></td>
-									<td>
-										<?php echo form_input(array('name'=>'amount_tendered', 'value'=>'', 'class'=>'form-control input-sm', 'size'=>'5')); ?>
-									</td>
-								</tr>
-								-- end jdg removed -->
 							</table>
 							
-							<!-- jdg removed
-							<div class='btn btn-sm btn-danger pull-left' id='cancel_receiving_button'><span class="glyphicon glyphicon-remove">&nbsp</span><?php echo $this->lang->line('receivings_cancel_receiving') ?></div>
-							
-							<div class='btn btn-sm btn-success pull-right' id='finish_receiving_button'><span class="glyphicon glyphicon-ok">&nbsp</span><?php echo $this->lang->line('receivings_complete_receiving') ?></div>
-							-- end jdg removed -->
 						</div>
 					<?php echo form_close(); ?>
 					
-					<!-- jdg added -->
 					<div>
 						<?php
 						// Only show this part if there is at least one payment entered.
@@ -459,10 +438,10 @@ if (isset($success))
 										<?php echo form_dropdown('payment_type', $payment_options, $selected_payment_type, array('id'=>'payment_types', 'class'=>'selectpicker show-menu-arrow', 'data-style'=>'btn-default btn-sm', 'data-width'=>'fit')); ?>
 									</td>
 								</tr>
-								<tr>
+								<tr class="amount_tendered-input">
 									<td><span id="amount_tendered_label"><?php echo $this->lang->line('sales_amount_tendered'); ?></span></td>
 									<td>
-										<?php echo form_input(array('name'=>'amount_tendered', 'id'=>'amount_tendered', 'class'=>'form-control input-sm non-giftcard-input', 'value'=>'', 'size'=>'5', 'tabindex'=>++$tabindex)); ?>
+										<?php echo form_input(array('name'=>'amount_tendered', 'id'=>'amount_tendered', 'class'=>'form-control input-sm non-giftcard-input', 'value'=>to_currency_no_money($total), 'size'=>'5', 'tabindex'=>++$tabindex)); ?>
 									</td>
 								</tr>
 								<tr class="giftcard-input">
@@ -479,14 +458,6 @@ if (isset($success))
 						}
 						?>
 					</div>
-					<!-- end jdg added -->
-					
-					<!-- jdg removed -->
-<!--					<div class='btn btn-sm btn-danger pull-left' id='cancel_receiving_button'><span class="glyphicon glyphicon-remove">&nbsp</span>--><?php //echo $this->lang->line('receivings_cancel_receiving') ?><!--</div>-->
-<!--					-->
-<!--					<div class='btn btn-sm btn-success pull-right' id='finish_receiving_button'><span class="glyphicon glyphicon-ok">&nbsp</span>--><?php //echo $this->lang->line('receivings_complete_receiving') ?><!--</div>-->
-<!--					-->
-					<!-- end jdg removed -->
 				<?php
 				}
 				?>
@@ -617,8 +588,7 @@ $(document).ready(function()
 	$('[name="price"],[name="quantity"],[name="discount"],[name="description"],[name="serialnumber"]').change(function() {
 		$(this).parents("tr").prevAll("form:first").submit()
 	});
-
-	// jdg added
+	
     $("#payment_types").change(check_payment_type).ready(check_payment_type);
 
     $("#giftcard_no").autocomplete(
@@ -642,16 +612,14 @@ $(document).ready(function()
         {
             $("#giftcard_no").attr('disabled', false);
             $(".giftcard-input").css({'display':'table-row'});
-        }
-        else
+        } else
         {
             $("#giftcard_no").attr('disabled', true);
             $(".giftcard-input").css({'display':'none'});
         }
-        $("#amount_tendered").val('');
+        
         $("#giftcard_no").val('');
     }
-    // end jdg added
 });
 
 </script>

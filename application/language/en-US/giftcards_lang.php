@@ -6,6 +6,7 @@ $lang["giftcards_amazon"] = "Amazon";
 $lang["giftcards_bulk_edit"] = "Bulk Edit";
 $lang["giftcards_cannot_be_deleted"] = "Could not delete selected Store Credit(s), one or more of the selected credits Cards has sales.";
 $lang["giftcards_cannot_find_giftcard"] = "Store Credit not found.";
+$lang["giftcards_cannot_find_giftcard_long"] = "Store Credit not found. Enter a valid account number or <a href='/giftcards'>create a new account</a>.";
 $lang["giftcards_cannot_use"] = "Store Credit %1 cannot be used for this sale: invalid Customer.";
 $lang["giftcards_card_value"] = "Value";
 $lang["giftcards_category"] = "Category";
@@ -18,6 +19,7 @@ $lang["giftcards_confirm_delete"] = "Are you sure you want to delete the selecte
 $lang["giftcards_cost_price"] = "Wholesale Price";
 $lang["giftcards_count"] = "Update Inventory";
 $lang["giftcards_current_quantity"] = "Current Quantity";
+$lang["giftcards_current_value"] = "Store Credit %1 current balance is %2. New balance will be %3.";
 $lang["giftcards_description"] = "Description";
 $lang["giftcards_details_count"] = "Inventory Count Details";
 $lang["giftcards_do_nothing"] = "Do Nothing";
@@ -68,6 +70,3 @@ $lang["giftcards_update"] = "Update Store Credit";
 $lang["giftcards_use_inventory_menu"] = "Use Inventory Menu";
 $lang["giftcards_value"] = "Store Credit Value must be a number.";
 $lang["giftcards_value_required"] = "Store Credit Value is a required field.";
-
-$lang["giftcards_current_value"] = "Store Credit %1 current balance is %2";
-$lang["giftcards_cannot_find_giftcard_long"] = "Store Credit not found. Enter a valid account number or <a href='/giftcards'>create a new account</a>.";

@@ -352,8 +352,7 @@ class Receiving_lib
 		return $total;
 	}
 
-	/* jdg added */
-	// Multiple Payments
+	/* Payments */
 	public function get_payments()
 	{
 		if(!$this->CI->session->userdata('receiving_payments'))
@@ -364,13 +363,11 @@ class Receiving_lib
 		return $this->CI->session->userdata('receiving_payments');
 	}
 	
-	// Multiple Payments
 	public function set_payments($payments_data)
 	{
 		$this->CI->session->set_userdata('receiving_payments', $payments_data);
 	}
 	
-	// Multiple Payments
 	public function add_payment($payment_id, $payment_amount)
 	{
 		$payments = $this->get_payments();
@@ -390,7 +387,6 @@ class Receiving_lib
 		$this->set_payments($payments);
 	}
 	
-	// Multiple Payments
 	public function delete_payment($payment_id)
 	{
 		$payments = $this->get_payments();
@@ -398,7 +394,6 @@ class Receiving_lib
 		$this->set_payments($payments);
 	}
 	
-	// Multiple Payments
 	public function empty_payments()
 	{
 		$this->CI->session->unset_userdata('receiving_payments');
@@ -418,7 +413,6 @@ class Receiving_lib
 		$this->CI->session->unset_userdata('payment_type');
 	}
 	
-	// Multiple Payments
 	public function get_payments_total()
 	{
 		$subtotal = 0;
@@ -429,7 +423,23 @@ class Receiving_lib
 		
 		return $subtotal;
 	}
-	/* end jdg added */
+	
+	public function get_totals()
+	{
+		$totals = array();
+		
+		$total = $this->get_total();
+		$totals['total'] = $total;
+		
+		$payment_total = $this->get_payments_total();
+		$totals['payment_total'] = $payment_total;
+		
+		$amount_due = bcsub($total, $payment_total);
+		$totals['amount_due'] = $amount_due;
+		
+		return $totals;
+	}
+	/* Payments */
 
 }
 
